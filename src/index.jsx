@@ -1,39 +1,32 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './App.css';
 
-const Nav = ({ scrolledValue }) => {
+const Nav = () => {
   const [activeLink, setActiveLink] = useState(null);
   const handleLinkClick = (link) => {
     setActiveLink(link);
   };
-  const navLinks = ['#home', '#projects', '#about', '#contact'];
   return (
-    <header className={scrolledValue}>
-      {navLinks.map((link) => (
-        <a key={link} href={link} className={activeLink === link ? 'active' : ''} onClick={() => handleLinkClick(link)}>{link.replace('#', '')}</a>
-      ))}
+    <header>
+        <div className='menuBarcontainer'>
+          <h2>Abhiram</h2>
+          <i class="fa-solid fa-bars" onClick={()=>{document.querySelector('.anchorTagscontainer').classList.toggle('anchorTagscontainerActive')}}></i>
+        </div>
+        <div className='anchorTagscontainer'>
+          <a key='home' href='#home' className={activeLink === '#home' ? 'active' : ''} onClick={() => handleLinkClick('#home')}>Home</a>
+          <a key='projects' href='#projects' className={activeLink === '#projects' ? 'active' : ''} onClick={() => handleLinkClick('#projects')}>Projects</a>
+          <a key='about' href='#about' className={activeLink === '#about' ? 'active' : ''} onClick={() => handleLinkClick('#about')}>About</a>
+          <a key='contact' href='#contact' className={activeLink === '#contact' ? 'active' : ''} onClick={() => handleLinkClick('#contact')}>Contact</a>
+        </div>
     </header>
   );
 };
 
 const Home = () =>{
-  const [scrolled, setScrolled] = useState("dontChangebg");
-  React.useEffect(()=>{
-    const homediv = document.querySelector("#home");    
-      document.addEventListener('scroll', () => {
-        if(homediv.getBoundingClientRect().bottom < 50){
-          setScrolled("changeBg");
-        }
-        else{
-          setScrolled("dontChangebg");
-        }
-      });
-    }
-  );
   return(
     <>
-      <Nav scrolledValue={scrolled}/>
+      <Nav/>
       <main id='home'>
         <div className = "hero-container">
           <div className="hero-image">
@@ -98,8 +91,8 @@ const Projects = () =>{
         <div className="websites-container">
             <h2>React Js Projects</h2>
             <div className="websites">
-              <a className="website " href="https://8dsongs.me/" target='_blank' rel="noopener noreferrer">
-                <img src="images/8dsongs.png" alt="8dsongs.me"/>
+              <a className="website " href="https://abhiram945.github.io/8d" target='_blank' rel="noopener noreferrer">
+                <img src="images/8dsongs.png" alt="8dsongs"/>
               </a>
               <a className="website todo" href="https://www.github.com/abhiram945" target='_blank' rel="noopener noreferrer">
                 <img src="images/todo.png" alt="todo"/>
