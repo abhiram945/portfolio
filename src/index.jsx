@@ -4,45 +4,48 @@ import './App.css';
 
 const Nav = () => {
   const [activeLink, setActiveLink] = useState(null);
+  const [menu, setMenu] = useState(0);
   const handleLinkClick = (link) => {
     setActiveLink(link);
   };
   return (
     <header>
-        <div className='menuBarcontainer'>
-          <h2>Abhiram</h2>
-          <i class="fa-solid fa-bars" onClick={()=>{document.querySelector('.anchorTagscontainer').classList.toggle('anchorTagscontainerActive')}}></i>
+        <div className='logo-container'>
+          <h2>Abhi<span>.</span></h2>
         </div>
-        <div className='anchorTagscontainer'>
+        <nav>
           <a key='home' href='#home' className={activeLink === '#home' ? 'active' : ''} onClick={() => handleLinkClick('#home')}>Home</a>
           <a key='projects' href='#projects' className={activeLink === '#projects' ? 'active' : ''} onClick={() => handleLinkClick('#projects')}>Projects</a>
           <a key='about' href='#about' className={activeLink === '#about' ? 'active' : ''} onClick={() => handleLinkClick('#about')}>About</a>
           <a key='contact' href='#contact' className={activeLink === '#contact' ? 'active' : ''} onClick={() => handleLinkClick('#contact')}>Contact</a>
+        </nav>
+        <div className='menu-icon-container'>
+          <i class={`fa-solid fa-${menu%2 === 0 ? 'bars' : 'x'}`} onClick={(e)=>{
+            e.preventDefault();
+            document.querySelector('nav').classList.toggle('active-nav');
+            setMenu(menu+1);
+            }}></i>
         </div>
     </header>
   );
 };
 
-const Home = () =>{
+const Main = () =>{
   return(
-    <>
-      <Nav/>
-      <main id='home'>
-        <div className = "hero-container">
-          <div className="hero-image">
-            <img src='images/coding.jpg' alt='hero'></img>
-          </div>
-          <div className="hero-details-container">
-            <img src='images/hero-laptop.jpg' alt='hero-laptop'></img>
-            <div className='hero-details'>
-              <p>Hi! I Am</p>
-              <h1>ABHIRAM</h1>
-              <p>Aiming to become an AIML Engineer</p>
-            </div>
-          </div>
-        </div>
-      </main>
-    </>
+    <main id='home'>
+      <div className='hero-details-container'>
+        <p>Hello, I Am</p>
+        <h1>ABHIRAM</h1>
+        <p>And I'm a <span>Frontend Developer</span></p>
+        <p>I'm passionate about WebDevelopment and AI&ML, Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Ipsam dolore maiores cumque error unde! Est autem laudantium doloremque animi placeat.
+        </p>
+        <button>Download Resume</button>
+      </div>
+      <div className="hero-image-container">
+        <img src='images/coding.jpg' alt='hero'></img>
+      </div>
+    </main>
   );
 }
 
@@ -129,8 +132,8 @@ const About = () =>{
         <div className="box">
           <h3>Programming in</h3><br/>
           <p className="language"><span>&#10004;</span><b>C</b></p>
-          <p className="language"><span>&#10004;</span><b>Python</b></p>
-          <p className="language"><span>&#10004;</span><b>Java</b></p>
+          <p className="language"><span>&#10004;</span><b>ML in Python</b></p>
+          <p className="language"><span>&#10004;</span><b>DSA in Java</b></p>
         </div>
         <div className="box">
           <h3>Web Suite</h3><br/>
@@ -162,7 +165,8 @@ const Contact = () =>{
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <Home/>
+    <Nav/>
+    <Main/>
     <Projects/>
     <About/>
     <Contact/>

@@ -4,136 +4,121 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   text-decoration: none;
+  font-family:'Segoe UI';
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
-body{
-  &::-webkit-scrollbar{
-    display: none;
-  }
+body::-webkit-scrollbar{
+  display: none;
 }
-
 #root{
   width:100%;
   height: 100%;
-  position: relative;
-  background-color: #0F0F0F;
-}
-header{
-  position:fixed;
-  top:0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  padding:0 2.5rem;
-  z-index: 1;
-  background-color: #0F0F0F;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-header .menuBarcontainer{
-  & h2{
-    color: #008170;
-    font-size: 2.5rem;
-  }
-  & i{
-    display: none;
-  }
   
 }
-header .anchorTagscontainer{
+:root{
+  --backgroundcolor : #1f242d;
+  --masterblue : #0ef;
+  --text:#fff;
+}
+header{
+  width: 100%;
+  position: fixed;
+  top:0;
+  z-index:1;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding:0.5rem 5rem;
+  padding:0.5rem 2.5rem;
+  background-color: var(--backgroundcolor);
 }
-header .anchorTagscontainer a{
-  padding:0.5rem;
-  border-radius: 0.25rem;
-  margin:0 1rem;
-  position: relative;
-  color: #008170;
+header .logo-container h2{
+  font-size: 2rem;
+  cursor: default;
+  color:var(--masterblue);
+  & span{
+    color: var(--text);
+  }
 }
-header .anchorTagscontainer .active{
-  color:#0F0F0F;
-  background-color: #008170;
+header nav a{
+  color:var(--text);
+  margin:0 2.5rem;
+}
+header nav a:hover, nav .active{
+  color:var(--masterblue);
+}
+header .menu-icon-container{
+  display: none;
 }
 main{
-  width: 100%;
-}
-.hero-container{
-  width:100%;
-  padding:2rem;
+  width: 100vw;
   height: 100vh;
+  color:var(--text);
+  background-color:var(--backgroundcolor);
+  padding:0 5rem;
   display: flex;
-  justify-content: center;
+  gap:10%;
+  justify-content: space-between;
   align-items: center;
 }
-.hero-container div{
-  width:100%;
-}
-.hero-container .hero-image img{
-  width:60%;
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto;
-}
-.hero-container .hero-details-container{
-  font-size: 2rem;
-  text-align: center;
-  position: relative;
-}
-.hero-details-container:hover{
-  transform:scale(1.025)
-}
-.hero-details{
-  position: absolute;
-  top:50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  color: #0F0F0F;
-}
-.hero-details h1{
-  display: inline-block;
-  position: relative;
-  -webkit-text-stroke: 0.025rem #008170;
-}
-.hero-details h1::before{
-  overflow: hidden;
-  position: absolute;
-  top:0;
-  left:0;
-  width: 0%;
-  content: "ABHIRAM";
-  color:#008170;
-  border-right: 0.2rem solid ;
-  animation: namecolor 2.5s linear infinite;
-}
-@keyframes namecolor {
-  0%{
-    width:0px;
+main .hero-details-container{
+  width: 45%;
+  display: flex;
+  gap:1.5rem;
+  flex-direction: column;
+  & h1{
+    color: var(--masterblue);
   }
-  40%,50%,60%{
-    width:100%;
+  & p > span{
+    font-size: 1.5rem;
+    color: var(--masterblue);
+  }
+  & button{
+    width: 10rem;
+    padding:0.75rem 1rem;
+    background-color: var(--masterblue);
+    color:var(--backgroundcolor);
+    border:none;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.25rem var(--masterblue);
+    cursor: pointer;
+  }
+}
+main .hero-image-container{
+  width: 45%;
+  animation: heroAnimate ease-in-out 3s infinite;
+  & img{
+    width: 75%;
+    display: block;
+    margin: auto;
+    border-top-right-radius: 5rem;
+    border-bottom-left-radius: 5rem;
+    box-shadow: 0 0.5rem 1rem var(--masterblue);
+  }
+}
+@keyframes heroAnimate{
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(1rem);
   }
   100%{
-    width:0px;
+    transform: translateY(0);
   }
 }
-.hero-details-container img{
-  width: 100%;
-}
+
 .projects-container{
   padding-top:4rem;
   padding-bottom: 1rem;
   width:100%;
   text-align: center;
-  background-color: #232D3F;
+  background-color: var(--backgroundcolor);
 }
 .projects-container > p{
-  color:#005B41;
+  color:var(--text);
 }
 .projects-container > h2{
-  color: #008170;
+  color: var(--masterblue);
 }
 .projects{
   height: 100%;
@@ -148,18 +133,18 @@ main{
   height:27rem;
   padding-top:0.3rem;
   border-radius: 1rem;
-  border: solid 0.1rem ;
+  border: solid 0.1rem var(--text);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #0F0F0F;
+  background-color: var(--backgroundcolor);
 }
 .projects .project h2{
   border-radius: 1rem;
-  color: #008170;
+  color: var(--masterblue);
 }
 .projects .project p{
-  color: #005B41;
+  color: var(--text);
 }
 .projects .project img{
   width: 100%;
@@ -172,7 +157,7 @@ main{
   padding:2.5rem 0 0;
 }
 .websites-container > h2{
-  color: #008170;
+  color: var(--masterblue);
 }
 .websites{
   display: flex;
@@ -186,7 +171,7 @@ main{
   width: 45%;
   border: solid 0.1rem ;
   transition: all ease 0.5s;
-  border:solid 0.1rem #0F0F0F;
+  border:solid 0.1rem var(--text);
 }
 .websites .website:hover{
   transform:scale(1.05)
@@ -203,13 +188,14 @@ main{
   width:100%;
   text-align: center;
   padding:3.5rem 1rem 2rem;
-  background-color: #0F0F0F;
+  background-color: var(--backgroundcolor);
 }
 .about-container > p{
-  color: #005B41;
+  color: var(--text);
 }
 .about-container > h2{
-  color: #008170;
+  color: var(--masterblue);
+  margin-bottom: 1rem;
 }
 .certificates-container{
   width: 100%;
@@ -219,8 +205,7 @@ main{
   justify-content: center;
 }
 .certificates-container .scroll-container{
-  width: 40rem;
-  height: auto;
+  width: 32.5rem;
   display: flex;
   align-items: center;
   overflow-x: hidden;
@@ -251,7 +236,9 @@ main{
 }
 .certificates-container .scroll-container img{
   width: 100%;
+  height: 100%;
   animation: scroll 30s infinite linear;
+  object-fit: contain;
 }
 .about-details-container{
   width: 100%;
@@ -271,7 +258,7 @@ main{
   flex-direction: column;
   align-items:center;
   justify-content: center;
-  border-color: #232D3F;
+  border-color: var(--text);
 }
 .about-details-container div .language{
   display: block;
@@ -280,83 +267,85 @@ main{
   padding-left: 25%;
 }
 .about-details-container .box h3{
-  color: #008170;
+  color: var(--masterblue);
 }
 .box p{
-  color: #005B41;
+  color: var(--text);
 }
 .about-details-container div p span{
   margin-right: 1rem;
-  color: #232D3F;
+  color: var(--masterblue);
 }
 .footer-container{
   width: 100%;
   padding:1rem;
   text-align: center;
-  background-color: #232D3F;
+  background-color: var(--backgroundcolor);
 }
-.footer-container h2, .footer-container p{
-  color: #008170;
+.footer-container h2{
+  color: var(--masterblue);
+}
+.footer-container p{
+  color: var(--text);
 }
 .footer-links-container{
   padding:1rem;
 }
 .footer-links-container a i{
-  color: #005B41;
+  color: var(--masterblue);
   font-size: 2.5rem;
   margin: 0 1rem;
 }
-@media (width<426px){
+@media (width<450px){
   header{
-    padding:0 1rem;
-    flex-direction: column;
-    transition:all ease-in 2s;
+    padding:0.5rem 1rem;
   }
-  header .menuBarcontainer{
-  width: 100%;
-    color: #005B41;
-    background-color: #0F0F0F;
+  header nav{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding:1rem;
-    & h2{
-      font-size: 1.5rem;
-    }
+    justify-content: space-evenly;
+    position: absolute;
+    background-color: var(--backgroundcolor);
+    top: 3.325rem;
+    right: 0;
+    width: 0;
+    height: 35vh;
+    font-size: 0.1rem;
+    overflow: hidden;
+    transition: all 0.25s;
+  }
+  header .active-nav{
+    padding:0.5rem 0;
+    width: 50%;
+    font-size: 1rem;
+  }
+  header .menu-icon-container{
+    display: block;
     & i{
-      display: block;
+      color: var(--masterblue);
       font-size: 2rem;
     }
   }
-  header .anchorTagscontainer{
-    display: none;
-  }
-  header .anchorTagscontainerActive{
-    display: flex;
-    height: 25vh;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .hero-container{
-    width: 100%;
-    flex-wrap: wrap;
-    gap:0;
-    padding:5rem 0;
-  }
-  .hero-container .hero-image img{
-    width:75%;
-  }
-  .hero-container .hero-details-container{
-    font-size: 1.5rem;
-  }
-  .hero-details h1{
-    font-size: 100%;;
-  }
-  .hero-details p{
-    font-size: 0.85rem;
-    display: block;
-    margin: 0 auto;
-    width: 80%;
+  main{
+    height: 100vh;
+    flex-direction: column-reverse;
+    justify-content: end;
+    gap:2.5rem;
+    padding:2.5rem 1rem;
+    & .hero-details-container{
+      width: 100%;
+    }
+    & .hero-image-container{
+      width: 100%;
+      & img{
+        width: 85%;
+        border-radius: 0;
+        border-top-left-radius: 3rem;
+        border-bottom-right-radius: 3rem;
+        box-shadow: -0.15rem -0.15rem 1rem var(--masterblue);
+      }
+    }
   }
   .projects{
     grid-template-columns: 1fr;
@@ -378,14 +367,15 @@ main{
   }
   .about-details-container{
     gap:0.5rem;
+    grid-template-columns: 1fr;
   }
   .about-details-container div{
-    padding:1rem 0.25rem;
+    padding:1rem 0;
     margin: 1.25rem 0;
-    width:100%;
+    width:90%;
     font-size: 0.8rem;
   }
   .about-details-container div .language{
-    padding-left:5%;
+    padding-left:35%;
   }
 }
