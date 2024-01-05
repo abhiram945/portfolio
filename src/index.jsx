@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTypewriter } from 'react-simple-typewriter';
 import ReactDOM from 'react-dom/client';
 import './App.css';
 
@@ -31,14 +32,21 @@ const Nav = () => {
 };
 
 const Main = () =>{
+    const [typedText] = useTypewriter({
+      words:['Frontend Developer','Youtuber','Music creator','Tech enthusiast'],
+      loop:{},
+      typeSpeed:100,
+      delaySpeed:1000,
+    });
   return(
     <main id='home'>
       <div className='hero-details-container'>
         <p>Hello, I Am</p>
         <h1>ABHIRAM</h1>
-        <p>And I'm a <span>Frontend Developer</span></p>
-        <p>I'm passionate about WebDevelopment and AI&ML, Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Ipsam dolore maiores cumque error unde! Est autem laudantium doloremque animi placeat.
+        <p>And I'm a <span>{typedText}</span></p>
+        <p>I'm passionate about WebDevelopment and AI&ML, Committed learner,
+          deadline-driven, Love teaching, Thrive on collaboration,Music enthusiast and mixer,
+          Ready to contribute a dynamic skill set for innovation.
         </p>
         <button>Download Resume</button>
       </div>
