@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTypewriter } from 'react-simple-typewriter';
 import ReactDOM from 'react-dom/client';
 import './App.css';
@@ -21,7 +21,7 @@ const Nav = () => {
           <a key='contact' href='#contact' className={activeLink === '#contact' ? 'active' : ''} onClick={() => handleLinkClick('#contact')}>Contact</a>
         </nav>
         <div className='menu-icon-container'>
-          <i class={`fa-solid fa-${menu%2 === 0 ? 'bars' : 'x'}`} onClick={(e)=>{
+          <i className={`fa-solid fa-${menu%2 === 0 ? 'bars' : 'x'}`} onClick={(e)=>{
             e.preventDefault();
             document.querySelector('nav').classList.toggle('active-nav');
             setMenu(menu+1);
@@ -58,6 +58,20 @@ const Main = () =>{
 }
 
 const Projects = () =>{
+  useEffect(() => {
+    const projects = document.querySelectorAll('.project');
+    document.addEventListener('scroll', () => {
+      projects.forEach((project) => {
+        const bounds = project.getBoundingClientRect();
+        if (bounds.bottom < window.innerHeight) {
+          project.classList.add('project-translatex');
+        } else {
+          project.classList.remove('project-translatex');
+        }
+      });
+    });
+    return () => {};
+  }, []);
   return(
     <div className="projects-container" id="projects">
         <p>Explore through</p>
@@ -114,6 +128,20 @@ const Projects = () =>{
   );
 }
 const About = () =>{
+  useEffect(() => {
+    const aboutbox = document.querySelectorAll('.about-box');
+    document.addEventListener('scroll', () => {
+      aboutbox.forEach((box) => {
+        const bounds = box.getBoundingClientRect();
+        if (bounds.bottom < window.innerHeight) {
+          box.classList.add('zoom');
+        } else {
+          box.classList.remove('zoom');
+        }
+      });
+    });
+    return () => {};
+  }, []);
   return(
     <div className="about-container" id="about">
       <p>Get to know more</p>
@@ -129,21 +157,21 @@ const About = () =>{
         </div>
       </div>
       <div className="about-details-container">
-        <div className="box">
+        <div className="about-box">
           <h3>Education</h3><br/>
           <p><b>Pursuing B.Tech CSE AIML stream</b></p>
         </div>
-        <div className="box">
+        <div className="about-box">
           <h3>Goal</h3><br/>
           <p><b>Aiming to become an AIML Engineer</b></p>
         </div>
-        <div className="box">
+        <div className="about-box">
           <h3>Programming in</h3><br/>
           <p className="language"><span>&#10004;</span><b>C</b></p>
           <p className="language"><span>&#10004;</span><b>ML in Python</b></p>
           <p className="language"><span>&#10004;</span><b>DSA in Java</b></p>
         </div>
-        <div className="box">
+        <div className="about-box">
           <h3>Web Suite</h3><br/>
           <p className="language"><span>&#10004;</span><b>Html</b></p>
           <p className="language"><span>&#10004;</span><b>CSS - Bootsrap</b></p>
