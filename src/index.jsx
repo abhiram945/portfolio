@@ -63,7 +63,7 @@ const Projects = () =>{
     document.addEventListener('scroll', () => {
       projects.forEach((project) => {
         const bounds = project.getBoundingClientRect();
-        if (bounds.bottom < window.innerHeight) {
+        if (bounds.bottom < window.innerHeight+300) {
           project.classList.add('project-translatex');
         } else {
           project.classList.remove('project-translatex');
