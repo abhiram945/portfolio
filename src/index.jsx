@@ -51,7 +51,7 @@ const Main = () =>{
         <button>Download Resume</button>
       </div>
       <div className="hero-image-container">
-        <img src='images/coding.jpg' alt='hero'></img>
+        <img src='images/heroImage.png' alt='hero'></img>
       </div>
     </main>
   );

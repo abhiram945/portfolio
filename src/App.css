@@ -65,7 +65,7 @@ main{
   height: 100vh;
   color:var(--text);
   background-color:var(--backgroundcolor);
-  padding:0 5rem;
+  padding:0 5rem 0 7.5rem;
   display: flex;
   gap:10%;
   justify-content: space-between;
@@ -109,12 +109,12 @@ main .hero-image-container{
   animation: zoom 0.5s ease forwards, heroAnimate ease-in-out 3s infinite;
   animation-delay: 0.5s, 1.5s;
   & img{
-    width: 75%;
+    width: 62.5%;
     display: block;
     margin: auto;
     border-top-right-radius: 5rem;
     border-bottom-left-radius: 5rem;
-    box-shadow: 0 0.5rem 1rem var(--masterblue);
+    filter: drop-shadow( 0.1rem 0.1rem 0.3rem var(--masterblue));
   }
 }
 .projects-container{
