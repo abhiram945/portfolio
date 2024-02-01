@@ -158,21 +158,13 @@ const About = () =>{
       </div>
       <div className="about-details-container">
         <div className="about-box">
-          <h3>Education</h3><br/>
-          <p><b>Pursuing B.Tech CSE AIML stream</b></p>
-        </div>
-        <div className="about-box">
-          <h3>Goal</h3><br/>
-          <p><b>Aiming to become an AIML Engineer</b></p>
-        </div>
-        <div className="about-box">
           <h3>Programming in</h3><br/>
           <p className="language"><span>&#10004;</span><b>C</b></p>
           <p className="language"><span>&#10004;</span><b>ML in Python</b></p>
           <p className="language"><span>&#10004;</span><b>DSA in Java</b></p>
         </div>
         <div className="about-box">
-          <h3>Web Suite</h3><br/>
+          <h3>Development in</h3><br/>
           <p className="language"><span>&#10004;</span><b>Html</b></p>
           <p className="language"><span>&#10004;</span><b>CSS - Bootsrap</b></p>
           <p className="language"><span>&#10004;</span><b>Js - React Js</b></p>
@@ -186,7 +178,7 @@ const Contact = () =>{
   return(
     <footer id='contact'>
       <div className="footer-container" id="contact">
-        <h2 >Contact Me</h2>
+        <h2 >Get in touch</h2>
         <div className="footer-links-container">
           <a href="https://www.linkedin.com/in/s-abhiramreddy-597346260" target="_blank" rel="noopener noreferrer"><i className="fa fa-linkedin-square"></i></a>
           <a href="https://github.com/webdev4644" target="_blank" rel="noopener noreferrer"><i className="fa fa-github-square"></i></a>
