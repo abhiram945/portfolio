@@ -133,7 +133,7 @@ const About = () =>{
     document.addEventListener('scroll', () => {
       aboutbox.forEach((box) => {
         const bounds = box.getBoundingClientRect();
-        if (bounds.bottom < window.innerHeight) {
+        if (bounds.bottom < window.innerHeight+175) {
           box.classList.add('zoom');
         } else {
           box.classList.remove('zoom');
@@ -181,7 +181,7 @@ const Contact = () =>{
         <h2 >Get in touch</h2>
         <div className="footer-links-container">
           <a href="https://www.linkedin.com/in/s-abhiramreddy-597346260" target="_blank" rel="noopener noreferrer"><i className="fa fa-linkedin-square"></i></a>
-          <a href="https://github.com/webdev4644" target="_blank" rel="noopener noreferrer"><i className="fa fa-github-square"></i></a>
+          <a href="https://github.com/abhiram945" target="_blank" rel="noopener noreferrer"><i className="fa fa-github-square"></i></a>
           <a href="mailto:1137339.s.abhiramreddy@gmail.com" target="_blank" rel="noopener noreferrer"><i className="fa fa-envelope"></i></a>
         </div>
         <p>Made by Abhi with React Js</p>
