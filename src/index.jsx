@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTypewriter } from 'react-simple-typewriter';
 import ReactDOM from 'react-dom/client';
 import './App.css';
@@ -79,7 +79,7 @@ const Projects = () =>{
         <div className="projects">
             <div className="project">
                 <h2>Airport 3D Visualization</h2>
-                <p>Category: Engineering Visualization</p>
+                <p>Category: 3D Designing & Visualization</p>
                 <img src="images/airport.jpg" alt='airport'/>
             </div>
             <div className="project">
@@ -88,7 +88,7 @@ const Projects = () =>{
                 <img src="images/eyeMouse.jpg" alt='etemouse'/>
             </div>
             <div className="project">
-                <h2>Automatic fire alert and prevention system</h2>
+                <h2>Automatic fire alert & prevention system</h2>
                 <p>Category: Internet Of Things</p>
                 <img src="images/fireAlert.jpg" alt='firealert'/>
             </div>
@@ -108,9 +108,14 @@ const Projects = () =>{
                 <img src="images/solarEnergy.jpg" alt='solarenergy'/>
             </div>
             <div className="project">
-                <h2>Live Image describer</h2>
+                <h2>Live Image Describer</h2>
                 <p>Category: <b>Deep Learning</b></p>
                 <img src="images/imagedescriber.jpg" alt='solarenergy'/>
+            </div>
+            <div className="project">
+                <h2>Protein Structure Prediction</h2>
+                <p>Category: <b>Deep Learning</b></p>
+                <img src="images/proteinStructure.jpg" alt='protein structure'/>
             </div>
         </div>
         <div className="websites-container">
@@ -142,12 +147,29 @@ const About = () =>{
     });
     return () => {};
   }, []);
+  const scrollRef = useRef(null);
+  const scrollToLeft=()=>{
+    scrollRef.current.scrollLeft -=600;
+  }
+  const scrollToRight=()=>{
+    scrollRef.current.scrollLeft +=600;
+  }
   return(
     <div className="about-container" id="about">
       <p>Get to know more</p>
       <h2>About Me</h2>
+      <div className='aboutMe'>
+        <p>
+          I'm Abhiram from Andhra Pradesh, currently pursuing a B.Tech in Computer Science and Engineering, specializing in Artificial Intelligence and Machine Learning at Kalasalingam University.
+          I recently earned a 5-star gold badge in Java on Hackerrank and presented a paper at IEEE 6th International Conference.
+          Proficient in C, Python, and Java, with a focus on web development using HTML, CSS, JavaScript, and React Js.
+          Skilled in communication, multitasking, and team management, I aim to contribute to innovative projects as a developer.
+          Beyond tech, I enjoy music and stay updated on emerging trends in technology.
+        </p>
+      </div>
       <div className='certificates-container'>
-        <div className='scroll-container'>
+        <img src='images/leftScroll.svg' alt='leftScroll' onClick={()=>{scrollToLeft()}}/>
+        <div className='scroll-container' ref={scrollRef}>
           <img src='images/coursera_ibm.png' alt='IBM certification on coursera'/>
           <img src='images/daa_codechef.png' alt='DAA_CodeChef'/>
           <img src='images/ieee.png' alt='IEEE publication'/>
@@ -155,6 +177,7 @@ const About = () =>{
           <img src='images/webdevelopment_internship.jpg' alt='webdevelopment internship'/>
           <img src='images/MS-365-fundamentals.png' alt='MS 365 fundamentals'/>
         </div>
+        <img src='images/rightScroll.svg' alt='rightScroll' onClick={()=>{scrollToRight()}}/>
       </div>
       <div className="about-details-container">
         <div className="about-box">
@@ -166,8 +189,9 @@ const About = () =>{
         <div className="about-box">
           <h3>Development in</h3><br/>
           <p className="language"><span>&#10004;</span><b>Html</b></p>
-          <p className="language"><span>&#10004;</span><b>CSS - Bootsrap</b></p>
-          <p className="language"><span>&#10004;</span><b>Js - React Js</b></p>
+          <p className="language"><span>&#10004;</span><b>CSS & Bootsrap</b></p>
+          <p className="language"><span>&#10004;</span><b>JavaScript</b></p>
+          <p className="language"><span>&#10004;</span><b>MERN (currently learning)</b></p>
         </div>
       </div>
     </div>

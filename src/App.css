@@ -17,13 +17,13 @@ body::-webkit-scrollbar{
 }
 :root{
   --backgroundcolor : #1f242d;
-  --masterblue : #0ef;
+  --masterblue : #00EEFF;
   --text:#fff;
 }
 header{
   width: 100%;
   height: 10lvh;
-  position: fixed;
+  position: sticky;
   top:0;
   z-index:1;
   display: flex;
@@ -69,7 +69,6 @@ main{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top:10lvh;
   padding-left:5%;
 }
 main .hero-details-container{
@@ -223,6 +222,15 @@ main .hero-image-container{
   color: var(--masterblue);
   margin-bottom: 1rem;
 }
+.about-container .aboutMe{
+  width: 100%;
+}
+.aboutMe p{
+  width: 80%;
+  margin:1rem auto 2rem;
+  text-align: justify;
+  color: #fff;
+}
 .certificates-container{
   width: 100%;
   display: flex;
@@ -230,11 +238,18 @@ main .hero-image-container{
   align-items: center;
   justify-content: center;
 }
+.certificates-container > img{
+  cursor: pointer;
+  scale:1.25;
+  &:hover{
+    scale:1.75;
+  }
+}
 .certificates-container .scroll-container{
-  width: 32.5rem;
+  width: 37.5rem;
   display: flex;
   align-items: center;
-  overflow-x: hidden;
+  overflow-x: scroll;
 }
 .certificates-container .scroll-container::-webkit-scrollbar{
   display: none;
@@ -242,8 +257,6 @@ main .hero-image-container{
 .certificates-container .scroll-container img{
   width: 100%;
   height: 100%;
-  animation: scroll 30s infinite linear;
-  object-fit: contain;
 }
 .about-details-container{
   width: 100%;
@@ -344,26 +357,6 @@ main .hero-image-container{
     transform: translateY(0.75rem);
   }
 }
-@keyframes scroll {
-  0%,12.5%{
-    transform: translateX(0);
-  }
-  17.5%,30%{
-    transform: translateX(-100%);
-  }
-  35%,47.5%{
-    transform: translateX(-200%);
-  }
-  52.5%,65%{
-    transform: translateX(-300%);
-  }
-  70%,82.5%{
-    transform: translateX(-400%);
-  }
-  87.5%,100%{
-    transform: translateX(-500%);
-  }
-}
 /* Media queris */
 @media (width<450px){
   header{
@@ -436,6 +429,12 @@ main .hero-image-container{
   }
   .about-container{
     padding-top: 4rem;
+  }
+  .aboutMe p{
+    width: 95%;
+  }
+  .certificates-container > img{
+    display: none;
   }
   .about-details-container{
     gap:0.5rem;
