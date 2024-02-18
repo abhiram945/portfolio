@@ -145,14 +145,20 @@ const About = () =>{
         }
       });
     });
+    scrollRef.current.addEventListener('wheel', (event) => {
+      event.preventDefault(); // Prevent scrolling
+    });
     return () => {};
   }, []);
   const scrollRef = useRef(null);
+  
   const scrollToLeft=()=>{
-    scrollRef.current.scrollLeft -=600;
+    const scrollAmount = document.querySelector(".scroll-container img").width;
+    scrollRef.current.scrollLeft -=scrollAmount;
   }
   const scrollToRight=()=>{
-    scrollRef.current.scrollLeft +=600;
+    const scrollAmount = document.querySelector(".scroll-container img").width;
+    scrollRef.current.scrollLeft +=scrollAmount;
   }
   return(
     <div className="about-container" id="about">
@@ -168,7 +174,7 @@ const About = () =>{
         </p>
       </div>
       <div className='certificates-container'>
-        <img src='images/leftScroll.svg' alt='leftScroll' onClick={()=>{scrollToLeft()}}/>
+        <img src='images/leftScroll.svg' className='leftArrow' alt='leftScroll' onClick={()=>{scrollToLeft()}}/>
         <div className='scroll-container' ref={scrollRef}>
           <img src='images/ieee.png' alt='IEEE publication'/>
           <img src='images/coursera_ibm.png' alt='IBM certification on coursera'/>
@@ -177,7 +183,7 @@ const About = () =>{
           <img src='images/MS-365-fundamentals.png' alt='MS 365 fundamentals'/>
           <img src='images/webdevelopment_internship.jpg' alt='webdevelopment internship'/>
         </div>
-        <img src='images/rightScroll.svg' alt='rightScroll' onClick={()=>{scrollToRight()}}/>
+        <img src='images/rightScroll.svg' className='rightArrow' alt='rightScroll' onClick={()=>{scrollToRight()}}/>
       </div>
       <div className="about-details-container">
         <div className="about-box">

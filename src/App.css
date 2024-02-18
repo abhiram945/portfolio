@@ -240,6 +240,7 @@ main .hero-image-container{
 }
 .certificates-container > img{
   cursor: pointer;
+  padding:1rem;
   scale:1.25;
   &:hover{
     scale:1.75;
@@ -427,15 +428,41 @@ main .hero-image-container{
     max-width: 90%;
   }
   .about-container{
+    width: 100%;
     padding-top: 4rem;
   }
   .aboutMe p{
     width: 95%;
   }
+  .about-container .certificates-container{
+    flex-direction: column;
+    position: relative;
+  }
   .certificates-container > img{
-    display: none;
+    order: 1;
+    position: absolute;
+    transform: translateY(-50%);
+    padding:0.25rem;
+    border-radius: 50%;
+    background-color: #1f242d;
+  }
+  .certificates-container > img:hover{
+    scale:1.25;
+  }
+  .certificates-container .leftArrow{
+    left: -0.5rem;
+    top:50%;
+    
+  }
+  .certificates-container .rightArrow{
+    right: -0.5rem;
+    top:50%;
+  }
+  .certificates-container .scroll-container{
+    width: 100%;
   }
   .about-details-container{
+    margin-top:2rem;
     gap:0.5rem;
     grid-template-columns: 1fr;
   }
