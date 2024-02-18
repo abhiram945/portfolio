@@ -170,19 +170,19 @@ const About = () =>{
       <div className='certificates-container'>
         <img src='images/leftScroll.svg' alt='leftScroll' onClick={()=>{scrollToLeft()}}/>
         <div className='scroll-container' ref={scrollRef}>
+          <img src='images/ieee.png' alt='IEEE publication'/>
           <img src='images/coursera_ibm.png' alt='IBM certification on coursera'/>
           <img src='images/daa_codechef.png' alt='DAA_CodeChef'/>
-          <img src='images/ieee.png' alt='IEEE publication'/>
           <img src='images/oracle.png' alt='oracle_DB foundations'/>
-          <img src='images/webdevelopment_internship.jpg' alt='webdevelopment internship'/>
           <img src='images/MS-365-fundamentals.png' alt='MS 365 fundamentals'/>
+          <img src='images/webdevelopment_internship.jpg' alt='webdevelopment internship'/>
         </div>
         <img src='images/rightScroll.svg' alt='rightScroll' onClick={()=>{scrollToRight()}}/>
       </div>
       <div className="about-details-container">
         <div className="about-box">
           <h3>Programming in</h3><br/>
-          <p className="language"><span>&#10004;</span><b>C</b></p>
+          <p className="language"><span>&#10004;</span><b>C (intermediate)</b></p>
           <p className="language"><span>&#10004;</span><b>ML in Python</b></p>
           <p className="language"><span>&#10004;</span><b>DSA in Java</b></p>
         </div>
