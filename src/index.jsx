@@ -52,7 +52,7 @@ const Main = () => {
         <p>Hello, I Am</p>
         <h1>ABHIRAM</h1>
         <p>And I'm a <span>{typedText}</span></p>
-        <button onClick={() => window.open('images/Abhiram-resume.pdf')}>Download Resume</button>
+        <button onClick={() => window.open('images/AbhiramReddy.pdf')}>Download Resume</button>
       </div>
       <div className="hero-image-container">
         <img src='images/heroImage.png' alt='hero'></img>
