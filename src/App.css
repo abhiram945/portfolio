@@ -70,21 +70,41 @@ main{
   padding-left:7.5%;
   padding-top:7.5vh;
 }
+main .numbersContainer{
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 0;
+  overflow: hidden;
+  cursor:default;
+  user-select: none;
+  }
+  main .numbersContainer span{
+  font-size: 2rem;
+  transition: 1.75s;
+  color: var(--backgroundcolor);
+}
+main .numbersContainer span:hover{
+  transition: 0s;
+  color: var(--masterblue);
+  text-shadow: 0 0 10px rgba(0, 238, 255,0.5),0 0 30px rgba(0, 238, 255,0.4),0 0 50px rgba(0, 238, 255,0.3);
+  z-index: 9;
+}
 main .hero-details-container{
   font-size: 2.5rem;
-  width: 45%;
-  display: flex;
-  flex-direction: column;
-  gap:1rem;
   opacity: 0;
   animation: slide-right 0.2s ease forwards;
   animation-delay: 0.5s;
   & h1{
+    display: inline;
     color: var(--masterblue);
     opacity: 0;
     animation: slide-top 0.75s forwards;
     animation-delay: 0.8s;
-    font-style: oblique;
   }
   & p{
     font-size: 2rem;
@@ -94,7 +114,6 @@ main .hero-details-container{
    }
   }
   & button{
-    margin-top:1rem;
     width: 10rem;
     font-weight:500;
     padding:0.75rem 1rem;
@@ -114,7 +133,7 @@ main .hero-details-container{
 main .hero-image-container{
   width: 50%;  
   & img{
-    width: 62.5%;
+    width: 50%;
     display: block;
     margin: auto;
     opacity: 0;
