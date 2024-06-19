@@ -317,47 +317,7 @@ main .hero-image-container {
   display: block;
   margin: auto;
   width: 100%;
-  opacity: 0.7;
-}
-
-.projects-container .appsContainer {
-  padding: 1rem;
-  padding-top: 10vh;
-}
-
-.projects-container .appsContainer h2 {
-  color: var(--masterblue);
-}
-
-.projects-container .appsContainer p {
-  color: var(--text);
-  margin-top: 0.75rem;
-}
-
-.projects-container .appsContainer p span {
-  color: #FF4545;
-  font-size: 1.5rem;
-}
-
-.projects-container .appsContainer .appImagesContainer {
-  display: flex;
-  margin: 1rem 0;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  gap: 5%;
-}
-
-.projects-container .appsContainer .appImagesContainer img {
-  width: 17.5vw;
-}
-
-.projects-container .appsContainer .appImagesContainer a {
-  color: var(--backgroundcolor);
-  background-color: var(--text);
-  height: max-content;
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
+  opacity: 0.8;
 }
 
 .about-container {
@@ -637,19 +597,6 @@ main .hero-image-container {
 
   .projects-container {
     padding-bottom: 0;
-  }
-
-  .projects-container .appsContainer .appImagesContainer {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .projects-container .appsContainer .appImagesContainer img {
-    width: 90vw;
-  }
-
-  .projects-container .appsContainer .appImagesContainer a {
-    order: 3;
   }
 
   .about-container {

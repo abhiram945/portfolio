@@ -26,7 +26,6 @@ const Nav = () => {
                 <a href='#home' className={activeLink === '#home' ? 'active' : ''} onClick={() => handleLinkClick('#home')}>Home</a>
                 <a href='#projects' className={activeLink === '#projects' ? 'active' : ''} onClick={() => handleLinkClick('#projects')}>Projects</a>
                 <a href='#websites' className={activeLink === '#websites' ? 'active' : ''} onClick={() => handleLinkClick('#websites')}>Websites</a>
-                <a href='#apps' className={activeLink === '#apps' ? 'active' : ''} onClick={() => handleLinkClick('#apps')}>Apps</a>
                 <a href='#about' className={activeLink === '#about' ? 'active' : ''} onClick={() => handleLinkClick('#about')}>About</a>
                 <a href='#contact' className={activeLink === '#contact' ? 'active' : ''} onClick={() => handleLinkClick('#contact')}>Contact</a>
             </nav>
@@ -157,22 +156,13 @@ const Projects = () => {
                         <a href="https://fin-book.vercel.app" target='_blank' rel="noopener noreferrer">Visit FinBook &#8599;</a>
                     </div>
                     <div className="website">
-                        <img src='images/audic.png' alt='audic' />
-                        <a href='https://abhiram945.github.io/audic' target='_blank' rel="noopener noreferrer">Visit Audic &#8599;</a>
+                        <img src='images/dimera.png' alt='dimera' />
+                        <a href='https://dimera.vercel.app' target='_blank' rel="noopener noreferrer">Visit Dimera &#8599;</a>
                     </div>
                     <div className="website">
                         <img src="images/cse.png" alt="cse" />
-                        <a href="https://abhiram945.github.io/cse" target='_blank' rel="noopener noreferrer">Visit Live &#8599;</a>
+                        <a href="https://abhiram945.github.io/docsync" target='_blank' rel="noopener noreferrer">Visit DocSync &#8599;</a>
                     </div>
-                </div>
-            </div>
-            <div className='appsContainer' id='apps'>
-                <h2>Apps that I've developed</h2>
-                <p>Check out the <span>AUDIC</span> app developed using REACT NATIVE with EXPO</p>
-                <div className='appImagesContainer'>
-                    <img src='https://audic.vercel.app/assets/App1.jpg' alt='Audic-app-1' />
-                    <a href='https://audic.vercel.app/app' target='_blank' rel="noopener noreferrer">Check now</a>
-                    <img src='https://audic.vercel.app/assets/App2.jpg' alt='Audic-app-1' />
                 </div>
             </div>
         </div>
