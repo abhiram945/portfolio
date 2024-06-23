@@ -1,0 +1,17 @@
+.swiperContainer{
+    width: 50%;
+    height: 70vh;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide{
+    height: 100%;
+}
+@media (width<480px) {
+    .swiperContainer{
+        width: 100%;
+        height: 30vh;
+    }
+}

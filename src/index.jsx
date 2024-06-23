@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTypewriter } from 'react-simple-typewriter';
 import './App.css';
+import Imageslider from './swiper';
 import ReactDOM from 'react-dom/client';
 
 const Nav = () => {
@@ -26,6 +27,7 @@ const Nav = () => {
                 <a href='#home' className={activeLink === '#home' ? 'active' : ''} onClick={() => handleLinkClick('#home')}>Home</a>
                 <a href='#projects' className={activeLink === '#projects' ? 'active' : ''} onClick={() => handleLinkClick('#projects')}>Projects</a>
                 <a href='#websites' className={activeLink === '#websites' ? 'active' : ''} onClick={() => handleLinkClick('#websites')}>Websites</a>
+                <a href='#apps' className={activeLink === '#apps' ? 'active' : ''} onClick={() => handleLinkClick('#apps')}>Apps</a>
                 <a href='#about' className={activeLink === '#about' ? 'active' : ''} onClick={() => handleLinkClick('#about')}>About</a>
                 <a href='#contact' className={activeLink === '#contact' ? 'active' : ''} onClick={() => handleLinkClick('#contact')}>Contact</a>
             </nav>
@@ -41,7 +43,7 @@ const Nav = () => {
 };
 
 const Main = () => {
-    const [numbersArray,setNumbersArray] = useState([...Array(2000)].map(() => Math.floor(Math.random() * 10)));
+    const [numbersArray, setNumbersArray] = useState([...Array(2000)].map(() => Math.floor(Math.random() * 10)));
     const [typedText] = useTypewriter({
         words: ['Web Developer', 'App Developer', 'Music creator', 'DSA enthusiast'],
         loop: {},
@@ -165,6 +167,15 @@ const Projects = () => {
                     </div>
                 </div>
             </div>
+            <div className='appsContainer' id='apps'>
+                <h2>REACT NATIVE with EXPO</h2>
+                <h2>Check out <span>DIMERA</span> designed and developed for Android</h2>
+                <div className='imagesContainer'>
+                    <img src='https://dimera.vercel.app/assets/app1.jpg' alt='app1' />
+                    <a href='https://dimera.vercel.app/app' target='_blank' rel="noreferrer">Download Now</a>
+                    <img src='https://dimera.vercel.app/assets/app2.jpg' alt='app2' />
+                </div>
+            </div>
         </div>
     );
 }
@@ -226,18 +237,7 @@ const About = () => {
                     Beyond tech, I enjoy music and I create multi dimensional music, also stay updated on emerging trends in technology.
                 </p>
             </div>
-            <div className='certificates-container'>
-                <img src='images/leftScroll.svg' className='leftArrow' alt='leftScroll' onClick={() => { scrollToLeft() }} />
-                <div className='scroll-container' ref={scrollRef}>
-                    <img src='images/ieee.png' alt='IEEE publication' />
-                    <img src='images/coursera_ibm.png' alt='IBM certification on coursera' />
-                    <img src='images/daa_codechef.png' alt='DAA_CodeChef' />
-                    <img src='images/oracle.png' alt='oracle_DB foundations' />
-                    <img src='images/MS-365-fundamentals.png' alt='MS 365 fundamentals' />
-                    <img src='images/webdevelopment_internship.jpg' alt='webdevelopment internship' />
-                </div>
-                <img src='images/rightScroll.svg' className='rightArrow' alt='rightScroll' onClick={() => { scrollToRight() }} />
-            </div>
+            <Imageslider/>
             <div className="about-details-container">
                 <div className="about-box">
                     <h3>Programming in</h3><br />
@@ -247,7 +247,7 @@ const About = () => {
                 </div>
                 <div className="about-box">
                     <h3>Development in</h3><br />
-                    <p className="language"><span>&#10004;</span><b>Html, CSS, Bootsrap and Js</b></p>
+                    <p className="language"><span>&#10004;</span><b>Html, CSS and JavaScript</b></p>
                     <p className="language"><span>&#10004;</span><b>MERN Stack</b></p>
                     <p className="language"><span>&#10004;</span><b>React Native with Expo</b></p>
                 </div>
@@ -274,11 +274,11 @@ const Contact = () => {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <>
-    <Nav />
-    <Main />
-    <Projects />
-    <About />
-    <Contact />
-  </>
+    <>
+        <Nav />
+        <Main />
+        <Projects />
+        <About />
+        <Contact />
+    </>
 );
