@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { useTypewriter } from 'react-simple-typewriter';
 import './App.css';
 import Imageslider from './swiper';
 import ReactDOM from 'react-dom/client';
+import { waitFor } from '@testing-library/react';
 
 const Nav = () => {
     const [activeLink, setActiveLink] = useState(null);
@@ -43,21 +44,30 @@ const Nav = () => {
 };
 
 const Main = () => {
-    const [numbersArray, setNumbersArray] = useState([...Array(2000)].map(() => Math.floor(Math.random() * 10)));
-    const [typedText] = useTypewriter({
-        words: ['Web Developer', 'App Developer', 'Music creator', 'DSA enthusiast'],
-        loop: {},
+    const typewriterConfig = useMemo(() => ({
+        words: ['Web Developer', 'App Developer', 'Music Mixer', 'DSA Enthusiast'],
+        loop: true, 
         typeSpeed: 100,
+        deleteSpeed: 50,
         delaySpeed: 1000,
-    });
+    }), []);
+    const [typedText] = useTypewriter(typewriterConfig);
+
+    const [lefts,setLefts]=useState(Array.from({length:10}).map((i,j)=>Math.floor(Math.random()*100)))
+    const [tops, setTops] = useState(Array.from({length:10}).map((i,j)=>Math.floor(Math.random()*40)));
+    useEffect(()=>{
+        const timer = setInterval(() => {
+            setTops(prevTops => 
+                prevTops.map(top => (top >= 100 ? Math.floor(Math.random() * 40) : top + 1))
+            );
+        }, 25);
+        return ()=>clearInterval(timer);
+    },[]);
+    
 
     return (
         <main id='home'>
-            <div className='numbersContainer'>
-                {numbersArray.map((number, index) => (
-                    <span key={index}>{number}</span>
-                ))}
-            </div>
+            {Array.from({length:10}).map((l,i)=><div className='lineContainer' style={{left:lefts[i]+'vw',top:tops[i]+'%', opacity:tops[i]<=10 ? '0':'1'}}></div>)}
             <div className='hero-details-container'>
                 <p>Hello, I Am</p>
                 <h1>ABHIRAM</h1>
@@ -237,7 +247,7 @@ const About = () => {
                     Beyond tech, I enjoy music and I create multi dimensional music, also stay updated on emerging trends in technology.
                 </p>
             </div>
-            <Imageslider/>
+            <Imageslider />
             <div className="about-details-container">
                 <div className="about-box">
                     <h3>Programming in</h3><br />

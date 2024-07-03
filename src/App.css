@@ -62,15 +62,12 @@ header nav a {
 header nav a:hover {
   color: var(--masterblue);
 }
-
 nav .active {
   color: var(--masterblue) !important;
 }
-
 header .menu-icon-container {
   display: none;
 }
-
 main {
   width: 100vw;
   height: 100vh;
@@ -83,33 +80,14 @@ main {
   padding-top: 7.5vh;
 }
 
-main .numbersContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-wrap: wrap;
-  z-index: 0;
-  overflow: hidden;
-  cursor: default;
+main .lineContainer{
   user-select: none;
-  line-height: 1;
-}
-
-main .numbersContainer span {
-  font-size: 2.5rem;
-  transition: 1s;
-  color: var(--backgroundcolor);
-}
-
-main .numbersContainer span:hover {
-  transition: 0s;
-  color: var(--masterblue);
-  text-shadow: 0 0 5px rgba(0, 238, 255, 0.5), 0 0 10px rgba(0, 238, 255, 0.4),
-    0 0 15px rgba(0, 238, 255, 0.3);
-  z-index: 9;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--masterblue);
+  position: absolute;
+  overflow: hidden;
 }
 
 main .hero-details-container {
