@@ -52,21 +52,24 @@ const Main = () => {
     }), []);
     const [typedText] = useTypewriter(typewriterConfig);
 
-    const [lefts,setLefts]=useState(Array.from({length:10}).map((i,j)=>Math.floor(Math.random()*100)))
-    const [tops, setTops] = useState(Array.from({length:10}).map((i,j)=>Math.floor(Math.random()*40)));
+    const [lefts,setLefts]=useState(Array.from({length:25}).map((i,j)=>Math.floor(Math.random()*100)));
+    const [tops, setTops] = useState(Array.from({length:25}).map((i,j)=>Math.floor(Math.random()*50)));
     useEffect(()=>{
         const timer = setInterval(() => {
             setTops(prevTops => 
-                prevTops.map(top => (top >= 100 ? Math.floor(Math.random() * 40) : top + 1))
+                prevTops.map(top => (top >= 99 ? Math.floor(Math.random() * 40) : top + 1))
             );
         }, 25);
+        setInterval(() => {
+            setLefts(Array.from({length:10}).map((i,j)=>Math.floor(Math.random()*100)));
+        }, 2000);
         return ()=>clearInterval(timer);
     },[]);
     
 
     return (
         <main id='home'>
-            {Array.from({length:10}).map((l,i)=><div className='lineContainer' style={{left:lefts[i]+'vw',top:tops[i]+'%', opacity:tops[i]<=10 ? '0':'1'}}></div>)}
+            {Array.from({length:25}).map((l,i)=><div className='lineContainer' style={{left:lefts[i]+'vw',top:tops[i]+'%', opacity:tops[i]<=10 ? '0':'1'}}></div>)}
             <div className='hero-details-container'>
                 <p>Hello, I Am</p>
                 <h1>ABHIRAM</h1>
