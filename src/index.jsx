@@ -28,7 +28,6 @@ const Nav = () => {
                 <a href='#home' className={activeLink === '#home' ? 'active' : ''} onClick={() => handleLinkClick('#home')}>Home</a>
                 <a href='#projects' className={activeLink === '#projects' ? 'active' : ''} onClick={() => handleLinkClick('#projects')}>Projects</a>
                 <a href='#websites' className={activeLink === '#websites' ? 'active' : ''} onClick={() => handleLinkClick('#websites')}>Websites</a>
-                <a href='#apps' className={activeLink === '#apps' ? 'active' : ''} onClick={() => handleLinkClick('#apps')}>Apps</a>
                 <a href='#about' className={activeLink === '#about' ? 'active' : ''} onClick={() => handleLinkClick('#about')}>About</a>
                 <a href='#contact' className={activeLink === '#contact' ? 'active' : ''} onClick={() => handleLinkClick('#contact')}>Contact</a>
             </nav>
@@ -45,7 +44,7 @@ const Nav = () => {
 
 const Main = () => {
     const typewriterConfig = useMemo(() => ({
-        words: ['Web Developer', 'App Developer', 'Music Mixer', 'DSA Enthusiast'],
+        words: ['Web Developer', 'Music Mixer', 'DSA Enthusiast'],
         loop: true, 
         typeSpeed: 100,
         deleteSpeed: 50,
@@ -175,15 +174,6 @@ const Projects = () => {
                         <img src="images/cse.png" alt="cse" />
                         <a href="https://abhiram945.github.io/docsync" target='_blank' rel="noopener noreferrer">Visit DocSync &#8599;</a>
                     </div>
-                </div>
-            </div>
-            <div className='appsContainer' id='apps'>
-                <h2>REACT NATIVE with EXPO</h2>
-                <h2>Check out <span>DIMERA</span> designed and developed for Android</h2>
-                <div className='imagesContainer'>
-                    <img src='https://dimera.vercel.app/assets/app1.jpg' alt='app1' />
-                    <a href='https://dimera.vercel.app/app' target='_blank' rel="noreferrer">Download Now</a>
-                    <img src='https://dimera.vercel.app/assets/app2.jpg' alt='app2' />
                 </div>
             </div>
         </div>
