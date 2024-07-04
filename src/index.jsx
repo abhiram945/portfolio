@@ -28,6 +28,7 @@ const Nav = () => {
                 <a href='#home' className={activeLink === '#home' ? 'active' : ''} onClick={() => handleLinkClick('#home')}>Home</a>
                 <a href='#projects' className={activeLink === '#projects' ? 'active' : ''} onClick={() => handleLinkClick('#projects')}>Projects</a>
                 <a href='#websites' className={activeLink === '#websites' ? 'active' : ''} onClick={() => handleLinkClick('#websites')}>Websites</a>
+                <a href='#apps' className={activeLink === '#apps' ? 'active' : ''} onClick={() => handleLinkClick('#apps')}>Apps</a>
                 <a href='#about' className={activeLink === '#about' ? 'active' : ''} onClick={() => handleLinkClick('#about')}>About</a>
                 <a href='#contact' className={activeLink === '#contact' ? 'active' : ''} onClick={() => handleLinkClick('#contact')}>Contact</a>
             </nav>
@@ -44,7 +45,7 @@ const Nav = () => {
 
 const Main = () => {
     const typewriterConfig = useMemo(() => ({
-        words: ['Web Developer', 'Music Mixer', 'DSA Enthusiast'],
+        words: ['Web Developer', 'App Developer', 'Music Mixer', 'DSA Enthusiast'],
         loop: true, 
         typeSpeed: 100,
         deleteSpeed: 50,
@@ -52,7 +53,7 @@ const Main = () => {
     }), []);
     const [typedText] = useTypewriter(typewriterConfig);
 
-    const [lefts,setLefts]=useState(Array.from({length:25}).map((i,j)=>Math.floor(Math.random()*100)));
+    const [lefts,setLefts]=useState(Array.from({length:25}).map((i,j)=>Math.floor(Math.random()*95)));
     const [tops, setTops] = useState(Array.from({length:25}).map((i,j)=>Math.floor(Math.random()*50)));
     useEffect(()=>{
         const timer = setInterval(() => {
@@ -61,7 +62,7 @@ const Main = () => {
             );
         }, 25);
         setInterval(() => {
-            setLefts(Array.from({length:10}).map((i,j)=>Math.floor(Math.random()*100)));
+            setLefts(Array.from({length:10}).map((i,j)=>Math.floor(Math.random()*95)));
         }, 2000);
         return ()=>clearInterval(timer);
     },[]);
@@ -173,10 +174,15 @@ const Projects = () => {
                         <img src='images/dimera.png' alt='dimera' />
                         <a href='https://dimera.vercel.app' target='_blank' rel="noopener noreferrer">Visit Dimera &#8599;</a>
                     </div>
-                    <div className="website">
-                        <img src="images/cse.png" alt="cse" />
-                        <a href="https://abhiram945.github.io/docsync" target='_blank' rel="noopener noreferrer">Visit DocSync &#8599;</a>
-                    </div>
+                </div>
+            </div>
+            <div className='appsContainer' id='apps'>
+                <h2>Apps that I've developed</h2>
+                <p>Check out the <span>DIMERA</span> app developed using REACT NATIVE with EXPO</p>
+                <div className='appImagesContainer'>
+                    <img src='https://dimera.vercel.app/assets/app1.jpg' alt='Dimera-app-1' />
+                    <a href='https://dimera.vercel.app/app' target='_blank' rel="noopener noreferrer">Download now</a>
+                    <img src='https://dimera.vercel.app/assets/app2.jpg' alt='Dimera-app-2' />
                 </div>
             </div>
         </div>
