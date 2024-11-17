@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useTypewriter } from 'react-simple-typewriter';
 import './App.css';
 import Imageslider from './swiper';
 import ReactDOM from 'react-dom/client';
-import { waitFor } from '@testing-library/react';
 
 const Nav = () => {
     const [activeLink, setActiveLink] = useState(null);
@@ -70,7 +69,7 @@ const Main = () => {
 
     return (
         <main id='home'>
-            {Array.from({length:25}).map((l,i)=><div className='lineContainer' style={{left:lefts[i]+'vw',top:tops[i]+'%', opacity:tops[i]<=10 ? '0':'1'}}></div>)}
+            {Array.from({length:25}).map((l,i)=><div key={i} className='lineContainer' style={{left:lefts[i]+'vw',top:tops[i]+'%', opacity:tops[i]<=10 ? '0':'1'}}></div>)}
             <div className='hero-details-container'>
                 <p>Hello, I Am</p>
                 <h1>ABHIRAM</h1>
@@ -168,7 +167,7 @@ const Projects = () => {
                         <img src="images/finbook1.png" alt="finbook1" />
                         <hr />
                         <img src="images/finbook2.png" alt="finbook2" />
-                        <a href="https://fin-book.vercel.app" target='_blank' rel="noopener noreferrer">Visit FinBook &#8599;</a>
+                        <a href="https://finbook.vercel.app" target='_blank' rel="noopener noreferrer">Visit FinBook &#8599;</a>
                     </div>
                     <div className="website">
                         <img src='images/dimera.png' alt='dimera' />
@@ -210,28 +209,6 @@ const About = () => {
         };
     }, []);
 
-    const scrollRef = useRef(null);
-    const [notZeroScroll, setNotZeroScroll] = useState(false);
-
-    const scrollToLeft = () => {
-        const scrollAmount = document.querySelector(".scroll-container img").width;
-        if (notZeroScroll) {
-            scrollRef.current.scrollLeft = 0;
-            setNotZeroScroll(false);
-        } else {
-            scrollRef.current.scrollLeft -= scrollAmount;
-        }
-    }
-
-    const scrollToRight = () => {
-        const scrollAmount = document.querySelector(".scroll-container img").width;
-        if (notZeroScroll) {
-            scrollRef.current.scrollLeft = 0;
-            setNotZeroScroll(false);
-        } else {
-            scrollRef.current.scrollLeft += scrollAmount;
-        }
-    }
 
     return (
         <div className="about-container" id="about">
@@ -273,7 +250,7 @@ const Contact = () => {
                 <div className="footer-links-container">
                     <a href="https://www.linkedin.com/in/s-abhiramreddy" target="_blank" rel="noopener noreferrer"><i className="fa fa-linkedin-square"></i></a>
                     <a href="https://github.com/abhiram945" target="_blank" rel="noopener noreferrer"><i className="fa fa-github-square"></i></a>
-                    <a href="mailto:1137339.s.abhiramreddy@gmail.com" target="_blank" rel="noopener noreferrer"><i className="fa fa-envelope"></i></a>
+                    <a href="mailto:abhiram94567@gmail.com" target="_blank" rel="noopener noreferrer"><i className="fa fa-envelope"></i></a>
                 </div>
                 <p>Made by Abhi with React Js</p>
             </div>

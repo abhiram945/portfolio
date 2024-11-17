@@ -1,6 +1,7 @@
 .swiperContainer{
     width: 50%;
     height: 70vh;
+    z-index: 0;
 }
 img{
     width: 100%;
