@@ -7,7 +7,7 @@ function Header() {
     <header className=''>
         <h1 className=''>A.</h1>
         <nav className=''>
-            {["home","skills","websites","apps","projects","about","contact"].map((link,index)=>
+            {["home","skills","websites","apps","about","contact"].map((link,index)=>
                 <a key={index} href={`#${link}`} className={link===activeLink ? "active":""} onClick={()=>setActiveLink(link)}>{link.toUpperCase()}</a>
             )}
         </nav>

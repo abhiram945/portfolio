@@ -1,0 +1,91 @@
+.aboutSectionContainer{
+    background-color: var(--primary);
+    height: 100vh;
+    padding-top: 7vh;
+}
+.aboutSectionContainer .heading{
+    text-align: center;
+    font-size: 3rem;
+}
+.heading span{
+    color: var(--secondary);
+}
+.aboutSectionContainer .description{
+    margin: 0.25rem 2.5rem;
+    text-align: center;
+    font-size: 1.05rem;
+}
+.description span{
+    color: var(--secondary);
+    font-size: 1.5rem;
+}
+.aboutSectionContainer .customSwiperContainer{
+    width: 40vw;
+    margin: 1.5rem auto 0;
+}
+
+
+/* ----------- Contect Section ------------*/
+
+.contactSectionContainer{
+    background-color: var(--primary);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contactSectionContainer .heading{
+    text-align: center;
+    color: var(--secondary);
+    font-size: 3rem;
+}
+.contactSectionContainer .subHeading{
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 2rem;
+    color: var(--brown);
+}
+.contactSectionContainer .linksContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.linksContainer a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    animation: var(--fadeIn) 1s ease-in forwards;
+}
+
+.linksContainer .linkedIn {
+    border: 2px solid #0077B5;
+    color: #0077B5;
+}
+
+.linksContainer .linkedIn:hover {
+    background-color: #0077B5;
+    color: #fff;
+    padding-left:1.255rem;
+    padding-right:1.255rem;
+    gap: 0rem;
+}
+
+.linksContainer .github {
+    border: 2px solid #000;
+    color: #000;
+}
+
+.linksContainer .github img {
+    border-radius: 50%;
+}
+
+.linksContainer .github:hover {
+    background-color: #000;
+    color: #fff;
+}

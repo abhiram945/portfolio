@@ -4,6 +4,8 @@ import Header from './Header'
 import Hero from "./Hero"
 import Skills from './Skills'
 import Websites from './Websites'
+import Apps from './Apps'
+import AboutAndContact from './AboutAndContact'
 
 
 const Main=()=>{
@@ -12,6 +14,8 @@ const Main=()=>{
     <Hero/>
     <Skills/>
     <Websites/>
+    <Apps/>
+    <AboutAndContact/>
     </>
 }
 

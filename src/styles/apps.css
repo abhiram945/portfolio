@@ -1,0 +1,42 @@
+.appsSectionContainer{
+    background-color: var(--primary);
+    padding-top: 7vh;
+}
+.appsSectionContainer .heading{
+    text-align: center;
+    font-size: 3rem;
+    color: var(--secondary);
+}
+.appsSectionContainer .appsContainer{
+    margin-top: 1rem;
+}
+.appsContainer .appContainer{
+    width:75vw;
+    height: 80vh;
+    margin:0 auto 2.5rem;
+    padding: 1rem;
+}
+.appContainer:nth-child(2){
+    margin-bottom: 0;
+}
+.appContainer .imagesContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+.imagesContainer img{
+    width: 13rem;
+    box-shadow: var(--heroShadow);
+    border-radius: 0.5rem;
+}
+.appContainer .detailsContainer{
+    text-align: center;
+    margin-top: 1rem    
+}
+.detailsContainer h3{
+    font-size: 2rem;
+    color: var(--secondary);
+}
+.detailsContainer p{
+    color: var(--brown);
+    font-size: 1.25rem;
+}

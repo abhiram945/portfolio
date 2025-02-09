@@ -31,7 +31,7 @@ function Websites() {
         <div className='websitesContainer'>
             {websitesData.map((website,index)=><div className='websiteContainer' key={index} style={{flexDirection:`${index%2===0?"row":"row-reverse"}`}}>
                 <div className='customSwiperContainer'>
-                    <CustomSwiper imagesArray={website.images}/>
+                    <CustomSwiper imagesArray={website.images} location="websites"/>
                 </div>
                 <div className='websiteDetailsContainer' style={{paddingLeft:`${index%2===0?"3rem":"0"}`, paddingRight:`${index%2!==0?"8rem":"0"}`}}>
                     <h2 className='name'>{website.name.toUpperCase()}</h2>
