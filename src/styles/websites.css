@@ -1,0 +1,100 @@
+.websitesSectionContainer{
+    background-color: var(--primary);
+    padding-top: 8vh;
+    padding-bottom: 2vh;
+}
+.websitesSectionContainer .heading{
+    color: var(--secondary);
+    text-align: center;
+    font-size: 3rem;
+    margin:0.75rem 0 1.25rem;
+}
+.websitesContainer .websiteContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 5rem;
+}
+.websiteContainer .customSwiperContainer{
+    width: 50%;
+    height: max-content;
+    border: solid 0.15rem var(--lightGray);
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+.websiteDetailsContainer .name{
+    font-size: 3rem;
+    font-weight: 900;
+    background: var(--linearGradient);
+    background-clip: text;
+    color: transparent;
+    animation: var(--linearGradientAnimation) 7s linear infinite alternate;
+}
+.websiteDetailsContainer .useCase{
+    font-size: 1.5rem;
+    white-space: nowrap;
+}
+.websiteDetailsContainer .techStackContainer{
+    display: flex;
+    gap: 1rem;
+    margin:1.5rem 0;
+}
+.techStackContainer p{
+    color: #fff;
+    padding:0.5rem;
+    border-radius: 0.5rem;
+    cursor: default;
+    box-shadow: var(--heroShadow);
+}
+.techStackContainer .tailwindcss{
+    background-color: #00BCFF;
+}
+.techStackContainer .mongodb{
+    background-color: rgb(29, 185, 29);
+}
+.techStackContainer .expressjs{
+    background-color: #fff;
+    color: #000;
+}
+.techStackContainer .reactjs{
+    background-color: #00D8FF;
+    color: #fff;
+}
+.techStackContainer .restapi{
+    background-color: gray;
+}
+.websiteDetailsContainer .linksContainer a{
+    display: inline-block;
+    padding:0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: var(--heroShadow);
+    margin-right:0.5rem;
+}
+.websiteDetailsContainer .linksContainer .visit{
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background: var(--linearGradient);
+    animation:var(--linearGradientAnimation) 6s linear infinite alternate;
+    display: inline-flex;
+    align-items: center;
+    gap:0.5rem;
+}
+.websiteDetailsContainer .linksContainer .visit:hover{
+    padding-left: 1rem;
+    scale:1.075;
+}
+.websiteDetailsContainer .linksContainer .visit img{
+    width: 1rem;
+}
+.websiteDetailsContainer .linksContainer .github{
+    color: #000;
+    border: solid 2px #000;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+.websiteDetailsContainer .linksContainer .github:hover{
+    color: #fff;
+    background-color: #000;
+}

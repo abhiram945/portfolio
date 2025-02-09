@@ -1,0 +1,108 @@
+@import "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Anton&display=swap";
+
+:root {
+  --dmSans: "DM Sans", serif;
+  --anton: "Anton", "DM Sans", serif;
+  --primary: #edf2f8;
+  --secondary: #313bac;
+  --black: #030303;
+  --lightGray: #e4e4e4;
+  --gray: #6b7688;
+  --brown: #46364a;
+  --heroShadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  --moveUpDown:moveUpDown;
+  --slideLeft:slideLeft;
+  --slideRight:slideRight;
+  --slideUp:slideUp;
+  --slideDown:slideDown;
+  --fadeIn:fadeIn;
+  --ringFadeIn:ringFadeIn;
+  --linearGradient:linear-gradient(45deg, rgb(241, 124, 88), rgb(233, 69, 132), rgb(36, 170, 219), rgb(39, 219, 177), rgb(255, 220, 24), rgb(255, 55, 6)) 0% 0% / 600% 100%;
+  --linearGradientAnimation:linearGradientAnimation;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  font-family: var(--dmSans);
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+@keyframes moveUpDown {
+  0% {
+      transform: translateZ(0);
+  }
+
+  50% {
+      transform: translate3d(0, -12%, 0);
+  }
+
+  100% {
+      transform: translateZ(0);
+  }
+}
+@keyframes slideLeft {
+  from {
+      transform: translateX(100%);
+  }
+  to {
+      transform: translateX(0);
+  }
+}
+@keyframes slideRight {
+  from {
+      transform: translateX(-100%);
+  }
+  to {
+      transform: translateX(0);
+  }
+}
+@keyframes slideUp {
+  from {
+      transform: translateY(100%);
+  }
+  to {
+      transform: translateY(0);
+  }
+}
+@keyframes slideDown {
+  from {
+      transform: translateY(-100%);
+  }
+  to {
+      transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from{
+      opacity: 0;
+  }
+  to{
+      opacity: 1;
+  }
+}
+@keyframes ringFadeIn {
+  from{
+      opacity: 0;
+  }
+  to{
+      opacity: 0.9;
+  }
+}
+@keyframes linearGradientAnimation {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: 100% center;
+  }
+}
