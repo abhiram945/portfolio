@@ -20,7 +20,7 @@ const Hero = () => {
           <h2 className=""><span className='ringUpText'>& APP</span><span className='ringUpText'>LOPER</span></h2>
         </div>
         <div className='heroMiddleLinksContainer'>
-          <a className='resume' href='/images/abhiram.pdf' target='_blank'>Resume</a>
+          <a className='resume' href='/images/abhiram.pdf' target='_blank'><p>Resume</p><img src='/images/hero/resume.svg' alt='linked In' /></a>
           <a className='linkedIn' href='https://www.linkedin.com/in/s-abhiramreddy/' target='_blank'><p className=''>Linked </p><img src='/images/hero/linkedIn.svg' alt='linked In' /></a>
           <a className='github' href='https://github.com/abhiram945' target='_blank'><p>Github</p><img src='/images/hero/github.svg' alt='github' className='' /></a>
         </div>

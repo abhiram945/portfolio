@@ -2,7 +2,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.2rem 2.5vw;
+    padding: 0.5rem 2.5rem;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(22px);
     width: 100%;
@@ -11,12 +11,13 @@ header{
 }
 header h1{
     color: var(--secondary);
-    font-size: 2.5rem;
+    font-size: 1.75rem;
 }
 header nav a{
     color: var(--gray);
     padding: 0.25rem 0.75rem;
     border-radius:0.9rem;
+    vertical-align: middle;
 }
 header nav a:hover{
     color: var(--secondary);
@@ -24,4 +25,10 @@ header nav a:hover{
 header nav .active {
     background-color: var(--secondary);
     color: #fff !important;
+}
+
+@media screen and (max-width:800px) {
+    header{
+        display: none;
+    }
 }

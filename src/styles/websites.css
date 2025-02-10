@@ -1,4 +1,6 @@
 .websitesSectionContainer{
+    height: 100%;
+    width: 100%;
     background-color: var(--primary);
     padding-top: 8vh;
     padding-bottom: 2vh;
@@ -13,7 +15,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 0 5rem;
+    padding: 0 5%;
 }
 .websiteContainer .customSwiperContainer{
     width: 50%;
@@ -22,8 +24,11 @@
     border-radius: 0.75rem;
     overflow: hidden;
 }
+.websiteContainer .websiteDetailsContainer{
+    width: 50%;
+}
 .websiteDetailsContainer .name{
-    font-size: 3rem;
+    font-size: 5vw;
     font-weight: 900;
     background: var(--linearGradient);
     background-clip: text;
@@ -32,10 +37,10 @@
 }
 .websiteDetailsContainer .useCase{
     font-size: 1.5rem;
-    white-space: nowrap;
 }
 .websiteDetailsContainer .techStackContainer{
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     margin:1.5rem 0;
 }
@@ -97,4 +102,49 @@
 .websiteDetailsContainer .linksContainer .github:hover{
     color: #fff;
     background-color: #000;
+}
+
+
+@media screen and (max-width:800px) {
+    .websitesSectionContainer{
+        padding: 0.5rem 0 1rem;
+    }
+    .websitesSectionContainer .heading{
+        font-size: 2.5rem;
+    }
+    .websitesContainer .websiteContainer{
+        width: 100%;
+        flex-direction: column !important;
+        padding: 0.5rem;
+        border-bottom: solid 1px var(--lightGray);
+    }
+    .websitesContainer .websiteContainer:last-child{
+        border:none;
+    }
+    .websiteContainer .customSwiperContainer{
+        width: 100%;
+        border-radius: 0.5rem;
+    }
+    .websiteContainer .websiteDetailsContainer{
+        width: 100%;
+        padding: 0 !important;
+        text-align: center;
+    }
+    .websiteDetailsContainer .name{
+        font-size: 2rem;
+    }
+    .websiteDetailsContainer .useCase{
+        font-size: 1rem;
+    }
+    .websiteDetailsContainer .techStackContainer{
+        justify-content: center;
+        gap: 0.5rem;
+        margin: 0.5rem 0;
+    }
+}
+@media screen and (max-width:426px) {
+    .websitesSectionContainer .heading{
+        font-size: 2rem;
+    }
+
 }

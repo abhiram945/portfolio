@@ -28,6 +28,7 @@
   -webkit-tap-highlight-color: transparent;
   font-family: var(--dmSans);
   text-decoration: none;
+  user-select: none;
 }
 
 html {

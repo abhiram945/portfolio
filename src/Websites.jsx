@@ -33,7 +33,7 @@ function Websites() {
                 <div className='customSwiperContainer'>
                     <CustomSwiper imagesArray={website.images} location="websites"/>
                 </div>
-                <div className='websiteDetailsContainer' style={{paddingLeft:`${index%2===0?"3rem":"0"}`, paddingRight:`${index%2!==0?"8rem":"0"}`}}>
+                <div className='websiteDetailsContainer' style={{paddingLeft:`${index%2===0?"3rem":"0"}`, paddingRight:`${index%2!==0?"8vw":"0"}`}}>
                     <h2 className='name'>{website.name.toUpperCase()}</h2>
                     <p className='useCase'>{website.usecase}</p>
                     <div className='techStackContainer'>

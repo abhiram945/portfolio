@@ -3,7 +3,7 @@ import "./styles/skills.css"
 function Skills() {
     const skillLevels = [3, 4, 5, 4, 3, 3, 5, 3, 4]
     return (
-        <div id='skills' className='skillSectionContainer'>
+        <div id='skills' className='skillsSectionContainer'>
             <h2 className=''>My <span className=''>SKILLS</span></h2>
             <div className="rowsContainer">
                 <div className='row'>

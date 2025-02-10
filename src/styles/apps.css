@@ -1,42 +1,123 @@
-.appsSectionContainer{
+.appsSectionContainer {
+    width: 100%;
+    height: 100%;
     background-color: var(--primary);
     padding-top: 7vh;
 }
-.appsSectionContainer .heading{
+
+.appsSectionContainer .heading {
     text-align: center;
     font-size: 3rem;
     color: var(--secondary);
 }
-.appsSectionContainer .appsContainer{
+
+.appsSectionContainer .appsContainer {
     margin-top: 1rem;
+    width: 100%;
 }
-.appsContainer .appContainer{
-    width:75vw;
-    height: 80vh;
-    margin:0 auto 2.5rem;
-    padding: 1rem;
+
+.appsContainer .appContainer {
+    width: 100%;
+    margin: 0 0 2.5rem;
 }
-.appContainer:nth-child(2){
+
+.appContainer:nth-child(2) {
     margin-bottom: 0;
 }
-.appContainer .imagesContainer{
+
+.appContainer .imagesContainer .largeScreens{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5vw;
 }
-.imagesContainer img{
+
+.imagesContainer .smallScreens {
+    display: none;
+}
+
+.imagesContainer .largeScreens img {
     width: 13rem;
     box-shadow: var(--heroShadow);
     border-radius: 0.5rem;
 }
-.appContainer .detailsContainer{
+
+.appContainer .detailsContainer {
     text-align: center;
-    margin-top: 1rem    
+    margin-top: 1rem
 }
-.detailsContainer h3{
+
+.detailsContainer h3 {
     font-size: 2rem;
     color: var(--secondary);
 }
-.detailsContainer p{
+
+.detailsContainer p {
     color: var(--brown);
     font-size: 1.25rem;
+}
+
+@media screen and (max-width:800px) {
+    .appsSectionContainer {
+        padding-top: 2.5vh;
+    }
+
+    .appsContainer .appContainer {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 2.5rem;
+        padding: 1rem;
+    }
+
+    .appContainer:nth-child(2) {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width:691px) {
+    .appsSectionContainer {
+        padding-top: 5vh;
+        font-size: 2vh;
+    }
+
+    .appsContainer .appContainer {
+        width: 100%;
+        display: flex;
+        position: relative;
+    }
+    .appContainer .imagesContainer{
+        justify-content: start;
+    }
+    
+    .appContainer .imagesContainer .largeScreens {
+        display: none;
+    }
+    
+    .imagesContainer .smallScreens {
+        display: inline-block;
+        box-shadow: var(--heroShadow);
+        width: 80vw;
+    }
+    .appContainer .detailsContainer{
+        margin: 0;
+        transform: rotate(90deg);
+        transform-origin:bottom left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: max-content;
+        height: 15vw;
+    }
+    .detailsContainer p {
+        width: max-content;
+        margin-left: 1rem;
+        color: var(--gray);
+    }
+    .finbookDetailsContainer h3{
+        color: #3368F4; 
+        margin-left: 5vh;
+    }
+    .dimeraDetailsContainer h3{
+        color: #FF4546;
+    }
 }

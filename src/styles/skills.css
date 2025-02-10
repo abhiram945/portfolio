@@ -1,11 +1,11 @@
-.skillSectionContainer{
-    height: 100vh;
+.skillsSectionContainer{
+    height: 100%;
     width: 100%;
     background-color: var(--primary);
     padding-top: 7vh;
     overflow: hidden;
 }
-.skillSectionContainer h2{
+.skillsSectionContainer h2{
     color: var(--black);
     text-align: center;
     font-size: 3rem;
@@ -13,10 +13,10 @@
     display: block;
     margin-bottom: 2.5rem;
 }
-.skillSectionContainer h2 span{
+.skillsSectionContainer h2 span{
     color: var(--secondary);
 }
-.skillSectionContainer .rowsContainer{
+.skillsSectionContainer .rowsContainer{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,12 +26,14 @@
 }
 .rowsContainer .row{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 1.75rem;
     animation: var(--fadeIn) 1s ease-in forwards;
 }
 .row .skillsContainer{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
     border: solid 2px var(--secondary);
@@ -58,6 +60,7 @@
 .skillsContainer .skillContainer{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .skillContainer img{
     width: 10rem;
@@ -68,4 +71,25 @@
     text-align: center;
     margin-top: 0.5rem;
     font-weight: 500;
+}
+
+/* @media screen and (max-width:800px) {
+} */
+@media screen and (max-width:426px) {
+    .skillsSectionContainer{
+        padding:0.25rem 0 1rem;
+    }
+    .skillsSectionContainer h2{
+        margin-bottom: 1rem;
+    }
+    .skillsContainer .skillHeading{
+        white-space: nowrap;
+    }
+    .skillContainer img{
+        width: 4rem;
+        height: 4rem;
+    }
+    .skillContainer p{
+        font-size: 0.8rem;
+    }
 }

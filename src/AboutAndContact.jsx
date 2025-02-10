@@ -24,7 +24,7 @@ const AboutAndContact = () => {
             <p className='subHeading'>Take a Coffee & Connect with me...</p>
             <div className='linksContainer'>
                 <a className='linkedIn' href='https://www.linkedin.com/in/s-abhiramreddy/' target='_blank'><p className=''>Linked </p><img src='/images/hero/linkedIn.svg' alt='linked In' /></a>
-                <a className='github' href='https://github.com/abhiram945' target='_blank'><p>Github</p><img src='/images/hero/github.svg' alt='github' className='' /></a>
+                <a className='gmail' href='mailto:abhiramdev945@gmail.com' target='_blank'><p>Mail</p><img src='/images/about/gmail.svg' alt='gmail' /></a>
             </div>
         </div>
 
