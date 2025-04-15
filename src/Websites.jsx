@@ -13,11 +13,19 @@ const websitesData = [
     github: 'https://github.com/abhiram945/finbook',
   },
   {
+    name: 'eduflex',
+    images: Array.from({length:7}).map((value,index)=>`eduflex${index+1}`),
+    usecase: 'An AI powered self learning platform',
+    techStack: ['gen ai','langchain','faiss','mongodb', 'express js','flask', 'react js', 'rest api','tailwind css'],
+    url: '',
+    github: '',
+  },
+  {
     name: 'freshbasket',
     images: ['freshbasket1', 'freshbasket2', 'freshbasket3'],
     usecase: 'The final spot for fresh and healthy food',
     techStack: ['tailwind css', 'mongodb', 'express js', 'react js', 'rest api'],
-    url: '',
+    url: 'https://freshbasket1.vercel.app',
     github: '',
   },
   {
@@ -27,6 +35,14 @@ const websitesData = [
     techStack: ['react js'],
     url: 'https://dimera.vercel.app',
     github: 'https://github.com/abhiram945/dimera',
+  },
+  {
+    name: 'scenario talk',
+    images: ["live-image-describer"],
+    usecase: 'A platform that helps visually impaired individuals know about the world around them',
+    techStack: ['python','yolo','huggingface','langchain','open ai','streamlit'],
+    url: '',
+    github: 'https://github.com/abhiram945/live-image-describer/blob/main/Live-image-describer.py',
   },
 ];
 
@@ -98,10 +114,9 @@ const Websites = () => {
                     href={website.url}
                     target='_blank'
                     className='visit'
-                    whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 300 }}
                   >
-                    Visit <img src='/images/websites/visit.svg' alt='Visit' />
+                    Visit <img src='/images/websites/view.svg' alt='Visit' />
                   </motion.a>
                 )}
                 {website.github && (
@@ -109,10 +124,9 @@ const Websites = () => {
                     href={website.github}
                     target='_blank'
                     className='github'
-                    whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 300 }}
                   >
-                    Github
+                    Github <img src='/images/websites/visit.svg' alt='Visit' />
                   </motion.a>
                 )}
               </div>
