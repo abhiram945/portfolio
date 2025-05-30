@@ -18,8 +18,18 @@ const CustomSwiper=({imagesArray, location, auto=false})=>{
         className="customSwiper"
         style={{width:"100%", height:"100%"}}
       >
-        {imagesArray.map((image,index)=><SwiperSlide key={image+index} style={{width:"100%", height:"100%"}}>
-            <img src={`/images/${location}/${image}.png`} alt={image} style={{width:"100%", height:"100%", verticalAlign:"middle"}}/>
+        {imagesArray.map((image,index)=><SwiperSlide key={image+index} style={{
+            width:"100%", 
+            height:"100%"
+          }}>
+            <img 
+              src={`/images/${location}/${image}.png`} 
+              alt={image} 
+              style={{
+                width:"100%", 
+                height:"100%"
+              }}
+            />
         </SwiperSlide>)}
         
       </Swiper>

@@ -15,7 +15,7 @@ const AboutAndContact = () => {
                 I specialize in building real-time applications to automate daily tasks while staying updated with the latest tech trends.
             </p>
             <div className="customSwiperContainer">
-                <CustomSwiper imagesArray={["ieee", "MS-365-fundamentals", "coursera_ibm", "oracle", "internship"]} location="about" auto={true} />
+                <CustomSwiper imagesArray={["ieee","ieee2", "MS-365-fundamentals", "coursera_ibm", "oracle"]} location="about" auto={true} />
             </div>
         </div>
         <div className='contactSectionContainer' id='contact'>
