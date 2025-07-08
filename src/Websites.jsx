@@ -18,7 +18,7 @@ const websitesData = [
     usecase: 'An AI powered self learning platform',
     techStack: ['gen ai','langchain','faiss','mongodb', 'express js','flask', 'react js', 'rest api','tailwind css'],
     url: '',
-    github: '',
+    github: 'https://github.com/abhiram945/eduflex',
   },
   {
     name: 'freshbasket',
