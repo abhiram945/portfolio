@@ -15,7 +15,7 @@ const Hero = () => {
       </div>
       <div className='heroMiddle'>
         <div className="ringAndTextContainer">
-          <img src='/images/hero/ring.png' alt='ring' className='' />
+          <img src='/images/hero/ring.png' alt='ring' className='' loading='lazy'/>
           <h2 className=""><span>WEB</span><span>DEVE</span></h2>
           <h2 className=""><span className='ringUpText'>& APP</span><span className='ringUpText'>LOPER</span></h2>
         </div>
@@ -26,9 +26,9 @@ const Hero = () => {
         </div>
       </div>
       <div className='heroRight'>
-        <img src='/images/hero/appDev.png' alt='app' className='' />
-        <img src='/images/hero/dev.jpg' alt='web' className='' />
-        <img src='/images/hero/webDev.png' alt='web' className='' />
+        <img loading='lazy' src='/images/hero/appDev.png' alt='app' className='' />
+        <img loading='lazy' src='/images/hero/dev.jpg' alt='web' className='' />
+        <img loading='lazy' src='/images/hero/webDev.png' alt='web' className='' />
       </div>
     </main>
   )

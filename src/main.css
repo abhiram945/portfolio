@@ -91,6 +91,56 @@ html::-webkit-scrollbar {
       opacity: 1;
   }
 }
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.fade-in-up {
+  opacity: 0;
+}
+
+
+
+.fade-in-up.animate {
+  animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-fill-mode: forwards;
+}
+
+.fade-in {
+  opacity: 0;
+}
+
+
+
+.fade-in.animate {
+  animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 1;
+}
+
+/* Optional: Add delay utility classes for staggered effects */
+.delay-1 { animation-delay: 0.5s; }
+.delay-2 { animation-delay: 0.7s; }
+.delay-3 { animation-delay: 0.9s; }
+.delay-4 { animation-delay: 1s; }
+.delay-5 { animation-delay: 1.5s; }
 @keyframes ringFadeIn {
   from{
       opacity: 0;

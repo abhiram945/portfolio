@@ -23,6 +23,7 @@ const CustomSwiper=({imagesArray, location, auto=false})=>{
             height:"100%"
           }}>
             <img 
+              loading='lazy'
               src={`/images/${location}/${image}.png`} 
               alt={image} 
               style={{
