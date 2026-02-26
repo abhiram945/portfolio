@@ -1,11 +1,11 @@
 import { createRoot } from 'react-dom/client'
 import "./main.css"
-import Header from './Header'
-import Hero from "./Hero"
-import Skills from './Skills'
-import Websites from './Websites'
-import Apps from './Apps'
-import AboutAndContact from './AboutAndContact'
+import Header from './sections/Header'
+import Hero from "./sections/Hero"
+import Skills from './sections/Skills'
+import Websites from './sections/Websites'
+import Apps from './sections/Apps'
+import AboutAndContact from './sections/AboutAndContact'
 
 
 const Main=()=>{
