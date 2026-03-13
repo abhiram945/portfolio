@@ -1,0 +1,132 @@
+[
+    {
+        "type": "h1",
+        "content": "REACTNATIVE WITH EXPO"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Install Node.js",
+            "Create new expo Project",
+            {
+                "type": "code",
+                "content": "npx create-expo-app@latest MyExpoAppName"
+            },
+            "Install Expo Go on mobile",
+            "Start the Expo Development server",
+            {
+                "type": "code",
+                "content": "npm start"
+            },
+            "Scan the QR code to run the app using Expo go installed on mobile."
+        ]
+    },
+    {
+        "type": "h2",
+        "content": "To test on Android Studio or Using Physical device, download & install Android Studio with SDK, NDK and create a Virtual Device."
+    },
+    {
+        "type": "p",
+        "content": "Set env var User Varables on PC:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "1. new=> ANDROID_HOME:C:/Users/user-name/AppData/Local/Android/Sdk",
+            "2. Path=> Edit=> New then add C:\\Users\\user-name\\AppData\\Local\\Android\\Sdk\\platform-tools"
+        ]
+    },
+    {
+        "type": "p",
+        "content": "CMake will be downloaded by android studio, set the cmake path in environmental variables"
+    },
+    {
+        "type": "p",
+        "content": "To generate Development build / android folder"
+    },
+    {
+        "type": "code",
+        "content": "npx expo prebuild"
+    },
+    {
+        "type": "p",
+        "content": "To run the developemnt build / test apk on mobile Connect mobile to PC using USB and enable UsbDebugging in Developer Options. Then in terminal at any path, run:"
+    },
+    {
+        "type": "code",
+        "content": "adb devices"
+    },
+    {
+        "type": "p",
+        "content": "It will display the connected mobile phone model number as unauthenticated. In mobile it will prompt to allow the PC to debug, Accept/Ok the request."
+    },
+    {
+        "type": "p",
+        "content": "To connect wirelessly, connect PC and mobile to same network and then run:"
+    },
+    {
+        "type": "code",
+        "content": "adb connect mobile_ip_address"
+    },
+    {
+        "type": "p",
+        "content": "To run using prebuild android folder on physical device / on android studio run:"
+    },
+    {
+        "type": "code",
+        "content": "npm run android"
+    },
+    {
+        "type": "p",
+        "content": "To reduce APK size add in app.json:"
+    },
+    {
+        "type": "code",
+        "content": "In expo obj: “useLegacyPackaging”:true,\nIn expo.android: “enableProguardInReleaseBuilds”: true"
+    },
+    {
+        "type": "p",
+        "content": "To generate a key for signing the apk, open new terminal as Admin and navigate to the path"
+    },
+    {
+        "type": "code",
+        "content": "cd C:\\Program Files\\Java\\jdkx.x.x_x\\bin\nkeytool -genkeypair -v -storetype PKCS12 -keystore file_name.keystore -alias file_name_alias -keyalg RSA -keysize 2048 -validity 10000"
+    },
+    {
+        "type": "p",
+        "content": "Place the file_name.keystore file under the android/app directory in project folder."
+    },
+    {
+        "type": "p",
+        "content": "Edit the file ~/.gradle/gradle.properties or android/gradle.properties, and add the following (replace ***** with the correct keystore password, alias and key password)"
+    },
+    {
+        "type": "code",
+        "content": "MYAPP_UPLOAD_STORE_FILE=file_name.keystore\nMYAPP_UPLOAD_KEY_ALIAS=file_name_alias\nMYAPP_UPLOAD_STORE_PASSWORD=*****\nMYAPP_UPLOAD_KEY_PASSWORD=*****"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "To generate android folder / Development build",
+            {
+                "type": "code",
+                "content": "npx expo prebuild"
+            },
+            "Clean up the build",
+            {
+                "type": "code",
+                "content": ".cd android\n./gradlew clean"
+            },
+            "Generate the final APK",
+            {
+                "type": "code",
+                "content": "/gradlew assembleRelease"
+            },
+            "for signingReport:",
+            {
+                "type": "code",
+                "content": "cd android\n./gradlew signingReport"
+            }
+        ]
+    }
+]

@@ -119,9 +119,10 @@
   }
 
   html::-webkit-scrollbar {
-    @apply hidden;
+    display:  none;
   }
 }
+
 
 .linear-gradient-text {
   background: linear-gradient(

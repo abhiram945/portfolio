@@ -1,0 +1,1428 @@
+[
+    {
+        "type": "h1",
+        "content": "Complete CORE JAVA roadmap"
+    },
+    {
+        "type": "h2",
+        "content": "What is java?"
+    },
+    {
+        "type": "p",
+        "content": "The high-level programming language developed by James Gosling in 1995 at Sun MicroSystems and later acquired by Oracle. It is a hybrid language because it uses both compilation (into bytecode) and interpretation (or JIT compilation) for execution. Gains the popularity because of the features such as Portability, Write Once and Run Anywhere, Robustness, Secure and Various fields in which can be applied."
+    },
+    {
+        "type": "h2",
+        "content": "Why java?"
+    },
+    {
+        "type": "p",
+        "content": "Popular, Easy to learn, large community, multiple open-source libraries, powerful development tools, free, platform independent."
+    },
+    {
+        "type": "h2",
+        "content": "1. Origin & Evolution of Java"
+    },
+    {
+        "type": "p",
+        "content": "Understand the why before the what."
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Inventor: James Gosling, Sun Microsystems, 1991",
+            "Original Goal: Write a language that’s platform-independent and simple, for software devs",
+            "First Name: Oak → changed to Java in 1995",
+            "WORA: “Write Once, Run Anywhere” enabled by JVM",
+            "DRY: Don’t Repeat Yourself",
+            "Killer Features: Garbage Collection, No Pointers, Class-based OOP, Runtime Polymorphism",
+            "Features: Object Oriented, Platform independent, simple, secure, robust, multithreaded, architecture neutral, portable, high performance, high level, rich APIs, automatic garbage collection."
+        ]
+    },
+    {
+        "type": "h2",
+        "content": "2. Java Fundamentals"
+    },
+    {
+        "type": "ul",
+        "content": [
+            {
+                "type": "bold",
+                "content": "JDK vs JRE vs JVM:"
+            },
+            "JDK(Platform dependent): JRE + dev tools (javac, javadoc, etc.)",
+            "JRE(Platform dependent): JVM + libraries",
+            "JVM: Abstract machine that runs bytecode",
+            "Dependent means referring to JVM implementation",
+            "Independent means referring to Java bytecode that JVM executes"
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "Execution flow"
+    },
+    {
+        "type": "code",
+        "content": ".java -> javac -> bytecode -> .class -> jvm -> jvm interpreter -> machine code -> run"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Keywords: Pre-defined words that are reserved for specific use case",
+            "Naming convention rules",
+            "Variable: Containers that contains data",
+            {
+                "type": "bold",
+                "content": "Scope of variables:"
+            },
+            "Local Scope: Declared inside methods/blocks; accessible only within that block.",
+            "Block Scope: Declared inside loops, if, or {} blocks; exists only within those braces.",
+            "Global Scope : Variables declared inside a class, which can be accessible everywhere.",
+            "Instance Scope: Declared inside a class but outside methods; tied to an object (non-static).",
+            "Class/Static Scope: Declared with static; belongs to the class, not objects.",
+            {
+                "type": "bold",
+                "content": "Life Cycle of a Variable"
+            },
+            "Local Variable: Created when method/block is entered, destroyed when exited.",
+            "Instance Variable: Created when an object is created, destroyed when the object is garbage collected.",
+            "Static Variable: Created when the class is loaded, destroyed when the class is unloaded (usually end of program).",
+            {
+                "type": "bold",
+                "content": "Data Types:"
+            },
+            "Primitive (byte, short, int, long, float(6-7 digits), double(14-15 digits), char, boolean)",
+            "Non-primitive (String, Array, Wrapper class, Objects, Interface, Enum, Tree, Graphs)"
+        ]
+    },
+    {
+        "type": "h4",
+        "content": "Storage unit conversion table"
+    },
+    {
+        "type": "table",
+        "content": {
+            "headers": [
+                "Unit",
+                "Conversion"
+            ],
+            "rows": [
+                [
+                    "1 Gigabyte (GB)",
+                    "= 1024 Megabytes (MB)"
+                ],
+                [
+                    "1 Megabyte (MB)",
+                    "= 1024 Kilobytes (KB)"
+                ],
+                [
+                    "1 Kilobyte (KB)",
+                    "= 1024 Bytes (B)"
+                ],
+                [
+                    "1 Byte (B)",
+                    "= 8 Bits (b)"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "h4",
+        "content": "Default values for the data types assigned by java automatically with memory allocated"
+    },
+    {
+        "type": "table",
+        "content": {
+            "headers": [
+                "Data Type",
+                "Default Value",
+                "Storage/Memory"
+            ],
+            "rows": [
+                [
+                    "byte",
+                    "0",
+                    "1 byte"
+                ],
+                [
+                    "short",
+                    "0",
+                    "2 bytes"
+                ],
+                [
+                    "int",
+                    "0",
+                    "4 bytes"
+                ],
+                [
+                    "long",
+                    "0L",
+                    "8 bytes"
+                ],
+                [
+                    "float",
+                    "0.0f",
+                    "4 bytes"
+                ],
+                [
+                    "double",
+                    "0.0d",
+                    "8 bytes"
+                ],
+                [
+                    "char",
+                    "\"\\u0000\" (null char)",
+                    "2 bytes"
+                ],
+                [
+                    "boolean",
+                    "false",
+                    "1 bit"
+                ],
+                [
+                    "Object types",
+                    "null",
+                    "depends"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "h3",
+        "content": "Type Conversion: converting one data type into another which is done automatically by the java compiler itself."
+    },
+    {
+        "type": "h4",
+        "content": "Types of conversion:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "1. Widening: happens automatically by java, and its safe because of no loss. And the order: byte → short → char → int → long → float → double.",
+            "2. Narrowing: Manual process that converts larger data type into smaller one. It’s not safe because of data loss. And the order is the reverse of widening. This is called Type Casting."
+        ]
+    },
+    {
+        "type": "p",
+        "content": "Type Casting: In type casting, a data type is converted into another data type by the programmer using the casting operator during the program design. In type casting, the destination data type may be smaller than the source data type when converting the data type to another data type, that’s why it is also called narrowing conversion. The technique used for narrowing conversion."
+    },
+    {
+        "type": "h4",
+        "content": "Casting syntax:"
+    },
+    {
+        "type": "code",
+        "content": "destination_data_type var_name = (destination_data_type) variable;"
+    },
+    {
+        "type": "p",
+        "content": "() is called casting operator"
+    },
+    {
+        "type": "table",
+        "content": {
+            "headers": [
+                "Conversion Type",
+                "Direction",
+                "Automatic?",
+                "Risk of Data Loss"
+            ],
+            "rows": [
+                [
+                    "Widening (Implicit)",
+                    "Smaller → Larger",
+                    "✅ Yes",
+                    "❌ No"
+                ],
+                [
+                    "Narrowing (Explicit)",
+                    "Larger → Smaller",
+                    "❌ No",
+                    "✅ Yes"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "p",
+        "content": "Type Promotion in expressions: byte → short → int → long → float → double."
+    },
+    {
+        "type": "p",
+        "content": "Methods of each data type (offered by java), String immutability"
+    },
+    {
+        "type": "h3",
+        "content": "Operators:"
+    },
+    {
+        "type": "p",
+        "content": "Arithmetic, logical (&&, ||) operators, Ternary operator (“?”)"
+    },
+    {
+        "type": "h3",
+        "content": "Conditional Statements"
+    },
+    {
+        "type": "p",
+        "content": "if, else if, else, switch-case along with continue and break keywords"
+    },
+    {
+        "type": "h3",
+        "content": "Control Flow:"
+    },
+    {
+        "type": "p",
+        "content": "Loops: for loop, while loop, do while loop, enhanced for loop etc\nA loop is a control structure that repeats a block of code multiple times until a condition is false. We need loops to avoid repeating code manually and to perform repetitive tasks efficiently. So that we don’t need to write code multiple times. It checks a condition, if it's true, it runs the code block. After each run, it checks the condition again. This continues until the condition becomes false."
+    },
+    {
+        "type": "h4",
+        "content": "Difference between for loop and while loop and do while loop"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "for loop: Used when the number of iterations is known; initialization, condition, and update are in one line.",
+            "while loop: Used when the number of iterations is unknown; only condition is specified, initialization and update are done separately.",
+            "do while loop: The do-while loop in Java is a post-test loop, meaning that the loop condition is evaluated after the loop body is executed. This ensures that the loop body is always executed at least once."
+        ]
+    },
+    {
+        "type": "p",
+        "content": "Practice questions: Solve the pattern questions"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Access modifiers",
+            "Function/Method, main method",
+            "return types"
+        ]
+    },
+    {
+        "type": "h2",
+        "content": "3. Object-Oriented Programming in Java"
+    },
+    {
+        "type": "p",
+        "content": "Order: E -> I -> A -> P, 1 connected with others\nOOP, which stands for Object-Oriented Programming, is a programming paradigm that organizes software design around objects containing data and code. These objects interact with each other to perform tasks, making programs more modular, reusable, and easier to maintain."
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Classes: Classes act as blueprints for creating objects, defining their structure and behaviour.",
+            "Objects: Objects are instances of classes, combining data (attributes) and code (methods) to represent real-world entities or concepts."
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "4 Pillars of OOP"
+    },
+    {
+        "type": "ul",
+        "content": [
+            {
+                "type": "bold",
+                "content": "1. Abstraction:"
+            },
+            "Abstraction in Java is the process of hiding the implementation details and only showing the essential details or features to the user. It allows to focus on what an object does rather than how it does it. The unnecessary details are not displayed to the user.",
+            {
+                "type": "bold",
+                "content": "How to Achieve Abstraction in Java?"
+            },
+            "Java provides two ways to implement abstraction, which are listed below:",
+            "1. Abstract Classes (Partial Abstraction)",
+            "2. Interface (100% Abstraction)",
+            {
+                "type": "bold",
+                "content": "Abstract Classes and Abstract Methods"
+            },
+            "• An abstract class is a class that is declared with an abstract keyword",
+            "• An abstract class may have both abstract methods (methods without implementation) and concrete methods (methods with implementation).",
+            "• An abstract method is a method that is declared without implementation.",
+            "• An abstract method must always be redefined in the subclass, thus making overriding compulsory or making the subclass itself abstract.",
+            "• Any class that contains one or more abstract methods must also be declared with an abstract keyword.",
+            "• There can be no object of an abstract class. That is, an abstract class cannot be directly instantiated with the new keyword.",
+            "• An abstract class can have parameterized constructors and the default constructor is always present in an abstract class.",
+            {
+                "type": "bold",
+                "content": "Key features of abstraction:"
+            },
+            "• Abstraction hides the complex details and shows only essential features.",
+            "• Abstract classes may have methods without implementation and must be implemented by subclasses.",
+            "• By abstracting functionality, changes in the implementation do not affect the code that depends on the abstraction.",
+            {
+                "type": "bold",
+                "content": "2. Encapsulation:"
+            },
+            "Encapsulation is the process of wrapping data (variables) and methods into a single unit (class) and restricting direct access to them.\nWe manipulate the data using special methods named getter and setter. Encapsulation is used to hide the implementation part and show the functionality for better readability and usability.",
+            {
+                "type": "bold",
+                "content": "Uses of Encapsulation in Java"
+            },
+            "• Data Hiding: The internal data of an object is hidden from the outside world, preventing direct access.",
+            "• Data Integrity: Only validated or safe values can be assigned to an object’s attributes via setter methods.",
+            "• Reusability: Encapsulated code is more flexible and reusable for future modifications or requirements.",
+            "• Security: Sensitive data is protected as it cannot be accessed directly.",
+            {
+                "type": "bold",
+                "content": "3. Inheritance:"
+            },
+            "Allowing classes to inherit the properties/data of parent class to the child classes. We use extends keyword to implement the inheritance.\nSuper class == Parent class == Base class\nSub class == Child class == Derived class",
+            {
+                "type": "bold",
+                "content": "Types of inheritance:"
+            },
+            "1. Single inheritance: One child class from a parent class",
+            "2. Multi-level inheritance: Multiple levels of children classes from a previous class",
+            "3. Hierarchical inheritance: More than 1 child class from a parent class",
+            "4. Multiple inheritance: A child from more than 1 parent which is not allowed in java as it results in a diamond problem and leads to ambiguity.",
+            "5. Hybrid inheritance: Mix of 2 or more of the above.",
+            {
+                "type": "bold",
+                "content": "Uses of Inheritance in Java"
+            },
+            "• Code Reusability: The code written in the Superclass is common to all subclasses. Child classes can directly use the parent class code.",
+            "• Method Overriding: Method overriding is achievable only through Inheritance. It is one of the ways by which Java achieves Run Time Polymorphism.",
+            "• Abstraction: The concept of abstraction where we do not have to provide all details, is achieved through inheritance. Abstraction only shows the functionality to the user.",
+            "• Organizes classes in a structured manner, improving readability and maintainability.",
+            {
+                "type": "bold",
+                "content": "4. Polymorphism:"
+            },
+            "The term \"polymorphism\" means \"many forms\". It means an object can behave differently based on specific use case specially in the runtime.",
+            {
+                "type": "bold",
+                "content": "Types of Polymorphism"
+            },
+            "1. Compile time polymorphism == static polymorphism == Method over loading.\nIn a class, when multiple methods have same name, different number of parameters with any return type is considered as method overloading.",
+            "2. Run time polymorphism == Method overriding\nWhen a subclass provides a specific implementation of a method that is already defined in its superclass is considered as method overriding. The method in the subclass must have the same name, same return type, and same no.of parameters as the method in the superclass.",
+            {
+                "type": "bold",
+                "content": "Key features of polymorphism"
+            },
+            "• Multiple Behaviours: The same method can behave differently depending on the object that calls this method.",
+            "• Method Overriding: A child class can redefine a method of its parent class.",
+            "• Method Overloading: We can define multiple methods with the same name but different parameters.",
+            "• Runtime Decision: At runtime, Java determines which method to call depending on the object's actual class. Dynamic method dispatch (decided at runtime, not compile-time)."
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "Constructor & Types"
+    },
+    {
+        "type": "p",
+        "content": "A constructor is a special block of code that is called when an object is created. Its main job is to initialize the object, to set up its internal state, or to assign default values to its attributes. This process happens automatically when we use the \"new\" keyword to create an object."
+    },
+    {
+        "type": "h4",
+        "content": "Characteristics of constructor"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Same name as class name",
+            "No return type",
+            "Automatically called on object creation",
+            "Used to set initial values for Object attributes"
+        ]
+    },
+    {
+        "type": "h4",
+        "content": "Why Do We Need Constructors in Java"
+    },
+    {
+        "type": "p",
+        "content": "Constructors play a very important role; it ensures that an object is properly initialized before use.\nWhat happens when we don't use constructors:\nWithout constructors:\n• Objects might have undefined or default values.\n• Extra initialization methods would be required."
+    },
+    {
+        "type": "h4",
+        "content": "Types of constructors"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Default constructor: Have no parameters, invisible (created by java itself). By default, java creates the default constructor when we don’t create one. Once we create a constructor (with or without parameters), the java compiler no longer creates the default constructor.\nThe default constructor (implicit/explicit) initializes the default values such as 0 for numbers, null for objects etc.",
+            "Parameterized constructor\nIf we need to initialize the default values with different values(other then default values) then we use the parameterized constructor.",
+            "Copy constructor: The copy constructor is called with an object as a parameter which copies the data available from the passed object to the newly created object.\nWhen we need instances(objects) of a class to be invoked into either same or different class, we use copy constructor."
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "This & Super keywords"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "this: used to reference the current class",
+            "super: used to reference the parent class’s constructor and methods"
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "Object Class (Super class of all classes):"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "getClass(): to get the name of the class of a non-primitive object",
+            "toString(): The default implementation of toString() returns a string consisting of the object's class name followed by the \"@\" symbol and the object's hash code in hexadecimal format. While this default representation is useful for distinguishing between objects, it often lacks meaningful information about the object's state.",
+            "equals(): used to compare two objects for equality.",
+            " hashCode(): The default implementation of hashCode() in the Object class typically generates a hash code based on the object's memory address.",
+            "Note: If you override the equals() method to compare objects based on their content, you must also override hashCode() to maintain the contract:\nIf two objects are equal according to the equals() method, their hashCode() must return the same integer value.\nIf two objects are not equal according to the equals() method, their hashCode() should ideally return different integers, though this is not mandatory."
+        ]
+    },
+    {
+        "type": "h4",
+        "content": "== vs .equals()"
+    },
+    {
+        "type": "table",
+        "content": {
+            "headers": [
+                "Aspect",
+                "== Equality operator",
+                ".equals() methos"
+            ],
+            "rows": [
+                [
+                    "Compares",
+                    "Compares if two references point to same memory location",
+                    "Compares the content of objects"
+                ],
+                [
+                    "Working",
+                    "Primitives and object references",
+                    "Only objects"
+                ],
+                [
+                    "Customizable",
+                    "Cannot be overridden",
+                    "Can be overridden in custom classes"
+                ],
+                [
+                    "Default behaviour",
+                    "Compares memory address",
+                    "Compares references unless overridden"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "ul",
+        "content": [
+            "wait(), notify(), notifyAll() linked with threading",
+            "clone(): To copy an object without creating a new instance. // requires interfaces, exception handling",
+            "finalize(): The method invoked by garbage collector, when an object is no more referenced, this method allows an object to perform any necessary cleanup operations such as closing files, releasing network connections or freeing other system resources."
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "Static and Instance concepts"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Instance variable, Instance method",
+            "Static variable, Static method, Static block, Static nested classes",
+            "Static import (example with Math using static import)"
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "Class Loading & Initialization Order"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "If the parent class can’t load its child, then the class loader loads the child class. So the class loaders are responsible only for importing those classes into the memory whenever required.",
+            "Order of execution: static blocks, instance blocks, constructors"
+        ]
+    },
+    {
+        "type": "h2",
+        "content": "4. Exception Handling in Java"
+    },
+    {
+        "type": "h3",
+        "content": "What is an Exception?"
+    },
+    {
+        "type": "p",
+        "content": "An exception is an event that occurs during the execution of a program that disrupts the normal flow of instructions."
+    },
+    {
+        "type": "h3",
+        "content": "Why Exception handling?"
+    },
+    {
+        "type": "p",
+        "content": "Exception handling is crucial for robust and reliable software development because it allows programs to handle errors or unexpected situations that occur during runtime. Without it, errors can cause program crashes, unpredictable behaviour, and a poor user experience."
+    },
+    {
+        "type": "h3",
+        "content": "Types of Exceptions:"
+    },
+    {
+        "type": "h4",
+        "content": "Checked (must be handled): Conditions that a well-written application should anticipate and recover from. These are checked at compile-time. The compiler forces the developer to handle them using try-catch block or using throws."
+    },
+    {
+        "type": "table",
+        "content": {
+            "headers": [
+                "Exception",
+                "When it Occurs"
+            ],
+            "rows": [
+                [
+                    "IOException",
+                    "During I/O operations"
+                ],
+                [
+                    "FileNotFoundException",
+                    "When file doesn’t exist"
+                ],
+                [
+                    "SQLException",
+                    "Database access issues"
+                ],
+                [
+                    "ClassNotFoundException",
+                    "Trying to load a missing class dynamically"
+                ],
+                [
+                    "InterruptedException",
+                    "Thread is interrupted while waiting/sleeping"
+                ],
+                [
+                    "ParseException",
+                    "Issues during parsing formatted text"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "h4",
+        "content": "Unchecked (runtime): An unexpected event occur at runtime and that the application usually cannot anticipate or recover from. The compiler doesn’t force the developer to catch them. But if they aren’t catched properly, the entire application will be crashed. These usually indicate programming bugs, such as logic errors or improper use of an API."
+    },
+    {
+        "type": "table",
+        "content": {
+            "headers": [
+                "Exception",
+                "When it Occurs"
+            ],
+            "rows": [
+                [
+                    "ArithmeticException",
+                    "Division by zero"
+                ],
+                [
+                    "NullPointerException",
+                    "Accessing members on a null reference"
+                ],
+                [
+                    "ArrayIndexOutOfBoundsException",
+                    "Invalid array index"
+                ],
+                [
+                    "StringIndexOutOfBoundsException",
+                    "Invalid string index"
+                ],
+                [
+                    "NumberFormatException",
+                    "Converting bad string to number"
+                ],
+                [
+                    "IllegalArgumentException",
+                    "Passing illegal args to a method"
+                ],
+                [
+                    "IllegalStateException",
+                    "Method called at an inappropriate time"
+                ]
+            ]
+        }
+    },
+    {
+        "type": "h4",
+        "content": "Errors (fatal): Conditions that are external to the application, and that the application usually cannot anticipate or recover from. Eg: OutOfMemoryError, StackOverflowError"
+    },
+    {
+        "type": "h3",
+        "content": "How to use Exception Handling?"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "throw: keyword used to actually throw an exception",
+            "throws: keyword used in method signature to declare exceptions"
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "try-catch-finally Mechanics:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "finally - always runs even with return in try or catch",
+            "Catching multiple exceptions: catch (IOException | SQLException e)"
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "Custom Exceptions:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Extend Exception or Runtime Exception",
+            "Always provide multiple constructors for flexibility"
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "Best Practices:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Never swallow exceptions (catch (Exception e) {} = bad)",
+            "Wrap low-level exceptions with meaningful custom ones",
+            "Avoid using exceptions for flow control (conditional statements, control flows/loops)"
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "Final, Finally, and Finalize (Trio Confusion)"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "final (variable, method, class)",
+            "finally (in try-catch)",
+            "finalize() (deprecated)"
+        ]
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Scanner class",
+            "Arrays & Types",
+            "Sorting techniques",
+            "Strings",
+            "new string() vs “”",
+            "StringBuilder & StringBuffer"
+        ]
+    },
+    {
+        "type": "h2",
+        "content": "5. Java Collections Framework"
+    },
+    {
+        "type": "h3",
+        "content": "Important Interfaces:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "1. Iterable: The top most root interface and it is the super interface of all collection type. It contains: iterator()",
+            "2. Collection: collection implements iterable. The root interface for List, Set, Queue. It contains: add(), remove(), size(), clear(), contains(), equals(), hashCode(), isEmpty(), iterator(), toArray() etc\nSub interfaces of collection are List, Set and Queue."
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "List Implementations:"
+    },
+    {
+        "type": "p",
+        "content": "List: The list is an interface that implements collection interface. It is an ordered collection that allows duplicates. It was implemented by"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "ArrayList: Backed by an array. Resize = O(n), insert/delete = O(n)",
+            "LinkedList, Doubly linked list. Insert = O(1), but index access = O(n) & Vector",
+            "Note: resizing threshold / capacity growth logic = 1.5x in ArrayList",
+            "Methods: add, clear, contains, get, indexOf, isEmpty, iterator, remove, size, sort, toArray"
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "Set Implementations:"
+    },
+    {
+        "type": "p",
+        "content": "Set: The set is an interface that implements collection interface. It doesn’t allow duplicates. It was implemented by"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "HashSet: Backed by HashMap with random order",
+            "LinkedHashSet: Maintains insertion order",
+            "TreeSet: Red-Black Tree; sorted and unique elements",
+            "Methods: same as List"
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "Queue Implementations:"
+    },
+    {
+        "type": "p",
+        "content": "Queue: Queue is an interface that implements Collection interface. It is used for FIFO data structure. It was implemented by LinkedList, PriorityQueue, ArrayDeque\nThe Priority queue used the heap data structure to store the data. Especially while storing it uses the min-heap data structure which stores the minimum value at its root. To use PQ, we need to implement the Comparable interface and override the compareTo method."
+    },
+    {
+        "type": "h4",
+        "content": "Methods of Priority queue:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "add(element) / offer(element): Inserts an element into the queue. add() throws an exception if the insertion fails, while offer() returns false.",
+            "peek() / top(): Returns the highest priority element (without removing it). Returns null if the queue is empty.",
+            "poll(): Retrieves and removes the highest priority element. Returns null if the queue is empty.",
+            "remove(): Retrieves and removes the head of the queue.",
+            "remove(element): Removes a single instance of the specified element from the queue if present.",
+            "clear(): Removes all elements from the queue.",
+            "size(): Returns the number of elements in the queue.",
+            "contains(element): Returns true if the queue contains the specified element.",
+            "isEmpty(): Checks if the queue is empty."
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "Map Implementations:"
+    },
+    {
+        "type": "p",
+        "content": "Map: A key-value pair storage implemented by using HashMap, LinkedHashMap, TreeMap, HashTable"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "HashMap: Uses array + linked list/binary tree buckets (Java 8+)",
+            "LinkedHashMap: Maintains access or insertion order",
+            "TreeMap: Sorted by key, based on Red-Black Tree",
+            "Iterate using Map.entrySet() or Map.keySet() or Map.values()"
+        ]
+    },
+    {
+        "type": "h4",
+        "content": "Methods of Map:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "put(key, value): Adds or updates a key-value pair in the map. Returns the previous value associated with the key, or null if there was no mapping.",
+            "putIfAbsent(key, value): Adds the key-value pair only if the key is not already present. Returns the current value if the key exists.",
+            "get(key): Returns the value associated with the key, or null if the key is not present.",
+            "getOrDefault(key, defaultValue): Returns the value associated with the key, or the defaultValue if the key is not present.",
+            "containsKey(key): Returns true if the map contains the given key.",
+            "containsValue(value): Returns true if the map contains the given value.",
+            "remove(key): Removes the mapping for the specified key. Returns the removed value, or null if no mapping existed.",
+            "remove(key, value): Removes the entry only if the key maps to the specified value. Returns true if removed.",
+            "replace(key, value): Replaces the value for the key if it exists. Returns the old value, or null if not found.",
+            "replace(key, oldValue, newValue): Replaces the value only if the current value matches the specified old value. Returns true if replaced.",
+            "keySet(): Returns a Set view of all keys in the map.",
+            "values(): Returns a Collection view of all values in the map.",
+            "entrySet(): Returns a Set view of all key-value pairs (Map.Entry objects).",
+            "isEmpty(): Returns true if the map contains no key-value mappings.",
+            "size(): Returns the number of key-value pairs in the map.",
+            "clear(): Removes all key-value mappings from the map."
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "Internal Mechanics:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "equals() and hashCode() critical for HashSet/HashMap",
+            "Collisions handled via chaining or treeification",
+            "fail-fast Iterators throw ConcurrentModificationException"
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "Iteration Techniques:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Iterator: It is used to traverse all types of lists including ArrayList, Vector, LinkedList, Stack",
+            "ListIterator (only for Lists): It extends iterator. It supports bi-directional traversal. And all the four CRUD operations(Create, Read, Update, Delete) operations.",
+            "forEach() method (Java 8)"
+        ]
+    },
+    {
+        "type": "h2",
+        "content": "6. Multithreading and Concurrency"
+    },
+    {
+        "type": "p",
+        "content": "If you don’t get this right, nothing else matters."
+    },
+    {
+        "type": "h3",
+        "content": "What is a Thread?"
+    },
+    {
+        "type": "p",
+        "content": "In Java, a thread is a lightweight process that allows for concurrent execution of code within a program. It is the smallest unit of processing that can be scheduled by the operating system."
+    },
+    {
+        "type": "h3",
+        "content": "What is multi-threading?"
+    },
+    {
+        "type": "p",
+        "content": "Java supports multithreading, which means that multiple threads can run concurrently within a single application. This enables programs to perform multiple tasks at the same time, improving performance and responsiveness."
+    },
+    {
+        "type": "h3",
+        "content": "Life cycle of a thread:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "1. New: The thread has been created but not yet started.",
+            "2. Runnable: The thread is ready to run and is waiting for its turn to be scheduled by the JVM.",
+            "3. Running: The thread is running to complete the task.",
+            "4. Blocked: The thread is waiting for a lock or resource.",
+            "5. Waiting: The thread is waiting indefinitely for another thread to perform a specific action.",
+            "6. Timed Waiting: The thread is waiting for a specific amount of time.",
+            "7. Terminated: The thread has completed its execution."
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "Key methods of threads:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "1. start(): Starts the thread execution.",
+            "2. run(): The entry point of the thread's execution.",
+            "3. sleep(): Causes the current thread to pause for a specified time.",
+            "4. join(): Waits for the thread to die.",
+            "5. interrupt(): Interrupts the thread.",
+            "6. isAlive(): Checks if the thread is alive.",
+            "7. wait(), notify(), notifyAll(): Used for thread communication and synchronization."
+        ]
+    },
+    {
+        "type": "h4",
+        "content": "Thread Creation:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Extending Thread",
+            "Implementing Runnable"
+        ]
+    },
+    {
+        "type": "p",
+        "content": "Thread states and transitions"
+    },
+    {
+        "type": "h4",
+        "content": "Synchronization:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Intrinsic locks (synchronized block/method)",
+            "Object-level vs Class-level locks",
+            "Risk of deadlocks, how to avoid (lock ordering, timeouts)"
+        ]
+    },
+    {
+        "type": "h4",
+        "content": "Volatile Keyword:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Guarantees visibility, not atomicity",
+            "Use when one thread writes, multiple read"
+        ]
+    },
+    {
+        "type": "h4",
+        "content": "Thread Communication:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "wait(), notify(), notifyAll() on a shared object",
+            "Must be called from synchronized block"
+        ]
+    },
+    {
+        "type": "h4",
+        "content": "ThreadLocal:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Separate variable copy per thread",
+            "Avoid shared state for safety"
+        ]
+    },
+    {
+        "type": "h4",
+        "content": "Concurrent Issues:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Race Condition",
+            "Deadlock",
+            "Livelock",
+            "Starvation"
+        ]
+    },
+    {
+        "type": "h4",
+        "content": "Best Practices:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Prefer Executor Service over manually creating threads",
+            "Avoid shared mutable state",
+            "Thread-safe collections (ConcurrentHashMap, etc.)"
+        ]
+    },
+    {
+        "type": "h2",
+        "content": "7. Java Memory Management"
+    },
+    {
+        "type": "h3",
+        "content": "Heap Memory"
+    },
+    {
+        "type": "p",
+        "content": "Heap memory in Java is a crucial part of the Java Virtual Machine (JVM) that is used for dynamic memory allocation. It stores objects created during program execution. Here's a breakdown:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Object Storage: The heap is where all Java objects, including instances of classes and arrays, are stored.",
+            "Dynamic Allocation: Memory for objects is allocated at runtime, as needed by the application.",
+            "Shared Memory: Objects in the heap can be accessed by any part of the application, including multiple threads.",
+            "When the heap becomes full and the JVM cannot allocate more memory for new objects, it throws an OutOfMemoryError."
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "String pool"
+    },
+    {
+        "type": "h3",
+        "content": "Hash table"
+    },
+    {
+        "type": "p",
+        "content": "In Java, a hash table is a data structure that stores key-value pairs. It uses a hash function to compute an index into an array, where the element will be inserted or searched. This allows for fast data retrieval, insertion, and deletion.\nJava provides two main classes from util pkg for hash tables:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Hashtable: This is a legacy class that is synchronized, meaning it is thread-safe. It does not allow null keys or values.",
+            "HashMap: This class is not synchronized and allows one null key and multiple null values. It generally offers better performance than Hashtable when thread safety is not a concern."
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "Stack memory"
+    },
+    {
+        "type": "p",
+        "content": "Stack memory in Java is a region of memory used for the execution of threads. Each thread has its own stack, which stores method calls, local variables, and reference variables."
+    },
+    {
+        "type": "h4",
+        "content": "Key characteristics of stack memory:"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "LIFO (Last-In-First-Out): Stack memory operates on a LIFO principle. When a method is called, a new stack frame is created and pushed onto the stack. When the method finishes, the frame is popped off.",
+            "Fast access: Accessing stack memory is fast due to its simple LIFO structure."
+        ]
+    },
+    {
+        "type": "h4",
+        "content": "How Stack Memory Works"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "When a method is invoked, a new block of memory is allocated on the stack.",
+            "This block stores the local variables and method parameters.",
+            "The stack frame remains active as long as the method is running.",
+            "Once the method completes its task, the block is popped off the stack.",
+            "The memory is now available for the next method."
+        ]
+    },
+    {
+        "type": "h4",
+        "content": "Stack memory vs Heap memory"
+    },
+    {
+        "type": "p",
+        "content": "Stack memory is used for short-lived data related to method execution, while heap memory is used for storing objects. Stack memory is faster, but has a limited size, whereas heap memory is more flexible."
+    },
+    {
+        "type": "h2",
+        "content": "8. Java I/O"
+    },
+    {
+        "type": "h3",
+        "content": "File handling"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "FileReader: To read the file char by char",
+            "FileWriter: To write the context into the file",
+            "BufferedReader: For efficient & faster line by line reading with FileReader"
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "Input and output streams"
+    },
+    {
+        "type": "p",
+        "content": "There are 3 IOStreams in java i.e System.in, System.out and System.err available in java.lang pkg. A stream is some bytes of flowing data. By default java imports these 3 streams.\nJava provides various Streams with its I/O package that helps the user to perform all the input-output operations. These streams support all the types of objects, data-types, characters, files, etc., to fully execute the I/O operations.\nEg: System.in and System.out"
+    },
+    {
+        "type": "h3",
+        "content": "Serialization and Deserialization"
+    },
+    {
+        "type": "p",
+        "content": "Serialization in Java is the process of converting an object into a byte stream. This stream can then be stored in a file, database, or transmitted over a network. The primary purpose of serialization is to save the state of an object so that it can be recreated later.\nDeserialization, on the other hand, is the reverse process. It takes a byte stream and reconstructs the original object. This allows you to load objects from storage or receive them over a network, restoring them to their previous state."
+    },
+    {
+        "type": "h2",
+        "content": "9. Java Design Patterns"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "Singleton implementation",
+            "Why and when to use design patterns"
+        ]
+    },
+    {
+        "type": "h1",
+        "content": "JAVA INTERVIEW BASED QUESTIONS"
+    },
+    {
+        "type": "h2",
+        "content": "Programming fundamentals – Theory"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "1. What are the different primitive data types in Java and their default values?",
+            "2. Explain the difference between == and equals() when used with primitives and objects.",
+            "3. What is a variable, and how is its scope determined in Java?",
+            "4. Differentiate between instance, local, static, and block scope variables.",
+            "5. How is Java platform-independent but JVM platform-dependent?",
+            "6. Explain the Java execution process from .java to execution.",
+            "7. What is the difference between JDK, JRE, and JVM?",
+            "8. Why is Java called a hybrid programming language?",
+            "9. How does memory allocation work for primitive variables vs object references?",
+            "10. Explain type conversion and the difference between widening and narrowing.",
+            "11. What is type promotion in expressions?",
+            "12. What is the difference between a char and an int when used in arithmetic?",
+            "13. What is the purpose of access modifiers? List and explain them briefly.",
+            "14. What is the difference between static and non-static methods?",
+            "15. What is a method signature in Java?",
+            "16. Can the main method be overloaded? Why or why not?",
+            "17. What is the role of the return keyword in a method?",
+            "18. Why do local variables need to be initialized before use?",
+            "19. Explain the purpose of the ternary operator and where it can replace if-else.",
+            "20. What are the features of Java that make it suitable for enterprise development?"
+        ]
+    },
+    {
+        "type": "h2",
+        "content": "Programming fundamentals – Practical"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "1. Write a Java program to find the largest of three numbers using if-else.",
+            "2. Write a program to check if a number is even or odd using modulus operator.",
+            "3. Write a program to print all prime numbers between 1 and 50.",
+            "4. Write a program to reverse a given integer (e.g., 1234 → 4321).",
+            "5. Write a program to check if a given year is a leap year.",
+            "6. Write a program to calculate the factorial of a number using a loop.",
+            "7. Write a program to print the multiplication table of a number (e.g., table of 5).",
+            "8. Write a program to count the number of digits in a given number.",
+            "9. Write a program to check whether a character is a vowel or consonant.",
+            "10. Write a program to swap two variables without using a third variable.",
+            "11. Write a program to print the Fibonacci series up to ‘n’ terms.",
+            "12. Write a program to print all Armstrong numbers between 100 and 999.",
+            "13. Write a program to sum the digits of a number (e.g., 123 → 6).",
+            "14. Write a program to check whether a number is a palindrome.",
+            "15. Write a program to convert a temperature from Celsius to Fahrenheit and vice versa.",
+            "16. Write a program to find the ASCII value of a character.",
+            "17. Write a program to find the sum of even and odd numbers from 1 to 100.",
+            "18. Write a program to print the number of uppercase and lowercase letters in a String.",
+            "19. Write a program to reverse a String using a loop (without using StringBuilder).",
+            "20. Write a program to print a triangle."
+        ]
+    },
+    {
+        "type": "h2",
+        "content": "Core java – Theory"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "1. What is OOP and how is it implemented in Java?",
+            "2. Define class and object with real-world examples.",
+            "3. What is the difference between encapsulation and abstraction?",
+            "4. How is data hiding achieved in Java?",
+            "5. What are the types of inheritance supported in Java?",
+            "6. Why is multiple inheritance not allowed with classes in Java?",
+            "7. What is method overloading? Provide rules and examples.",
+            "8. What is method overriding? What are the conditions for it?",
+            "9. Explain runtime vs compile-time polymorphism with examples.",
+            "10. What are abstract classes and when do you use them?",
+            "11. How is interface different from an abstract class?",
+            "12. Can a class implement multiple interfaces? Why is this allowed?",
+            "13. What are the key differences between public, protected, private, and default?",
+            "14. What is a constructor? How does it differ from a method?",
+            "15. Explain constructor overloading.",
+            "16. What is the use of this and super keywords?",
+            "17. What are static blocks and when are they executed?",
+            "18. What is the purpose of a default constructor?",
+            "19. How are methods resolved when both parent and child have the same method name?",
+            "20. Why is String immutable in Java?"
+        ]
+    },
+    {
+        "type": "h2",
+        "content": "Core java – Practical"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "1. Write a program to demonstrate widening and narrowing type conversion between all primitive data types.",
+            "2. Create a class with variables of all primitive data types and print their default values using a method.",
+            "3. Demonstrate the use of static vs instance variables and methods in a class.",
+            "4. Create a program to show how type promotion works in expressions using byte, short, int, and float.",
+            "5. Write a program that attempts to use a local variable without initializing it and observe the compile-time error.",
+            "6. Demonstrate variable scope by declaring local, instance, static, and block variables inside a class and printing their accessibility.",
+            "7. Write a program to convert boolean to int and vice versa using conditional (ternary) operator.",
+            "8. Create a program that overloads a method with different parameter types (e.g., int, double, char) and observe which version is called.",
+            "9. Demonstrate how arithmetic operations behave between char and int types.",
+            "10. Create a program with final variables and attempt to reassign them (to show immutability of final).",
+            "11. Demonstrate how String behaves as immutable and compare == vs equals() in multiple examples.",
+            "12. Write a program using StringBuilder to build and reverse a string and compare it with String.",
+            "13. Create a program to show the difference between post-increment and pre-increment operators.",
+            "14. Write a program using ternary operator to find the max of two numbers and demonstrate its nesting.",
+            "15. Demonstrate automatic type promotion in a compound expression involving mixed data types.",
+            "16. Write a program that shows the effect of casting a large double value to int and then to byte.",
+            "17. *Demonstrate the use of varargs by creating a method that accepts any number of integers and prints their sum.",
+            "18. Write a program to explore the behavior of dividing an integer by zero vs a double by zero.",
+            "19. Create a method to print the ASCII values of all characters from 'A' to 'Z'.",
+            "20. Demonstrate the behavior of uninitialized object references (null) and how accessing them causes NullPointerException.",
+            "21. Write a class with instance, static, and local variables and print their values using methods.",
+            "22. Create a program that demonstrates type promotion in arithmetic expressions using mixed primitives.",
+            "23. Write a method that takes various primitive arguments (int, float, char) and prints them.",
+            "24. Write a program to overload a method with different parameter types and print which one is called.",
+            "25. Write a program to swap two numbers using methods with arrays.",
+            "26. Create a program with a static method and an instance method and call both from main.",
+            "27. Write a program to demonstrate for, while, and do-while loops to print numbers from 1 to 5.",
+            "28. Create a program that prints whether a number is positive, negative, or zero using if-else.",
+            "29. Create a method that accepts two numbers and returns the larger one using ternary operator.",
+            "30. Write a program that uses switch to print the day name based on day number (1–7).",
+            "31. Write a class with a private variable and access it using getter and setter methods (Encapsulation).",
+            "32. Write a program that demonstrates single inheritance with parent and child classes.",
+            "33. Write a program to demonstrate method overriding.",
+            "34. Create an abstract class with one abstract and one concrete method, and implement it.",
+            "35. Write a program that implements an interface and defines its method.",
+            "36. Write a class that uses constructors to initialize variables and print them.",
+            "37. Create a method that takes a String and prints its reverse using a loop.",
+            "38. Write a class that uses this keyword to call a constructor from another constructor.",
+            "39. Write a program that uses a loop to print ASCII values of characters from A to Z.",
+            "40. Create a Student class with name and marks. Write a method that returns the grade based on marks using if-else."
+        ]
+    },
+    {
+        "type": "h2",
+        "content": "Exception handling"
+    },
+    {
+        "type": "ul",
+        "content": [
+            {
+                "type": "bold",
+                "content": "1. Number Parsing Error"
+            },
+            "Scenario: Write a program that tries to convert a String \"abc123\" into an integer using Integer.parseInt(). If it fails, catch the exception and print \"Invalid number format\" instead of crashing.",
+            "Checks: NumberFormatException, basic try-catch usage.",
+            {
+                "type": "bold",
+                "content": "2. Division with Safe Handling"
+            },
+            "Scenario: Write a method that takes two integers and returns the result of their division. If the denominator is zero, it should print \"Cannot divide by zero\" and return 0.",
+            "Checks: ArithmeticException, custom return value, no crash.",
+            {
+                "type": "bold",
+                "content": "3. Multiple Catch Blocks – Bank Withdrawal"
+            },
+            "Scenario: Simulate a bank withdrawal method. It throws:\n• IllegalArgumentException if the amount is negative,\n• ArithmeticException if balance is insufficient.\nUse two catch blocks to handle both separately.",
+            "Checks: multiple exception types, ordering of catch blocks, custom exception messages.",
+            {
+                "type": "bold",
+                "content": "4. Custom Exception – Age Validation"
+            },
+            "Scenario: Create a custom exception InvalidAgeException.\nWrite a method registerUser(int age) that throws this exception if the age is less than 18. Catch the exception and print: \"Registration failed: Invalid age\".",
+            "Checks: defining custom exceptions, throwing and catching them, real use-case simulation.",
+            {
+                "type": "bold",
+                "content": "5. Nested try-catch with finally – Online Order Process"
+            },
+            "Scenario: Simulate an online order method where:\n• First, it tries to process payment (may throw NullPointerException if payment gateway is null),\n• Then it tries to update order status (may throw IOException).\nUse nested try-catch blocks, and finally block to print \"Order process ended.\"",
+            "Checks: nesting, finally block usage, multiple exception scopes."
+        ]
+    },
+    {
+        "type": "h2",
+        "content": "Arrays"
+    },
+    {
+        "type": "h3",
+        "content": "1D Array Questions"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "1. Write a program to read 5 integers into a 1D array and print them in the same order.",
+            "2. Write a program to find the largest and smallest elements in a 1D array.",
+            "3. Write a program to reverse a 1D array and print the reversed array."
+        ]
+    },
+    {
+        "type": "h3",
+        "content": "2D Array Questions"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "1. Write a program to read a 3x3 matrix and print it in matrix format.",
+            "2. Write a program to calculate the sum of each row and each column of a 3x3 matrix."
+        ]
+    },
+    {
+        "type": "h2",
+        "content": "Collection Framework – Theory Questions"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "1. What is the Java Collections Framework? What problem does it solve?",
+            "2. What is the difference between a List, Set, and Map? Give real-world examples.",
+            "3. What is the difference between ArrayList and LinkedList in terms of performance and use-case?",
+            "4. How does HashSet ensure no duplicates are stored?",
+            "5. What happens when two keys with the same hashCode() are added to a HashMap?",
+            "6. What is the difference between HashMap and TreeMap?",
+            "7. Why is Iterator preferred over for loop when working with collections?",
+            "8. What is the fail-fast behavior in Java collections? Give an example.",
+            "9. How is HashMap internally implemented in Java? (Bucket, hashing, load factor, etc.)",
+            "10. What are generics in collections and why are they important?"
+        ]
+    },
+    {
+        "type": "h2",
+        "content": "Collection Framework – Practical Questions"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "1. Create an ArrayList of integers, add 5 elements, and print them using an iterator.",
+            "2. Create a HashSet of strings, add some duplicate values, and print the set to demonstrate that duplicates are not stored.",
+            "3. Use a HashMap to store student names and their marks, and print all key-value pairs using a for-each loop.",
+            "4. Create a LinkedList of strings representing tasks in a to-do list. Add, remove, and print elements to simulate task management.",
+            "5. Sort an ArrayList of integers in ascending order using Collections.sort() and print the sorted list."
+        ]
+    },
+    {
+        "type": "h2",
+        "content": "Multi-Threading – Practical Question"
+    },
+    {
+        "type": "ul",
+        "content": [
+            {
+                "type": "bold",
+                "content": "1. Print Messages in Parallel Threads"
+            },
+            "Scenario: Create a class that extends Thread and overrides the run() method to print \"Hello from thread\" 5 times. Start two threads from main().",
+            "Checks: extending Thread, overriding run(), using start()",
+            {
+                "type": "bold",
+                "content": "2. Runnable Interface Demo"
+            },
+            "Scenario: Create a class that implements Runnable and prints numbers from 1 to 5. Create and start two threads using this class.",
+            "Checks: implementing Runnable, passing to Thread constructor, thread execution",
+            {
+                "type": "bold",
+                "content": "3. Thread Sleep Simulation"
+            },
+            "Scenario: Create a thread that prints \"Processing...\" 3 times with a 1-second delay between each print using Thread.sleep().",
+            "Checks: sleep(), exception handling, thread pauses",
+            {
+                "type": "bold",
+                "content": "4. Thread Join Example"
+            },
+            "Scenario: Create two threads. Make the second thread wait for the first one to finish using join() before it starts its execution.",
+            "Checks: join(), thread coordination",
+            {
+                "type": "bold",
+                "content": "5. Interrupt a Sleeping Thread"
+            },
+            "Scenario: Create a thread that goes to sleep for 5 seconds. From the main() method, interrupt the thread after 2 seconds. Catch and handle the InterruptedException inside the thread.",
+            "Checks: sleep(), interrupt(), exception handling in threads"
+        ]
+    },
+    {
+        "type": "h2",
+        "content": "File handling – Theory"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "How is FileReader different from BufferedReader?",
+            "What happens when we pass file the existing file name to the FileWriter?"
+        ]
+    },
+    {
+        "type": "h2",
+        "content": "File Handling with JavaIO - Practical"
+    },
+    {
+        "type": "ul",
+        "content": [
+            "1. Write a java program to demonstrate the file reading with FileReader.",
+            "2. Write a java program to create a new file and write some context in the file using various methods(write, append).",
+            "3. Write a java program to read the text from a file line-by-line and ensure the exceptions are properly catched with caution."
+        ]
+    }
+]
