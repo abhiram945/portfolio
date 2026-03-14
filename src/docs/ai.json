@@ -4,20 +4,23 @@
         "content": "Roadmap to ML, DL, NLP, GenAI & LLMs"
     },
     {
-        "type": "h2",
-        "content": "Differences:"
+        "type": "p",
+        "content": "AI: The universe with no human intervention"
     },
     {
-        "type": "ul",
-        "content": [
-            "AI: The universe with no human intervention",
-            "ML: Subset of AI that analyses and visualizes data based on stats",
-            "DL: Subset of ML that mimics human brain",
-            "DS: Extract useful insights from the raw data and develop a model which involves all the above 3 phases"
-        ]
+        "type": "p",
+        "content": "ML: Subset of AI that analyses and visuapzes data based on stats"
     },
     {
-        "type": "h2",
+        "type": "p",
+        "content": "DL: Subset of ML that mimics human brain"
+    },
+    {
+        "type": "p",
+        "content": "DS: Extract useful insights from the raw data and develop a model which involves all the above 3 phases"
+    },
+    {
+        "type": "h1",
         "content": "1. Machine Learning (ML): Algorithms that learn patterns from data."
     },
     {
@@ -37,21 +40,28 @@
         "content": "Types:"
     },
     {
-        "type": "ul",
-        "content": [
-            "Simple Linear Regression: 1 independent vs 1 dependent",
-            {
-                "type": "code",
-                "content": "y = mx + c\ny = predicted\nm = coefficient/slope = tells how much the target(y) increases for every unit increase in input\nx = input\nc = intercept = the predicted/target(y) when input(x) is 0."
-            },
-            "Multi Linear Regression: multiple independent vs 1 dependent. When more than 1 inputs/individual variables are there, we use multiple linear regression. Y = b0 + b1X1 + b2X2 + b3X3 + ..... + bnXn\nWhere b0 is the intercept and b1,b2,b3...bn are the coefficients of the individual variables X1,X2,X3...Xn",
-            "Polynomial Regression: Non-linear data",
-            "Multivariate Regression: Predicts multiple dependent variables simultaneously",
-            {
-                "type": "p",
-                "content": "Regression Algorithms: Linear Regression, Lasso(L1), Ridge(L2), Elastic Net(L1+L2), SVR, Decision Tree Regression, Random Forest Regression, Gradient Boosting Regression, AdaBoostRegressor, XGBoost, LightGBM"
-            }
-        ]
+        "type": "p",
+        "content": "Simple pnear Regression: 1 independent vs 1 dependent"
+    },
+    {
+        "type": "code",
+        "content": "y = mx + c\ny = predicted\nm = coefficient/slope = tells how much the target(y) increases for every unit increase in input\nx = input\nc = intercept = the predicted/target(y) when input(x) is 0."
+    },
+    {
+        "type": "p",
+        "content": "Multi pnear Regression: multiple independent vs 1 dependent. When more than 1 inputs/individual variables are there, we use multiple pnear regression. Y = b0 + b1X1 + b2X2 + b3X3 + ..... + bnXn\nWhere b0 is the intercept and b1,b2,b3...bn are the coefficients of the individual variables X1,X2,X3...Xn"
+    },
+    {
+        "type": "p",
+        "content": "Polynomial Regression: Non-pnear data"
+    },
+    {
+        "type": "p",
+        "content": "Multivariate Regression: Predicts multiple dependent variables simultaneously"
+    },
+    {
+        "type": "p",
+        "content": "Regression Algorithms: pnear Regression, Lasso(L1), Ridge(L2), Elastic Net(L1+L2), SVR, Decision Tree Regression, Random Forest Regression, Gradient Boosting Regression, AdaBoostRegressor, XGBoost, pghtGBM"
     },
     {
         "type": "p",
@@ -62,253 +72,403 @@
         "content": "Types:"
     },
     {
-        "type": "ul",
-        "content": [
-            "Binary Classification: A or B",
-            "Multiclass Classification: A or B or C or D or E…. Or Z",
-            "Multilabel Classification: A and B",
-            "Imbalanced Classification: Class distribution is skewed and biased predictions"
-        ]
+        "type": "p",
+        "content": "Binary Classification: A or B"
     },
     {
-        "type": "h5",
+        "type": "p",
+        "content": "Multiclass Classification: A or B or C or D or E…. Or Z"
+    },
+    {
+        "type": "p",
+        "content": "Multilabel Classification: A and B"
+    },
+    {
+        "type": "p",
+        "content": "Imbalanced Classification: Class distribution is skewed and biased predictions"
+    },
+    {
+        "type": "h4",
         "content": "Classification Algorithms:"
     },
     {
-        "type": "ul",
-        "content": [
-            {
-                "type": "bold",
-                "content": "Logistic Regression"
-            },
-            "Logistic Regression is a Classification algorithm used to predict the probability of a categorical dependent variable.",
-            "It uses sigmoid funtion to map the predicted values to the probabilities.",
-            {
-                "type": "code",
-                "content": "Sigmoid function: f(x) = 1 / (1 + e^(-x)) where Euler's number(e) = 2.71828"
-            },
-            {
-                "type": "bold",
-                "content": "Decision Tree"
-            },
-            "Entropy - The measure of randomness in data and is a metric to measure impurity",
-            {
-                "type": "code",
-                "content": "Entropy(S) = -P(yes)*log2(P(yes))-P(no)*log2(P(no))"
-            },
-            "If no.of yes = no.of no then P(S)=0.5 and S=1",
-            "If all are yes/no then P(S)=0/1 and S=0",
-            "Information Gain - Decrease in entropy after data split",
-            "Gini Index - Another way to measure impurity which is used in CART(Classification and Regression Trees)",
-            "Reduction in Variance - Algorithm used for continuous target variables(regression problems)",
-            {
-                "type": "bold",
-                "content": "SVM"
-            },
-            {
-                "type": "bold",
-                "content": "RandomForest"
-            },
-            "Combination of multiple Decision Trees - Ensemble learning",
-            "It helps to tackle the bias and variance problems",
-            "Important Hyperparameters:",
-            {
-                "type": "code",
-                "content": "n_estimators = no.of trees\nmax_features = max no.of features to split a node\nmin_sample_leaf = minimum no.of leaves that are required to split an internal node"
-            },
-            {
-                "type": "bold",
-                "content": "KNN"
-            },
-            "KNN where K is no.of nearest data points around the dependent data point",
-            "And there exist no rule to assign a value to K, we can use hit and trail method",
-            "It uses euclidean distance to calculate the distance",
-            {
-                "type": "bold",
-                "content": "Naive Bayes"
-            },
-            "A ML classification algorithm what predicts based on probability.",
-            "The Naive terms is because of it's assumption that a feature is independent of other features. And if any of the feature is continuous it assumes that the values/data of the feature is normally distributed without any skewness. And if a feature is discrete then it assumed to have a multinomial distribution. Bayes term refers to that the algorithm is working based on Bayes theorem which is a mathematical formula used to calculate the conditional probability of an event based on prior knowledge.",
-            {
-                "type": "bold",
-                "content": "Gradient Boosting"
-            },
-            "Gradient Boosting is a powerful machine learning algorithm used for both classification and regression tasks. It builds an ensemble of weak learners, typically decision trees, in a sequential manner to improve the model's performance by minimizing the loss function. Gradient Boosting works by training each new model to correct the errors made by the previous models. The algorithm computes the gradient of the loss function with respect to the predictions of the current ensemble and then trains a new weak model to minimize this gradient. The predictions of the new model are added to the ensemble, and the process is repeated until a stopping criterion is met.",
-            {
-                "type": "bold",
-                "content": "AdaBoostClassifier"
-            },
-            {
-                "type": "bold",
-                "content": "XGBoost"
-            },
-            "XGBoost builds decision trees in a sequential manner:",
-            "Weights are assigned to all independent variables.",
-            "These variables are fed into a decision tree to predict results.",
-            "Variables predicted incorrectly have their weights increased.",
-            "These updated variables are passed to the next decision tree.",
-            "This process continues, and the ensemble of individual classifiers creates a stronger, more accurate model. It adds L1 and L2 regularization to reduce the overfitting something that standard gradient boosting lacks. Parallel processing for faster training. Offers built-in cross-validation and support for early stopping.",
-            {
-                "type": "bold",
-                "content": "LightGBM"
-            },
-            "(Light Gradient Boosting Machine) is an open-source framework developed by Microsoft for gradient boosting. It is designed to handle large datasets efficiently while maintaining high accuracy. LightGBM builds decision trees sequentially, where each tree corrects the errors of the previous one, making it a powerful ensemble learning method.",
-            {
-                "type": "bold",
-                "content": "Bagging"
-            },
-            "It is an ensemble learning technique that improves the stability and accuracy of machine learning algorithms by training multiple models on different subsets of the data.",
-            "It takes multiple models (usually of the same type) trained on random subsets of the training data (with replacement).",
-            "Each model makes predictions independently.",
-            "Final prediction is made by averaging (for regression) or majority voting (for classification). Ex: Random Forest",
-            {
-                "type": "bold",
-                "content": "Voting"
-            },
-            "It is another ensemble technique that combines predictions from multiple different models to improve overall performance. It takes multiple diverse models (e.g., logistic regression, SVM, decision tree) trained on the same dataset.",
-            "Each model casts a \"vote\" for the predicted class. Final prediction is based on 1)Hard Voting which considers majority class label 2)Soft Voting which considers average of predicted probabilities. Ex: Ensemble of logistic regression, k-NN, and SVM for classification tasks."
-        ]
+        "type": "bold",
+        "content": "Logistic Regression"
+    },
+    {
+        "type": "p",
+        "content": "Logistic Regression is a Classification algorithm used to predict the probabipty of a categorical dependent variable."
+    },
+    {
+        "type": "p",
+        "content": "It uses sigmoid funtion to map the predicted values to the probabipties."
+    },
+    {
+        "type": "code",
+        "content": "Sigmoid function: f(x) = 1 / (1 + e^(-x)) where Euler's number(e) = 2.71828"
+    },
+    {
+        "type": "bold",
+        "content": "Decision Tree"
+    },
+    {
+        "type": "p",
+        "content": "Entropy - The measure of randomness in data and is a metric to measure impurity"
+    },
+    {
+        "type": "code",
+        "content": "Entropy(S) = -P(yes)*log2(P(yes))-P(no)*log2(P(no))"
+    },
+    {
+        "type": "p",
+        "content": "If no.of yes = no.of no then P(S)=0.5 and S=1"
+    },
+    {
+        "type": "p",
+        "content": "If all are yes/no then P(S)=0/1 and S=0"
+    },
+    {
+        "type": "p",
+        "content": "Information Gain - Decrease in entropy after data sppt"
+    },
+    {
+        "type": "p",
+        "content": "Gini Index - Another way to measure impurity which is used in CART(Classification and Regression Trees)"
+    },
+    {
+        "type": "p",
+        "content": "Reduction in Variance - Algorithm used for continuous target variables(regression problems)"
+    },
+    {
+        "type": "bold",
+        "content": "SVM"
+    },
+    {
+        "type": "bold",
+        "content": "RandomForest"
+    },
+    {
+        "type": "p",
+        "content": "Combination of multiple Decision Trees - Ensemble learning"
+    },
+    {
+        "type": "p",
+        "content": "It helps to tackle the bias and variance problems"
+    },
+    {
+        "type": "p",
+        "content": "Important Hyperparameters:"
+    },
+    {
+        "type": "code",
+        "content": "n_estimators = no.of trees\nmax_features = max no.of features to sppt a node\nmin_sample_leaf = minimum no.of leaves that are required to sppt an internal node"
+    },
+    {
+        "type": "bold",
+        "content": "KNN"
+    },
+    {
+        "type": "p",
+        "content": "KNN where K is no.of nearest data points around the dependent data point"
+    },
+    {
+        "type": "p",
+        "content": "And there exist no rule to assign a value to K, we can use hit and trail method"
+    },
+    {
+        "type": "p",
+        "content": "It uses eucpdean distance to calculate the distance"
+    },
+    {
+        "type": "bold",
+        "content": "Naive Bayes"
+    },
+    {
+        "type": "p",
+        "content": "A ML classification algorithm what predicts based on probabipty."
+    },
+    {
+        "type": "p",
+        "content": "The Naive terms is because of it's assumption that a feature is independent of other features. And if any of the feature is continuous it assumes that the values/data of the feature is normally distributed without any skewness. And if a feature is discrete then it assumed to have a multinomial distribution. Bayes term refers to that the algorithm is working based on Bayes theorem which is a mathematical formula used to calculate the conditional probabipty of an event based on prior knowledge."
+    },
+    {
+        "type": "bold",
+        "content": "Gradient Boosting"
+    },
+    {
+        "type": "p",
+        "content": "Gradient Boosting is a powerful machine learning algorithm used for both classification and regression tasks. It builds an ensemble of weak learners, typically decision trees, in a sequential manner to improve the model's performance by minimizing the loss function. Gradient Boosting works by training each new model to correct the errors made by the previous models. The algorithm computes the gradient of the loss function with respect to the predictions of the current ensemble and then trains a new weak model to minimize this gradient. The predictions of the new model are added to the ensemble, and the process is repeated until a stopping criterion is met."
+    },
+    {
+        "type": "bold",
+        "content": "AdaBoostClassifier"
+    },
+    {
+        "type": "bold",
+        "content": "XGBoost"
+    },
+    {
+        "type": "p",
+        "content": "XGBoost builds decision trees in a sequential manner:"
+    },
+    {
+        "type": "p",
+        "content": "Weights are assigned to all independent variables."
+    },
+    {
+        "type": "p",
+        "content": "These variables are fed into a decision tree to predict results."
+    },
+    {
+        "type": "p",
+        "content": "Variables predicted incorrectly have their weights increased."
+    },
+    {
+        "type": "p",
+        "content": "These updated variables are passed to the next decision tree."
+    },
+    {
+        "type": "p",
+        "content": "This process continues, and the ensemble of individual classifiers creates a stronger, more accurate model. It adds L1 and L2 regularization to reduce the overfitting something that standard gradient boosting lacks. Parallel processing for faster training. Offers built-in cross-vapdation and support for early stopping."
+    },
+    {
+        "type": "bold",
+        "content": "pghtGBM"
+    },
+    {
+        "type": "p",
+        "content": "(pght Gradient Boosting Machine) is an open-source framework developed by Microsoft for gradient boosting. It is designed to handle large datasets efficiently while maintaining high accuracy. pghtGBM builds decision trees sequentially, where each tree corrects the errors of the previous one, making it a powerful ensemble learning method."
+    },
+    {
+        "type": "bold",
+        "content": "Bagging"
+    },
+    {
+        "type": "p",
+        "content": "It is an ensemble learning technique that improves the stabipty and accuracy of machine learning algorithms by training multiple models on different subsets of the data."
+    },
+    {
+        "type": "p",
+        "content": "It takes multiple models (usually of the same type) trained on random subsets of the training data (with replacement)."
+    },
+    {
+        "type": "p",
+        "content": "Each model makes predictions independently."
+    },
+    {
+        "type": "p",
+        "content": "Final prediction is made by averaging (for regression) or majority voting (for classification). Ex: Random Forest"
+    },
+    {
+        "type": "bold",
+        "content": "Voting"
+    },
+    {
+        "type": "p",
+        "content": "It is another ensemble technique that combines predictions from multiple different models to improve overall performance. It takes multiple diverse models (e.g., logistic regression, SVM, decision tree) trained on the same dataset."
+    },
+    {
+        "type": "p",
+        "content": "Each model casts a \"vote\" for the predicted class. Final prediction is based on 1)Hard Voting which considers majority class label 2)Soft Voting which considers average of predicted probabipties. Ex: Ensemble of logistic regression, k-NN, and SVM for classification tasks."
     },
     {
         "type": "h4",
         "content": "1.2 Unsupervised Learning: Where model identifies the patterns"
     },
     {
-        "type": "ul",
-        "content": [
-            {
-                "type": "bold",
-                "content": "K-Means clustering"
-            },
-            "K-Means clustering is an unsupervised machine learning algorithm that helps group data points into clusters based on their inherent similarity. Unlike supervised learning, where we train models using labeled data, K-Means is used when we have data that is not labeled and the goal is to uncover hidden patterns or structures. Eg: spam vs non-spam.",
-            "The Elbow Method helps by plotting the Within-Cluster Sum of Squares (WCSS) against increasing k values and looking for a point where the improvement slows down, this point is called the \"elbow\".",
-            {
-                "type": "bold",
-                "content": "DBSCAN"
-            },
-            "DBSCAN stands for Density Based Spatial Clustering of Applications with Noise. Clusters can take any shape not just circular or convex (Arbitrary-Shaped. It effectively identifies and handles noise points without assigning them to any cluster. In DBSCAN we need not specify the number of clusters. We prefer to use DBSCAN when the data is not spherical in shape or the number of classes is not known beforehand.",
-            {
-                "type": "bold",
-                "content": "Hierarchical clustering"
-            },
-            "Hierarchical clustering is used to group similar data points into clusters by building a hierarchy (tree-like structure). Unlike flat clustering like k-means hierarchical clustering does not require specifying the number of clusters in advance. The algorithm builds clusters step by step either by progressively merging smaller clusters or by splitting a large cluster into smaller ones. The process is often visualized using a dendrogram, which helps to understand data similarity. Types: 1) Agglomerative which means bottom-up approach. 2) Divisive which means top-down approach.",
-            {
-                "type": "bold",
-                "content": "Dimensionality Reduction"
-            },
-            "Dimensionality Reduction is technique used in unsupervised learning to reduce the number of input variables (features) in a dataset while preserving its essential structure and relationships. This is especially helpful when dealing with datasets that have hundreds or thousands of features, which can lead to overfitting, computation, Difficulty in visualization, Poor model generalization"
-        ]
+        "type": "bold",
+        "content": "K-Means clustering"
+    },
+    {
+        "type": "p",
+        "content": "K-Means clustering is an unsupervised machine learning algorithm that helps group data points into clusters based on their inherent similarity. Unpke supervised learning, where we train models using labeled data, K-Means is used when we have data that is not labeled and the goal is to uncover hidden patterns or structures. Eg: spam vs non-spam."
+    },
+    {
+        "type": "p",
+        "content": "The Elbow Method helps by plotting the Within-Cluster Sum of Squares (WCSS) against increasing k values and looking for a point where the improvement slows down, this point is called the \"elbow\"."
+    },
+    {
+        "type": "bold",
+        "content": "DBSCAN"
+    },
+    {
+        "type": "p",
+        "content": "DBSCAN stands for Density Based Spatial Clustering of Apppcations with Noise. Clusters can take any shape not just circular or convex (Arbitrary-Shaped. It effectively identifies and handles noise points without assigning them to any cluster. In DBSCAN we need not specify the number of clusters. We prefer to use DBSCAN when the data is not spherical in shape or the number of classes is not known beforehand."
+    },
+    {
+        "type": "bold",
+        "content": "Hierarchical clustering"
+    },
+    {
+        "type": "p",
+        "content": "Hierarchical clustering is used to group similar data points into clusters by building a hierarchy (tree-pke structure). Unpke flat clustering pke k-means hierarchical clustering does not require specifying the number of clusters in advance. The algorithm builds clusters step by step either by progressively merging smaller clusters or by spptting a large cluster into smaller ones. The process is often visuapzed using a dendrogram, which helps to understand data similarity. Types: 1) Agglomerative which means bottom-up approach. 2) Divisive which means top-down approach."
+    },
+    {
+        "type": "bold",
+        "content": "Dimensionapty Reduction"
+    },
+    {
+        "type": "p",
+        "content": "Dimensionapty Reduction is technique used in unsupervised learning to reduce the number of input variables (features) in a dataset while preserving its essential structure and relationships. This is especially helpful when deapng with datasets that have hundreds or thousands of features, which can lead to overfitting, computation, Difficulty in visuapzation, Poor model generapzation"
     },
     {
         "type": "h4",
         "content": "1.3 Reinforcement Learning: Where model learns frome environment"
     },
     {
-        "type": "ul",
-        "content": [
-            {
-                "type": "bold",
-                "content": "1. Q-Learning/ Q-value learning:"
-            },
-            "The model free reinforcement learning technique where the agents learn from actions not based on model of the environment. The agent learns purely from experience by trying different actions and seeing their results.",
-            {
-                "type": "code",
-                "content": "The Q-table is a matrix that maps state-action pairs to expected future rewards. Each entry in the table represents the agent’s estimate of how good it is to take a certain action in each state.\nQ[state][action] = expected reward"
-            },
-            {
-                "type": "bold",
-                "content": "2. SARSA:"
-            },
-            "State Action Reward State(Next state) Action(next action) is an on-policy reinforcement learning algorithm in which agent learns from the action the agent takes. And it is also a model free reinforcement learning algorithm."
-        ]
+        "type": "h4",
+        "content": "1. Q-Learning/ Q-value learning:"
+    },
+    {
+        "type": "p",
+        "content": "The model free reinforcement learning technique where the agents learn from actions not based on model of the environment. The agent learns purely from experience by trying different actions and seeing their results."
+    },
+    {
+        "type": "code",
+        "content": "The Q-table is a matrix that maps state-action pairs to expected future rewards. Each entry in the table represents the agent’s estimate of how good it is to take a certain action in each state.\nQ[state][action] = expected reward"
+    },
+    {
+        "type": "h4",
+        "content": "2. SARSA:"
+    },
+    {
+        "type": "p",
+        "content": "State Action Reward State(Next state) Action(next action) is an on-popcy reinforcement learning algorithm in which agent learns from the action the agent takes. And it is also a model free reinforcement learning algorithm."
     },
     {
         "type": "h2",
         "content": "Concepts:"
     },
     {
-        "type": "ul",
-        "content": [
-            {
-                "type": "bold",
-                "content": "Bias-Variance Tradeoff"
-            },
-            "High bias + low variance: Underfitting",
-            "Low bias + high variance: Overfitting",
-            "Fixing techniques: Cross validation, regularization",
-            {
-                "type": "bold",
-                "content": "Overfitting/Underfitting"
-            },
-            {
-                "type": "bold",
-                "content": "Cross-validation"
-            },
-            {
-                "type": "bold",
-                "content": "Feature Engineering"
-            },
-            {
-                "type": "bold",
-                "content": "Encoding categorical variables:"
-            },
-            "One-hot encoding: Convert categories into binary columns",
-            "Label encoding: Assign numeric labels to categories",
-            {
-                "type": "bold",
-                "content": "Confusion Matrix"
-            },
-            {
-                "type": "code",
-                "content": "     T   F - (Actual)\nP   TP  FP\nN   FN  TN\n|\n(predicted)"
-            },
-            {
-                "type": "bold",
-                "content": "Model Evaluation Metrics"
-            },
-            "Regression: MAE, MSE, RMSE, R^2",
-            "Classification:ROC-AUC, Log Loss",
-            {
-                "type": "code",
-                "content": "Accuracy = No.of correct predictions\nFormula = (TP+TN)/(TP+TN+FP+FN)\nPrecision = No.of True predictions(True as True) out of all predictions\nFormula = TP/(TP+FP)\nRecall = No.of True predictions(False as False) out of all predictions\nFormula = TP/(TP+FN) \nF1-Score = The harmonic mean of precision and recall\nFormula = 2*(precision*recall)/(precision+recall)"
-            },
-            {
-                "type": "bold",
-                "content": "K-fold cross validation:"
-            },
-            "It divides the entire dataset into K no.of chunks",
-            "And in each iteration one set is used for testing and rest of them are used for training. i.e.. if no.of questions = 100 and no.of chunks = 5 then each chunk contains 20 questions.",
-            {
-                "type": "code",
-                "content": "Iteration 1: 1 - testing, [2,3,4,5] - training\nIteration 2: 2 - testing, [1,3,4,5] - training\nIteration 3: 3 - testing, [1,2,4,5] - training\nIteration 4: 4 - testing, [1,2,3,5] - training\nIteration 5: 5 - testing, [1,2,3,4] - training."
-            },
-            "Bias = High bias means the model underfits the data—it misses important patterns. For example, a linear model trying to fit a complex, nonlinear dataset.",
-            "Variance = High variance means the model overfits—it captures noise as if it were signal. For example, a deep decision tree that perfectly fits training data but performs poorly on test data.",
-            "Cost function = Sum of square of distances. We minimize the cost function through Gradient Descent Algorithm.",
-            {
-                "type": "bold",
-                "content": "Hyperparameter tuning with Grid search"
-            },
-            "The settings defined before training that control the behaviour of a learning algorithm is known as Hyperparameter tuning. Grid Search is a brute-force technique that defines a grid of possible hyperparameter values. Trains and evaluates the model for every combination using cross-validation. Then Selects the best combination based on a scoring metric (e.g., accuracy, F1-score).",
-            {
-                "type": "bold",
-                "content": "Model Interpretability with SHAP, LIME"
-            },
-            "SHAP: Assigns each feature a value representing its contribution to the prediction, based on cooperative game theory (Shapley values)",
-            "LIME: Explains individual predictions by approximating the model locally with a simpler, interpretable model (like linear regression)",
-            {
-                "type": "bold",
-                "content": "Data Leakage"
-            },
-            "Occurs when a machine learning model accidentally uses information during training that wouldn’t be available at prediction time. This leads to unrealistically high performance during validation but poor results in real-world use",
-            {
-                "type": "bold",
-                "content": "Pipeline and Workflow Automation with MLflow, Airflow"
-            }
-        ]
+        "type": "bold",
+        "content": "Bias-Variance Tradeoff"
     },
     {
-        "type": "h2",
+        "type": "p",
+        "content": "High bias + low variance: Underfitting"
+    },
+    {
+        "type": "p",
+        "content": "Low bias + high variance: Overfitting"
+    },
+    {
+        "type": "p",
+        "content": "Fixing techniques: Cross vapdation, regularization"
+    },
+    {
+        "type": "bold",
+        "content": "Overfitting/Underfitting"
+    },
+    {
+        "type": "bold",
+        "content": "Cross-vapdation"
+    },
+    {
+        "type": "bold",
+        "content": "Feature Engineering:"
+    },
+    {
+        "type": "p",
+        "content": "The process of using domain knowledge to select, transform and create new variables/features from raw data to improve ML model performance. It involves Feature Creation, Feature Transformation, Handpng Categorical Data, Handpng Missing Data and Feature Selection."
+    },
+    {
+        "type": "bold",
+        "content": "Encoding categorical variables:"
+    },
+    {
+        "type": "p",
+        "content": "One-hot encoding: Convert categories into binary columns"
+    },
+    {
+        "type": "p",
+        "content": "Label encoding: Assign numeric labels to categories"
+    },
+    {
+        "type": "bold",
+        "content": "Confusion Matrix"
+    },
+    {
+        "type": "code",
+        "content": "     T   F - (Actual)\nP   TP  FP\nN   FN  TN\n|\n(predicted)"
+    },
+    {
+        "type": "bold",
+        "content": "Model Evaluation Metrics"
+    },
+    {
+        "type": "p",
+        "content": "Regression: MAE, MSE, RMSE, R^2"
+    },
+    {
+        "type": "p",
+        "content": "Classification:ROC-AUC, Log Loss"
+    },
+    {
+        "type": "code",
+        "content": "Accuracy = No.of correct predictions\nFormula = (TP+TN)/(TP+TN+FP+FN)\nPrecision = No.of True predictions(True as True) out of all predictions\nFormula = TP/(TP+FP)\nRecall = No.of True predictions(False as False) out of all predictions\nFormula = TP/(TP+FN) \nF1-Score = The harmonic mean of precision and recall\nFormula = 2*(precision*recall)/(precision+recall)"
+    },
+    {
+        "type": "bold",
+        "content": "K-fold cross vapdation:"
+    },
+    {
+        "type": "p",
+        "content": "It divides the entire dataset into K no.of chunks"
+    },
+    {
+        "type": "p",
+        "content": "And in each iteration one set is used for testing and rest of them are used for training. i.e.. if no.of questions = 100 and no.of chunks = 5 then each chunk contains 20 questions."
+    },
+    {
+        "type": "code",
+        "content": "Iteration 1: 1 - testing, [2,3,4,5] - training\nIteration 2: 2 - testing, [1,3,4,5] - training\nIteration 3: 3 - testing, [1,2,4,5] - training\nIteration 4: 4 - testing, [1,2,3,5] - training\nIteration 5: 5 - testing, [1,2,3,4] - training."
+    },
+    {
+        "type": "p",
+        "content": "Bias = High bias means the model underfits the data—it misses important patterns. For example, a pnear model trying to fit a complex, nonpnear dataset."
+    },
+    {
+        "type": "p",
+        "content": "Variance = High variance means the model overfits—it captures noise as if it were signal. For example, a deep decision tree that perfectly fits training data but performs poorly on test data."
+    },
+    {
+        "type": "p",
+        "content": "Cost function = Sum of square of distances. We minimize the cost function through Gradient Descent Algorithm."
+    },
+    {
+        "type": "bold",
+        "content": "Hyperparameter tuning with Grid search"
+    },
+    {
+        "type": "p",
+        "content": "The settings defined before training that control the behaviour of a learning algorithm is known as Hyperparameter tuning. Grid Search is a brute-force technique that defines a grid of possible hyperparameter values. Trains and evaluates the model for every combination using cross-vapdation. Then Selects the best combination based on a scoring metric (e.g., accuracy, F1-score)."
+    },
+    {
+        "type": "bold",
+        "content": "Model Interpretabipty with SHAP, pME"
+    },
+    {
+        "type": "p",
+        "content": "SHAP: Assigns each feature a value representing its contribution to the prediction, based on cooperative game theory (Shapley values)"
+    },
+    {
+        "type": "p",
+        "content": "pME: Explains individual predictions by approximating the model locally with a simpler, interpretable model (pke pnear regression)"
+    },
+    {
+        "type": "bold",
+        "content": "Data Leakage"
+    },
+    {
+        "type": "p",
+        "content": "Occurs when a machine learning model accidentally uses information during training that wouldn’t be available at prediction time. This leads to unreapstically high performance during vapdation but poor results in real-world use"
+    },
+    {
+        "type": "bold",
+        "content": "Pipepne and Workflow Automation with MLflow, Airflow"
+    },
+    {
+        "type": "h1",
         "content": "2. Deep Learning (DL)"
     },
     {
@@ -320,54 +480,68 @@
         "content": "Single layered Neural Network: 1 i/p layer + 1 hidden layer + 1 o/p layer"
     },
     {
-        "type": "ul",
-        "content": [
-            {
-                "type": "bold",
-                "content": "Perceptron:"
-            },
-            "Takes multiple inputs, applies weights, sums them and passes through a step activation function that outputs either 0 or 1(or -1 and 1, depending on convention). It’s a linear classifier.",
-            {
-                "type": "bold",
-                "content": "Neuron:"
-            },
-            "The modern perceptron which uses non-linear activation functions to learn complex patterns.",
-            {
-                "type": "bold",
-                "content": "Bias:"
-            },
-            "When the inputs become 0, the weighted sum becomes 0. To prevent this, we use bias which is some value added to the weighted sum and passed to the activation function.",
-            {
-                "type": "bold",
-                "content": "Loss function:"
-            },
-            "The metric to find the error between actual and predicted values. To reduce the loss, we go for a back propagation using optimizers to make sure that every weight gets updated.",
-            {
-                "type": "bold",
-                "content": "Vanishing gradient problem:"
-            },
-            "When new weight ~= old weight, it means the weights are not being updated properly. To fix this problem, we use activation functions like sigmoid(0 to 1), tanh(-1 to 1), relu(0 to x), leaky relu(-inf to inf) softmax(0 to 1) etc"
-        ]
+        "type": "bold",
+        "content": "Perceptron:"
+    },
+    {
+        "type": "p",
+        "content": "Takes multiple inputs, apppes weights, sums them and passes through a step activation function that outputs either 0 or 1(or -1 and 1, depending on convention). It’s a pnear classifier."
+    },
+    {
+        "type": "bold",
+        "content": "Neuron:"
+    },
+    {
+        "type": "p",
+        "content": "The modern perceptron which uses non-pnear activation functions to learn complex patterns."
+    },
+    {
+        "type": "bold",
+        "content": "Bias:"
+    },
+    {
+        "type": "p",
+        "content": "When the inputs become 0, the weighted sum becomes 0. To prevent this, we use bias which is some value added to the weighted sum and passed to the activation function."
+    },
+    {
+        "type": "bold",
+        "content": "Loss function:"
+    },
+    {
+        "type": "p",
+        "content": "The metric to find the error between actual and predicted values. To reduce the loss, we go for a back propagation using optimizers to make sure that every weight gets updated."
+    },
+    {
+        "type": "bold",
+        "content": "Vanishing gradient problem:"
+    },
+    {
+        "type": "p",
+        "content": "When new weight ~= old weight, it means the weights are not being updated properly. To fix this problem, we use activation functions pke sigmoid(0 to 1), tanh(-1 to 1), relu(0 to x), leaky relu(-inf to inf) softmax(0 to 1) etc"
     },
     {
         "type": "p",
         "content": "Multi Layered Neural Network: 1 i/p layer + multiple hidden layers + 1 o/p layer"
     },
     {
-        "type": "ul",
-        "content": [
-            "Fully Connected (Dense) Layers: Every neuron in one layer connects to every neuron in the next.",
-            {
-                "type": "bold",
-                "content": "Dropout as layer:"
-            },
-            "Dropout is a technique used in neural networks to prevent overfitting. During training, it randomly turns off some neurons so the model doesn’t rely too much on any one part. This helps the model learn better and perform well on new data. In practice, it's added to a model just like any other layer (e.g., Dense, Conv2D). The layer is active only during training—it’s automatically disabled during inference.",
-            {
-                "type": "bold",
-                "content": "Batch Normalization:"
-            },
-            "A technique used in training deep neural networks to make them faster and more stable by adjusting and scaling the outputs of a layer so they have a consistent distribution—usually with a mean of 0 and a standard deviation of 1—a  each mini-batch during training."
-        ]
+        "type": "p",
+        "content": "Fully Connected (Dense) Layers: Every neuron in one layer connects to every neuron in the next."
+    },
+    {
+        "type": "bold",
+        "content": "Dropout as layer:"
+    },
+    {
+        "type": "p",
+        "content": "Dropout is a technique used in neural networks to prevent overfitting. During training, it randomly turns off some neurons so the model doesn’t rely too much on any one part. This helps the model learn better and perform well on new data. In practice, it's added to a model just pke any other layer (e.g., Dense, Conv2D). The layer is active only during training—it’s automatically disabled during inference."
+    },
+    {
+        "type": "bold",
+        "content": "Batch Normapzation:"
+    },
+    {
+        "type": "p",
+        "content": "A technique used in training deep neural networks to make them faster and more stable by adjusting and scapng the outputs of a layer so they have a consistent distribution—usually with a mean of 0 and a standard deviation of 1—a  each mini-batch during training."
     },
     {
         "type": "p",
@@ -378,101 +552,167 @@
         "content": "Core Architectures of ANNs:"
     },
     {
-        "type": "ul",
-        "content": [
-            {
-                "type": "bold",
-                "content": "1. Feedforward Neural Networks (FNN):"
-            },
-            "The data flows only forward from input to output layer with no loops or memory. Typically used for classification, Regression and Basic pattern recognition.",
-            {
-                "type": "bold",
-                "content": "2. Convolutional Neural Networks (CNN): for images and spatial data"
-            },
-            "Convolutional Layers: Instead of “neurons,” they use filters/kernels, but you can think of each filter as a group of neurons working together.",
-            "Pooling layers: To reduce the spatial dimensions (width and height) of feature maps while retaining the most important information by sliding a filter (e.g., 2x2) over the input feature map and applying a specific operation (e.g., max or average) to summarize the features within the filter's region. The stride determines how far the filter moves at each step, and padding can be applied to ensure the filter covers the entire input.",
-            {
-                "type": "bold",
-                "content": "3. Recurrent Neural Networks (RNN): for text(NLP) or time series"
-            },
-            "The RNNs, in every iteration of training, at every layer, the neurons gets the output of previous stage as an input along with the actual input.",
-            "Recurrent Layers: The mechanism in RNN that has units (like LSTM cells) that function similarly to neurons but handle sequence data while maintaining memory of previous inputs.",
-            "LSTM, GRU: Both are variants of RNN designed to overcome the vanishing gradient problem. The LSTM handles long-term dependencies and on other hand GRU is a simplified version of LSTM. Best suited for sentiment analysis or text generation.",
-            "In LSTM allows the RNNs to remember for longer time periods using a state(input gate, forget gate, output gate) in each neuron.",
-            "Whereas in GRUs both the long term and the short term memories are combined together which makes it more lighter. It has an update gate and a reset gate. And it uses the sigmoid activation function to operate the gates."
-        ]
+        "type": "bold",
+        "content": "1. Feedforward Neural Networks (FNN):"
+    },
+    {
+        "type": "p",
+        "content": "The data flows only forward from input to output layer with no loops or memory. Typically used for classification, Regression and Basic pattern recognition."
+    },
+    {
+        "type": "bold",
+        "content": "2. Convolutional Neural Networks (CNN): for images and spatial data"
+    },
+    {
+        "type": "p",
+        "content": "Convolutional Layers: Instead of “neurons,” they use filters/kernels, but you can think of each filter as a group of neurons working together."
+    },
+    {
+        "type": "p",
+        "content": "Poopng layers: To reduce the spatial dimensions (width and height) of feature maps while retaining the most important information by spding a filter (e.g., 2x2) over the input feature map and applying a specific operation (e.g., max or average) to summarize the features within the filter's region. The stride determines how far the filter moves at each step, and padding can be appped to ensure the filter covers the entire input."
+    },
+    {
+        "type": "bold",
+        "content": "3. Recurrent Neural Networks (RNN): for text(NLP) or time series"
+    },
+    {
+        "type": "p",
+        "content": "The RNNs, in every iteration of training, at every layer, the neurons gets the output of previous stage as an input along with the actual input."
+    },
+    {
+        "type": "p",
+        "content": "Recurrent Layers: The mechanism in RNN that has units (pke LSTM cells) that function similarly to neurons but handle sequence data while maintaining memory of previous inputs."
+    },
+    {
+        "type": "p",
+        "content": "LSTM, GRU: Both are variants of RNN designed to overcome the vanishing gradient problem. The LSTM handles long-term dependencies and on other hand GRU is a simppfied version of LSTM. Best suited for sentiment analysis or text generation."
+    },
+    {
+        "type": "p",
+        "content": "In LSTM allows the RNNs to remember for longer time periods using a state(input gate, forget gate, output gate) in each neuron."
+    },
+    {
+        "type": "p",
+        "content": "Whereas in GRUs both the long term and the short term memories are combined together which makes it more pghter. It has an update gate and a reset gate. And it uses the sigmoid activation function to operate the gates."
     },
     {
         "type": "h3",
         "content": "Advanced Mechanisms:"
     },
     {
-        "type": "ul",
-        "content": [
-            {
-                "type": "bold",
-                "content": "1. Attention Mechanism:"
-            },
-            "DL technique allows models to focus on relevant parts of input sequences by making use of context. Used for sequence-to-sequence tasks, NLP. Often used in transformers. Used in neural networks—especially in sequence-to-sequence models like machine translation—to dynamically weigh the importance of different input elements. Instead of treating all words equally, attention lets the model decide which words are most relevant at each step of processing.",
-            {
-                "type": "p",
-                "content": "Key components:"
-            },
-            "Query(Q): What we are looking for",
-            "Key(K): What each input word offers",
-            "Value(V): The actual content of each word",
-            {
-                "type": "p",
-                "content": "Types:"
-            },
-            "Soft: Assigns continuous weights to all inputs.",
-            "Hard: Makes discrete choices – focuses on specific parts.",
-            "Self-Attention: Compares each word in a sequence with every other word. Used in transformers.",
-            "Multi-Head: is a core component of the Transformer architecture, introduced in Attention Is All You Need (Vaswani et al., 2017). It enhances the model’s ability to focus on different parts of an input sequence in parallel, capturing diverse contextual relationships crucial for NLP, vision, and speech tasks.",
-            {
-                "type": "bold",
-                "content": "2. Transformers:"
-            },
-            "Built entirely on attention mechanism (no recurrence). It is a DL architecture that was designed specifically for NLP tasks. Used in NLP, LLMs to understand the language. Eg: BERT(Bidirectional Encoder Representations from Transformers) uses encoder stack, GPT uses decoder stack. These can be able to process the sequences parallelly.",
-            "Architecture: Encoder -> Positional Encoding (enabling the model to capture the relationships and order of tokens effectively) -> Decoder.",
-            "Encoder has multiple blocks of encoders where each encoder has a feed forward NN and a self-attention layer. And the decoder contains multiple decoding blocks where each has feed forward NN, Encoder-Decoder attention layer and a self-attention layer.",
-            "Encoder – for understanding the entire input",
-            "Decoder – for generating from partial context",
-            "Encoder-Decoder – to transform from one sequence to another of possibly different length.",
-            "The shift from RNN with “Attention is All You Need” paper.",
-            {
-                "type": "bold",
-                "content": "Transfer Learning:"
-            },
-            "Reusing a pre-trained model on a new, related task by fine-tuning models for specific task/domains."
-        ]
+        "type": "bold",
+        "content": "1. Attention Mechanism:"
+    },
+    {
+        "type": "p",
+        "content": "DL technique allows models to focus on relevant parts of input sequences by making use of context. Used for sequence-to-sequence tasks, NLP. Often used in transformers. Used in neural networks—especially in sequence-to-sequence models pke machine translation—to dynamically weigh the importance of different input elements. Instead of treating all words equally, attention lets the model decide which words are most relevant at each step of processing."
+    },
+    {
+        "type": "p",
+        "content": "Key components:"
+    },
+    {
+        "type": "p",
+        "content": "Query(Q): What we are looking for"
+    },
+    {
+        "type": "p",
+        "content": "Key(K): What each input word offers"
+    },
+    {
+        "type": "p",
+        "content": "Value(V): The actual content of each word"
+    },
+    {
+        "type": "p",
+        "content": "Types:"
+    },
+    {
+        "type": "p",
+        "content": "Soft: Assigns continuous weights to all inputs."
+    },
+    {
+        "type": "p",
+        "content": "Hard: Makes discrete choices – focuses on specific parts."
+    },
+    {
+        "type": "p",
+        "content": "Self-Attention: Compares each word in a sequence with every other word. Used in transformers."
+    },
+    {
+        "type": "p",
+        "content": "Multi-Head: is a core component of the Transformer architecture, introduced in Attention Is All You Need (Vaswani et al., 2017). It enhances the model’s abipty to focus on different parts of an input sequence in parallel, capturing diverse contextual relationships crucial for NLP, vision, and speech tasks."
+    },
+    {
+        "type": "bold",
+        "content": "2. Transformers:"
+    },
+    {
+        "type": "p",
+        "content": "Built entirely on attention mechanism (no recurrence). It is a DL architecture that was designed specifically for NLP tasks. Used in NLP, LLMs to understand the language. Eg: BERT(Bidirectional Encoder Representations from Transformers) uses encoder stack, GPT uses decoder stack. These can be able to process the sequences parallelly."
+    },
+    {
+        "type": "p",
+        "content": "Architecture: Encoder -> Positional Encoding (enabpng the model to capture the relationships and order of tokens effectively) -> Decoder."
+    },
+    {
+        "type": "p",
+        "content": "Encoder has multiple blocks of encoders where each encoder has a feed forward NN and a self-attention layer. And the decoder contains multiple decoding blocks where each has feed forward NN, Encoder-Decoder attention layer and a self-attention layer."
+    },
+    {
+        "type": "p",
+        "content": "Encoder – for understanding the entire input"
+    },
+    {
+        "type": "p",
+        "content": "Decoder – for generating from partial context"
+    },
+    {
+        "type": "p",
+        "content": "Encoder-Decoder – to transform from one sequence to another of possibly different length."
+    },
+    {
+        "type": "p",
+        "content": "The shift from RNN with “Attention is All You Need” paper."
+    },
+    {
+        "type": "bold",
+        "content": "Transfer Learning:"
+    },
+    {
+        "type": "p",
+        "content": "Reusing a pre-trained model on a new, related task by fine-tuning models for specific task/domains."
     },
     {
         "type": "h3",
-        "content": "Specialized Architectures:"
+        "content": "Speciapzed Architectures:"
     },
     {
-        "type": "ul",
-        "content": [
-            {
-                "type": "bold",
-                "content": "1. Autoencoders:"
-            },
-            "Used to reduce the dimensionality and improve the feature learning. The encoder compresses input, decoder reconstructs it.",
-            {
-                "type": "bold",
-                "content": "2. Generative Adversarial Networks (GANs):"
-            },
-            "DL model used in CV. The 2 networks Generator and Discriminator competes. It is an unsupervised learning through adversarial training. The generator generates fake data while the discrimator tries to distinguish real from fake data. Excel in unsupervised learning.",
-            {
-                "type": "bold",
-                "content": "3. Sequence-to-Sequence Models:"
-            },
-            "A DL neural network architecture designed to transform one sequence into another, such as translating text or summarizing content. It consists of an encoder that processes the input sequence and a decoder that generates the output sequence."
-        ]
+        "type": "bold",
+        "content": "1. Autoencoders:"
     },
     {
-        "type": "h2",
+        "type": "p",
+        "content": "Used to reduce the dimensionapty and improve the feature learning. The encoder compresses input, decoder reconstructs it."
+    },
+    {
+        "type": "bold",
+        "content": "2. Generative Adversarial Networks (GANs):"
+    },
+    {
+        "type": "p",
+        "content": "DL model used in CV. The 2 networks Generator and Discriminator competes. It is an unsupervised learning through adversarial training. The generator generates fake data while the discrimator tries to distinguish real from fake data. Excel in unsupervised learning."
+    },
+    {
+        "type": "bold",
+        "content": "3. Sequence-to-Sequence Models:"
+    },
+    {
+        "type": "p",
+        "content": "A DL neural network architecture designed to transform one sequence into another, such as translating text or summarizing content. It consists of an encoder that processes the input sequence and a decoder that generates the output sequence."
+    },
+    {
+        "type": "h1",
         "content": "3. Natural Language Processing (NLP)"
     },
     {
@@ -484,44 +724,51 @@
         "content": "Techniques:"
     },
     {
-        "type": "ul",
-        "content": [
-            {
-                "type": "bold",
-                "content": "1. Bag of Words:"
-            },
-            "is a simple NLP technique that represents text as a set of individual words, ignoring grammar and word order but keeping word frequency. Each document becomes a vector of word counts.",
-            {
-                "type": "bold",
-                "content": "2. Tokenization"
-            },
-            {
-                "type": "bold",
-                "content": "3. TF-IDF:"
-            },
-            "It’s a statistical measure used in NLP to evaluate how important a word is to a document in a collection.",
-            {
-                "type": "bold",
-                "content": "4. Word Embeddings:"
-            },
-            "Numerical representations of words in a continuous vector space, where similar words have similar meanings and are placed close together. Eg:Word2Vec, GloVe, FastText",
-            {
-                "type": "bold",
-                "content": "5. Transformers"
-            },
-            {
-                "type": "bold",
-                "content": "6. Sequence-to-Sequence Models"
-            },
-            {
-                "type": "bold",
-                "content": "7. N-Grams"
-            },
-            "The transition from traditional NLP to DL"
-        ]
+        "type": "bold",
+        "content": "1. Bag of Words:"
     },
     {
-        "type": "h2",
+        "type": "p",
+        "content": "is a simple NLP technique that represents text as a set of individual words, ignoring grammar and word order but keeping word frequency. Each document becomes a vector of word counts."
+    },
+    {
+        "type": "bold",
+        "content": "2. Tokenization"
+    },
+    {
+        "type": "bold",
+        "content": "3. TF-IDF:"
+    },
+    {
+        "type": "p",
+        "content": "It’s a statistical measure used in NLP to evaluate how important a word is to a document in a collection."
+    },
+    {
+        "type": "bold",
+        "content": "4. Word Embeddings:"
+    },
+    {
+        "type": "p",
+        "content": "Numerical representations of words in a continuous vector space, where similar words have similar meanings and are placed close together. Eg:Word2Vec, GloVe, FastText"
+    },
+    {
+        "type": "bold",
+        "content": "5. Transformers"
+    },
+    {
+        "type": "bold",
+        "content": "6. Sequence-to-Sequence Models"
+    },
+    {
+        "type": "bold",
+        "content": "7. N-Grams"
+    },
+    {
+        "type": "p",
+        "content": "The transition from traditional NLP to DL"
+    },
+    {
+        "type": "h1",
         "content": "4. Large Language Models (LLMs)"
     },
     {
@@ -541,38 +788,51 @@
         "content": "Concepts:"
     },
     {
-        "type": "ul",
-        "content": [
-            {
-                "type": "bold",
-                "content": "Pretraining"
-            },
-            {
-                "type": "bold",
-                "content": "Fine-tuning:"
-            },
-            "RLHF (Reinforcement Learning from Human Feedback)",
-            {
-                "type": "bold",
-                "content": "Retrieval-Augmented Generation (RAG):"
-            },
-            "Retrieve data from external sources such as db, web, docs and then pass the user query along with retrieved data to LLM which lets the LLM to generate the context. So that instead of hallucinations, the model will answer with supporting data.",
-            {
-                "type": "p",
-                "content": "Types:"
-            },
-            "Dense retrieval (Semantic Matching): Captures semantic meaning and context.",
-            "Sparse retrieval (Lexical Matching): Relies on traditional term-frequency methods like BM25 or newer sparse vector models. Excellent for exact keyword matches, acronyms, and technical terms.",
-            "Embedding search (FAISS): A powerful technique used to find semantically similar items—like documents, images, or queries—based on their vector representations. Embedding search involves converting data (text, images, etc.) into vector embeddings using models like BERT, OpenAI embeddings. These embeddings capture semantic meaning—so similar items have similar vectors. FAISS helps search through these embeddings to find the most relevant matches. And FAISS works on the FAISS index and retrieves top-k most similar items based on vector distance.",
-            "RAG architecture: Index(offline) -> Retrieve(online) -> Generation",
-            {
-                "type": "bold",
-                "content": "LangChain & LangGraph"
-            }
-        ]
+        "type": "bold",
+        "content": "Pretraining"
     },
     {
-        "type": "h2",
+        "type": "bold",
+        "content": "Fine-tuning:"
+    },
+    {
+        "type": "p",
+        "content": "RLHF (Reinforcement Learning from Human Feedback)"
+    },
+    {
+        "type": "bold",
+        "content": "Retrieval-Augmented Generation (RAG):"
+    },
+    {
+        "type": "p",
+        "content": "Retrieve data from external sources such as db, web, docs and then pass the user query along with retrieved data to LLM which lets the LLM to generate the context. So that instead of hallucinations, the model will answer with supporting data."
+    },
+    {
+        "type": "p",
+        "content": "Types:"
+    },
+    {
+        "type": "p",
+        "content": "Dense retrieval (Semantic Matching): Captures semantic meaning and context."
+    },
+    {
+        "type": "p",
+        "content": "Sparse retrieval (Lexical Matching): Repes on traditional term-frequency methods pke BM25 or newer sparse vector models. Excellent for exact keyword matches, acronyms, and technical terms."
+    },
+    {
+        "type": "p",
+        "content": "Embedding search (FAISS): A powerful technique used to find semantically similar items—pke documents, images, or queries—based on their vector representations. Embedding search involves converting data (text, images, etc.) into vector embeddings using models pke BERT, OpenAI embeddings. These embeddings capture semantic meaning—so similar items have similar vectors. FAISS helps search through these embeddings to find the most relevant matches. And FAISS works on the FAISS index and retrieves top-k most similar items based on vector distance."
+    },
+    {
+        "type": "p",
+        "content": "RAG architecture: Index(offpne) -> Retrieve(onpne) -> Generation"
+    },
+    {
+        "type": "bold",
+        "content": "LangChain & LangGraph"
+    },
+    {
+        "type": "h1",
         "content": "5. Generative AI (GenAI)"
     },
     {
@@ -584,94 +844,115 @@
         "content": "Types of architectural approaches used to create models capable of generating new context:"
     },
     {
-        "type": "ul",
-        "content": [
-            {
-                "type": "bold",
-                "content": "1. Autoregressive:"
-            },
-            "These work sequentially, predicting the next element in the sequence based on all the elements that have come before it and their corresponding probabilities. Every newly predicted element is fed back in as context for the next prediction.",
-            {
-                "type": "bold",
-                "content": "2. Autoencoding models:"
-            },
-            "The standard autoencoders are mostly used for data compression and noise reduction, their direct application in GenAI comes through a specialized variant named Variational Auto Encoder(VAEs) which are probabilistic models designed to generate entirely new data samples which are not included in the training samples."
-        ]
+        "type": "bold",
+        "content": "1. Autoregressive:"
+    },
+    {
+        "type": "p",
+        "content": "These work sequentially, predicting the next element in the sequence based on all the elements that have come before it and their corresponding probabipties. Every newly predicted element is fed back in as context for the next prediction."
+    },
+    {
+        "type": "bold",
+        "content": "2. Autoencoding models:"
+    },
+    {
+        "type": "p",
+        "content": "The standard autoencoders are mostly used for data compression and noise reduction, their direct apppcation in GenAI comes through a speciapzed variant named Variational Auto Encoder(VAEs) which are probabipstic models designed to generate entirely new data samples which are not included in the training samples."
     },
     {
         "type": "h3",
         "content": "Models:"
     },
     {
-        "type": "ul",
-        "content": [
-            {
-                "type": "bold",
-                "content": "GANs"
-            },
-            {
-                "type": "bold",
-                "content": "Diffusion Models:"
-            },
-            "The state of art models works on 2 stages, a forward diffusion stage and a reverse diffusion stage. First, they slightly change the input by adding some gaussian noise, and then they try to undo the changes to get back the original data. This process of making the step-by-step changes and undoing them helps generate realistic images."
-        ]
+        "type": "bold",
+        "content": "GANs"
     },
     {
-        "type": "h2",
+        "type": "bold",
+        "content": "Diffusion Models:"
+    },
+    {
+        "type": "p",
+        "content": "The state of art models works on 2 stages, a forward diffusion stage and a reverse diffusion stage. First, they spghtly change the input by adding some gaussian noise, and then they try to undo the changes to get back the original data. This process of making the step-by-step changes and undoing them helps generate reapstic images."
+    },
+    {
+        "type": "h1",
         "content": "6. AI Agents VS Agentic AI"
     },
     {
         "type": "p",
-        "content": "AI agents are typically designed for narrow, well-defined tasks. They operate within clear boundaries, often with limited flexibility. Think of them as specialized tools: a recommendation engine, a chatbot for customer support, or a navigation system. They’re reactive, task-specific, and usually stateless. The LLMs acts as the brain of the agent."
+        "content": "AI agents are typically designed for narrow, well-defined tasks. They operate within clear boundaries, often with pmited flexibipty. Think of them as speciapzed tools: a recommendation engine, a chatbot for customer support, or a navigation system. They’re reactive, task-specific, and usually stateless. The LLMs acts as the brain of the agent."
     },
     {
         "type": "p",
-        "content": "On the other hand, agentic AI is more like a design philosophy or architectural pattern for building systems that behave more like autonomous collaborators than tools with much higher level of autonomy and complexity."
+        "content": "On the other hand, agentic AI is more pke a design philosophy or architectural pattern for building systems that behave more pke autonomous collaborators than tools with much higher level of autonomy and complexity."
     },
     {
         "type": "p",
-        "content": "Eg: AI agents are like employees following instructions, agentic AI is like a project manager who understands the goal, delegates tasks, uses tools, and adapts as needed — sometimes even suggesting better ways to achieve the outcome."
+        "content": "Eg: AI agents are pke employees following instructions, agentic AI is pke a project manager who understands the goal, delegates tasks, uses tools, and adapts as needed — sometimes even suggesting better ways to achieve the outcome."
     },
     {
         "type": "h3",
         "content": "Agentic AI concepts:"
     },
     {
-        "type": "ul",
-        "content": [
-            {
-                "type": "bold",
-                "content": "Agency:"
-            },
-            "Autonomy, Perception and Action",
-            {
-                "type": "bold",
-                "content": "Agent-Environment Loop:"
-            },
-            "Observe -> Decide -> Act -> Repeat",
-            {
-                "type": "bold",
-                "content": "Core Architecture:"
-            },
-            "Perception/Context Assembly(Input/RAG)",
-            "Reasoning/Planning (LLM as the brain, Chain Of Thoughts)",
-            "Memory Systems (Short term/Episodic, Long term/Semantic)",
-            "Tool Executor/Actuator (Function Calling, APIs)",
-            {
-                "type": "bold",
-                "content": "Agent Types:"
-            },
-            "Simple Reflex, Model based reflex, Goal based, Utility based, Learning based, Multi agent systems",
-            {
-                "type": "bold",
-                "content": "LLM integration:"
-            },
-            "Prompt engineering (System vs user), Chain of thoughts, RAG, Function calling/tool use.",
-            {
-                "type": "bold",
-                "content": "Evaluation & Ethics:"
-            },
-            "Evals (Task completion rate, accuracy, cost, latency), Observability (Tracing, Spans), Failure Modes (Ambiguous goals, brittle prompts, tool hallucination), Guardrails, Human in the Loop"
-        ]
+        "type": "bold",
+        "content": "Agency:"
+    },
+    {
+        "type": "p",
+        "content": "Autonomy, Perception and Action"
+    },
+    {
+        "type": "bold",
+        "content": "Agent-Environment Loop:"
+    },
+    {
+        "type": "p",
+        "content": "Observe -> Decide -> Act -> Repeat"
+    },
+    {
+        "type": "bold",
+        "content": "Core Architecture:"
+    },
+    {
+        "type": "p",
+        "content": "Perception/Context Assembly(Input/RAG)"
+    },
+    {
+        "type": "p",
+        "content": "Reasoning/Planning (LLM as the brain, Chain Of Thoughts)"
+    },
+    {
+        "type": "p",
+        "content": "Memory Systems (Short term/Episodic, Long term/Semantic)"
+    },
+    {
+        "type": "p",
+        "content": "Tool Executor/Actuator (Function Calpng, APIs)"
+    },
+    {
+        "type": "bold",
+        "content": "Agent Types:"
+    },
+    {
+        "type": "p",
+        "content": "Simple Reflex, Model based reflex, Goal based, Utipty based, Learning based, Multi agent systems"
+    },
+    {
+        "type": "bold",
+        "content": "LLM integration:"
+    },
+    {
+        "type": "p",
+        "content": "Prompt engineering (System vs user), Chain of thoughts, RAG, Function calpng/tool use."
+    },
+    {
+        "type": "bold",
+        "content": "Evaluation & Ethics:"
+    },
+    {
+        "type": "p",
+        "content": "Evals (Task completion rate, accuracy, cost, latency), Observabipty (Tracing, Spans), Failure Modes (Ambiguous goals, brittle prompts, tool hallucination), Guardrails, Human in the Loop"
     }
 ]

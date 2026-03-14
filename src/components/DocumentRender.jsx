@@ -85,21 +85,15 @@ const DocumentRender = ({ documentName }) => {
         );
       case 'h3':
         return (
-          <h3 key={index} className="mb-3 mt-6 text-xl font-semibold text-secondary max-[426px]:text-lg">
+          <h3 key={index} className="mb-3 mt-6 text-xl font-semibold text-brown max-[426px]:text-lg">
             {item.content}
           </h3>
         );
       case 'h4':
         return (
-          <h4 key={index} className="mb-2 mt-4 text-lg font-semibold text-gray">
+          <h4 key={index} className="mb-2 mt-4 text-lg text-gray">
             {item.content}
           </h4>
-        );
-      case 'h5':
-        return (
-          <h5 key={index} className="mb-2 mt-3 text-base font-semibold text-brown">
-            {item.content}
-          </h5>
         );
       case 'p':
         return (
@@ -110,24 +104,6 @@ const DocumentRender = ({ documentName }) => {
       case 'bold':
         return (
           <p key={index} className="mb-1 font-bold text-black">{item.content}</p>
-        );
-      case 'ul':
-        return (
-          <ul key={index} className="mb-6 ml-6 list-disc space-y-2 text-gray">
-            {item.content.map((li, i) => (
-              <li key={i}>
-                {typeof li === 'string' ? (
-                  li
-                ) : li.type === 'code' ? (
-                  <CodeBlock code={li.content} />
-                ) : li.type === 'bold' ? (
-                  <span className="font-bold text-black">{li.content}</span>
-                ) : (
-                  renderItem(li, i)
-                )}
-              </li>
-            ))}
-          </ul>
         );
       case 'code':
         return <CodeBlock key={index} code={item.content} />;
@@ -189,7 +165,7 @@ const DocumentRender = ({ documentName }) => {
                     onClick={() => setIsDropdownOpen(false)}
                   ></div>
                   <div className="absolute right-0 mt-2 w-40 flex flex-col overflow-hidden rounded-xl bg-white shadow-xl z-50 border border-lightGray">
-                    {['ai', 'java', 'git', 'react', 'rn'].map((doc) => (
+                    {Object.keys(dataMap).map((doc) => (
                       <button
                         key={doc}
                         onClick={() => {

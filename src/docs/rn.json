@@ -4,22 +4,32 @@
         "content": "REACTNATIVE WITH EXPO"
     },
     {
-        "type": "ul",
-        "content": [
-            "Install Node.js",
-            "Create new expo Project",
-            {
-                "type": "code",
-                "content": "npx create-expo-app@latest MyExpoAppName"
-            },
-            "Install Expo Go on mobile",
-            "Start the Expo Development server",
-            {
-                "type": "code",
-                "content": "npm start"
-            },
-            "Scan the QR code to run the app using Expo go installed on mobile."
-        ]
+        "type": "p",
+        "content": "Install Node.js"
+    },
+    {
+        "type": "p",
+        "content": "Create new expo Project"
+    },
+    {
+        "type": "code",
+        "content": "npx create-expo-app@latest MyExpoAppName"
+    },
+    {
+        "type": "p",
+        "content": "Install Expo Go on mobile"
+    },
+    {
+        "type": "p",
+        "content": "Start the Expo Development server"
+    },
+    {
+        "type": "code",
+        "content": "npm start"
+    },
+    {
+        "type": "p",
+        "content": "Scan the QR code to run the app using Expo go installed on mobile."
     },
     {
         "type": "h2",
@@ -30,11 +40,12 @@
         "content": "Set env var User Varables on PC:"
     },
     {
-        "type": "ul",
-        "content": [
-            "1. new=> ANDROID_HOME:C:/Users/user-name/AppData/Local/Android/Sdk",
-            "2. Path=> Edit=> New then add C:\\Users\\user-name\\AppData\\Local\\Android\\Sdk\\platform-tools"
-        ]
+        "type": "p",
+        "content": "1. new=> ANDROID_HOME:C:/Users/user-name/AppData/Local/Android/Sdk"
+    },
+    {
+        "type": "p",
+        "content": "2. Path=> Edit=> New then add C:\\Users\\user-name\\AppData\\Local\\Android\\Sdk\\platform-tools"
     },
     {
         "type": "p",
@@ -90,7 +101,7 @@
     },
     {
         "type": "code",
-        "content": "cd C:\\Program Files\\Java\\jdkx.x.x_x\\bin\nkeytool -genkeypair -v -storetype PKCS12 -keystore file_name.keystore -alias file_name_alias -keyalg RSA -keysize 2048 -validity 10000"
+        "content": "cd C:\\Program Files\\Java\\jdkx.x.x_x\\bin\nkeytool -genkeypair -v -storetype PKCS12 -keystore file_name.keystore -apas file_name_apas -keyalg RSA -keysize 2048 -vapdity 10000"
     },
     {
         "type": "p",
@@ -98,35 +109,34 @@
     },
     {
         "type": "p",
-        "content": "Edit the file ~/.gradle/gradle.properties or android/gradle.properties, and add the following (replace ***** with the correct keystore password, alias and key password)"
+        "content": "Edit the file ~/.gradle/gradle.properties or android/gradle.properties, and add the following (replace ***** with the correct keystore password, apas and key password)"
     },
     {
         "type": "code",
-        "content": "MYAPP_UPLOAD_STORE_FILE=file_name.keystore\nMYAPP_UPLOAD_KEY_ALIAS=file_name_alias\nMYAPP_UPLOAD_STORE_PASSWORD=*****\nMYAPP_UPLOAD_KEY_PASSWORD=*****"
+        "content": "MYAPP_UPLOAD_STORE_FILE=file_name.keystore\nMYAPP_UPLOAD_KEY_ApAS=file_name_apas\nMYAPP_UPLOAD_STORE_PASSWORD=*****\nMYAPP_UPLOAD_KEY_PASSWORD=*****"
     },
     {
-        "type": "ul",
-        "content": [
-            "To generate android folder / Development build",
-            {
-                "type": "code",
-                "content": "npx expo prebuild"
-            },
-            "Clean up the build",
-            {
-                "type": "code",
-                "content": ".cd android\n./gradlew clean"
-            },
-            "Generate the final APK",
-            {
-                "type": "code",
-                "content": "/gradlew assembleRelease"
-            },
-            "for signingReport:",
-            {
-                "type": "code",
-                "content": "cd android\n./gradlew signingReport"
-            }
-        ]
+        "type": "p",
+        "content": "Clean up the build"
+    },
+    {
+        "type": "code",
+        "content": ".cd android\n./gradlew clean"
+    },
+    {
+        "type": "p",
+        "content": "Generate the final APK"
+    },
+    {
+        "type": "code",
+        "content": "/gradlew assembleRelease"
+    },
+    {
+        "type": "p",
+        "content": "To get signingReport:"
+    },
+    {
+        "type": "code",
+        "content": "cd android\n./gradlew signingReport"
     }
 ]

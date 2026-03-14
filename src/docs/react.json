@@ -4,57 +4,52 @@
         "content": "REACT (VITE) ON GITHUB"
     },
     {
-        "type": "ul",
-        "content": [
-            {
-                "type": "p",
-                "content": "Initialize Git and Push Code"
-            },
-            {
-                "type": "code",
-                "content": "git init\ngit branch -M main\ngit add .\ngit commit -m \"first commit\"\ngit remote add origin https://github.com/username/repo_name.git\ngit push -u origin main"
-            },
-            {
-                "type": "p",
-                "content": "Install gh-pages"
-            },
-            {
-                "type": "code",
-                "content": "npm install gh-pages --save-dev"
-            },
-            {
-                "type": "p",
-                "content": "Configure vite.config.js"
-            },
-            {
-                "type": "code",
-                "content": "export default defineConfig(({ command }) => ({\n  plugins: [react()],\n  base: command === 'build' ? '/marketplace/' : '/',\n}))"
-            },
-            {
-                "type": "p",
-                "content": "Update package.json"
-            },
-            {
-                "type": "code",
-                "content": "\"predeploy\": \"npm run build\",\n\"deploy\": \"gh-pages -d dist\""
-            },
-            {
-                "type": "p",
-                "content": "Configure BrowserRouter/Router"
-            },
-            {
-                "type": "code",
-                "content": "<Router basename=\"/repo_name\">"
-            },
-            {
-                "type": "p",
-                "content": "Deploy"
-            },
-            {
-                "type": "code",
-                "content": "npm run deploy"
-            }
-        ]
+        "type": "p",
+        "content": "Initiapze Git and Push Code"
+    },
+    {
+        "type": "code",
+        "content": "git init\ngit branch -M main\ngit add .\ngit commit -m \"first commit\"\ngit remote add origin https://github.com/username/repo_name.git\ngit push -u origin main"
+    },
+    {
+        "type": "p",
+        "content": "Install gh-pages"
+    },
+    {
+        "type": "code",
+        "content": "npm install gh-pages --save-dev"
+    },
+    {
+        "type": "p",
+        "content": "Configure vite.config.js"
+    },
+    {
+        "type": "code",
+        "content": "export default defineConfig(({ command }) => ({\n  plugins: [react()],\n  base: command === 'build' ? '/marketplace/' : '/',\n}))"
+    },
+    {
+        "type": "p",
+        "content": "Update package.json"
+    },
+    {
+        "type": "code",
+        "content": "\"predeploy\": \"npm run build\",\n\"deploy\": \"gh-pages -d dist\""
+    },
+    {
+        "type": "p",
+        "content": "Configure BrowserRouter/Router"
+    },
+    {
+        "type": "code",
+        "content": "<Router basename=\"/repo_name\">"
+    },
+    {
+        "type": "p",
+        "content": "Deploy"
+    },
+    {
+        "type": "code",
+        "content": "npm run deploy"
     },
     {
         "type": "h1",

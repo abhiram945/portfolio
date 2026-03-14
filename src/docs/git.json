@@ -9,7 +9,7 @@
     },
     {
         "type": "code",
-        "content": "git config --list #To log all the git details"
+        "content": "git config --pst #To log all the git details"
     },
     {
         "type": "code",
@@ -28,169 +28,159 @@
         "content": "ADDITIONAL GIT COMMANDS"
     },
     {
-        "type": "ul",
-        "content": [
-            {
-                "type": "p",
-                "content": "to get the repo files into the local folder"
-            },
-            {
-                "type": "code",
-                "content": "$git pull origin main"
-            },
-            {
-                "type": "p",
-                "content": "to download a repo into system"
-            },
-            {
-                "type": "code",
-                "content": "$git clone https://github.com/username/repo_name.git"
-            },
-            {
-                "type": "p",
-                "content": "to create new branch"
-            },
-            {
-                "type": "code",
-                "content": "$git branch new_branch_name"
-            },
-            {
-                "type": "p",
-                "content": "git applies to the new branch now onwards"
-            },
-            {
-                "type": "code",
-                "content": "$git checkout new_branch_name"
-            },
-            {
-                "type": "p",
-                "content": "to display all the commit information"
-            },
-            {
-                "type": "code",
-                "content": "$git log"
-            },
-            {
-                "type": "p",
-                "content": "to go to a particular commit by eliminating commits after the commit"
-            },
-            {
-                "type": "code",
-                "content": "$git reset commit_id"
-            },
-            {
-                "type": "p",
-                "content": "to reset to the very first commit"
-            },
-            {
-                "type": "code",
-                "content": "$git reset --hard initial_commit_id"
-            },
-            {
-                "type": "p",
-                "content": "to reset to the very first commit"
-            },
-            {
-                "type": "code",
-                "content": "$git reset --hard –root"
-            },
-            {
-                "type": "p",
-                "content": "to display the contents of the file"
-            },
-            {
-                "type": "code",
-                "content": "$cat file_name.format"
-            },
-            {
-                "type": "p",
-                "content": "to go back to previous version before committing"
-            },
-            {
-                "type": "code",
-                "content": "$git restore --staged file_name.format"
-            }
-        ]
+        "type": "p",
+        "content": "To get the repo files into the local folder"
+    },
+    {
+        "type": "code",
+        "content": "$git pull origin main"
+    },
+    {
+        "type": "p",
+        "content": "To download a repo into system"
+    },
+    {
+        "type": "code",
+        "content": "$git clone https://github.com/username/repo_name.git"
+    },
+    {
+        "type": "p",
+        "content": "To create new branch"
+    },
+    {
+        "type": "code",
+        "content": "$git branch new_branch_name"
+    },
+    {
+        "type": "p",
+        "content": "To make the git appends to the new branch now onwards"
+    },
+    {
+        "type": "code",
+        "content": "$git checkout new_branch_name"
+    },
+    {
+        "type": "p",
+        "content": "To display all the commit information"
+    },
+    {
+        "type": "code",
+        "content": "$git log"
+    },
+    {
+        "type": "p",
+        "content": "To go to a particular commit by epminating commits after the commit"
+    },
+    {
+        "type": "code",
+        "content": "$git reset commit_id"
+    },
+    {
+        "type": "p",
+        "content": "To reset to the very first commit"
+    },
+    {
+        "type": "code",
+        "content": "$git reset --hard initial_commit_id"
+    },
+    {
+        "type": "p",
+        "content": "To reset to the very first commit"
+    },
+    {
+        "type": "code",
+        "content": "$git reset --hard –root"
+    },
+    {
+        "type": "p",
+        "content": "To display the contents of the file"
+    },
+    {
+        "type": "code",
+        "content": "$cat file_name.format"
+    },
+    {
+        "type": "p",
+        "content": "To go back to previous version before committing"
+    },
+    {
+        "type": "code",
+        "content": "$git restore --staged file_name.format"
     },
     {
         "type": "h1",
         "content": "REMOVE FILES FROM FOLDER & GIT REPO (UNDEPLOY)"
     },
     {
-        "type": "ul",
-        "content": [
-            {
-                "type": "p",
-                "content": "Delete a specific file using Git Bash or Unix-based terminals"
-            },
-            {
-                "type": "code",
-                "content": "rm -rf file_name.format"
-            },
-            {
-                "type": "p",
-                "content": "Delete all files and folders in the current directory using Git Bash"
-            },
-            {
-                "type": "code",
-                "content": "git rm -r *\ngit commit -m \"Delete all files\"\ngit push origin main"
-            },
-            {
-                "type": "p",
-                "content": "Remove the GitHub or remote repository connection"
-            },
-            {
-                "type": "code",
-                "content": "git remote remove origin"
-            },
-            {
-                "type": "p",
-                "content": "Verify if the remote repository was successfully removed"
-            },
-            {
-                "type": "code",
-                "content": "git remote -v"
-            },
-            {
-                "type": "p",
-                "content": "Remove the .git folder using Git Bash"
-            },
-            {
-                "type": "code",
-                "content": "rm -rf .git"
-            },
-            {
-                "type": "p",
-                "content": "Remove the .git folder using CMD"
-            },
-            {
-                "type": "code",
-                "content": "rmdir /s /q .git"
-            },
-            {
-                "type": "p",
-                "content": "Remove a folder using CMD (navigate up one level and delete the folder)"
-            },
-            {
-                "type": "code",
-                "content": "cd ..\nrmdir /s /q <folder_name>"
-            },
-            {
-                "type": "p",
-                "content": "Remove the .git using PowerShell"
-            },
-            {
-                "type": "code",
-                "content": "Remove-Item -Recurse -Force .git"
-            },
-            {
-                "type": "p",
-                "content": "Remove everything from a folder using PowerShell"
-            },
-            {
-                "type": "code",
-                "content": "Remove-Item -Recurse -Force *"
-            }
-        ]
+        "type": "p",
+        "content": "Delete a specific file using Git Bash or Unix-based terminals"
+    },
+    {
+        "type": "code",
+        "content": "rm -rf file_name.format"
+    },
+    {
+        "type": "p",
+        "content": "Delete all files and folders in the current directory using Git Bash"
+    },
+    {
+        "type": "code",
+        "content": "git rm -r *\ngit commit -m \"Delete all files\"\ngit push origin main"
+    },
+    {
+        "type": "p",
+        "content": "Remove the GitHub or remote repository connection"
+    },
+    {
+        "type": "code",
+        "content": "git remote remove origin"
+    },
+    {
+        "type": "p",
+        "content": "Verify if the remote repository was successfully removed"
+    },
+    {
+        "type": "code",
+        "content": "git remote -v"
+    },
+    {
+        "type": "p",
+        "content": "Remove the .git folder using Git Bash"
+    },
+    {
+        "type": "code",
+        "content": "rm -rf .git"
+    },
+    {
+        "type": "p",
+        "content": "Remove the .git folder using CMD"
+    },
+    {
+        "type": "code",
+        "content": "rmdir /s /q .git"
+    },
+    {
+        "type": "p",
+        "content": "Remove a folder using CMD (navigate up one level and delete the folder)"
+    },
+    {
+        "type": "code",
+        "content": "cd ..\nrmdir /s /q <folder_name>"
+    },
+    {
+        "type": "p",
+        "content": "Remove the .git using PowerShell"
+    },
+    {
+        "type": "code",
+        "content": "Remove-Item -Recurse -Force .git"
+    },
+    {
+        "type": "p",
+        "content": "Remove everything from a folder using PowerShell"
+    },
+    {
+        "type": "code",
+        "content": "Remove-Item -Recurse -Force *"
     }
 ]
