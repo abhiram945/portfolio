@@ -418,31 +418,31 @@
     },
     {
         "type": "p",
-        "content": "• An abstract class is a class that is declared with an abstract keyword"
+        "content": "An abstract class is a class that is declared with an abstract keyword"
     },
     {
         "type": "p",
-        "content": "• An abstract class may have both abstract methods (methods without implementation) and concrete methods (methods with implementation)."
+        "content": "An abstract class may have both abstract methods (methods without implementation) and concrete methods (methods with implementation)."
     },
     {
         "type": "p",
-        "content": "• An abstract method is a method that is declared without implementation."
+        "content": "An abstract method is a method that is declared without implementation."
     },
     {
         "type": "p",
-        "content": "• An abstract method must always be redefined in the subclass, thus making overriding compulsory or making the subclass itself abstract."
+        "content": "An abstract method must always be redefined in the subclass, thus making overriding compulsory or making the subclass itself abstract."
     },
     {
         "type": "p",
-        "content": "• Any class that contains one or more abstract methods must also be declared with an abstract keyword."
+        "content": "Any class that contains one or more abstract methods must also be declared with an abstract keyword."
     },
     {
         "type": "p",
-        "content": "• There can be no object of an abstract class. That is, an abstract class cannot be directly instantiated with the new keyword."
+        "content": "There can be no object of an abstract class. That is, an abstract class cannot be directly instantiated with the new keyword."
     },
     {
         "type": "p",
-        "content": "• An abstract class can have parameterized constructors and the default constructor is always present in an abstract class."
+        "content": "An abstract class can have parameterized constructors and the default constructor is always present in an abstract class."
     },
     {
         "type": "bold",
@@ -450,15 +450,15 @@
     },
     {
         "type": "p",
-        "content": "• Abstraction hides the complex details and shows only essential features."
+        "content": "Abstraction hides the complex details and shows only essential features."
     },
     {
         "type": "p",
-        "content": "• Abstract classes may have methods without implementation and must be implemented by subclasses."
+        "content": "Abstract classes may have methods without implementation and must be implemented by subclasses."
     },
     {
         "type": "p",
-        "content": "• By abstracting functionapty, changes in the implementation do not affect the code that depends on the abstraction."
+        "content": "By abstracting functionapty, changes in the implementation do not affect the code that depends on the abstraction."
     },
     {
         "type": "bold",
@@ -474,19 +474,19 @@
     },
     {
         "type": "p",
-        "content": "• Data Hiding: The internal data of an object is hidden from the outside world, preventing direct access."
+        "content": "Data Hiding: The internal data of an object is hidden from the outside world, preventing direct access."
     },
     {
         "type": "p",
-        "content": "• Data Integrity: Only vapdated or safe values can be assigned to an object’s attributes via setter methods."
+        "content": "Data Integrity: Only vapdated or safe values can be assigned to an object’s attributes via setter methods."
     },
     {
         "type": "p",
-        "content": "• Reusabipty: Encapsulated code is more flexible and reusable for future modifications or requirements."
+        "content": "Reusabipty: Encapsulated code is more flexible and reusable for future modifications or requirements."
     },
     {
         "type": "p",
-        "content": "• Security: Sensitive data is protected as it cannot be accessed directly."
+        "content": "Security: Sensitive data is protected as it cannot be accessed directly."
     },
     {
         "type": "bold",
@@ -526,19 +526,19 @@
     },
     {
         "type": "p",
-        "content": "• Code Reusabipty: The code written in the Superclass is common to all subclasses. Child classes can directly use the parent class code."
+        "content": "Code Reusabipty: The code written in the Superclass is common to all subclasses. Child classes can directly use the parent class code."
     },
     {
         "type": "p",
-        "content": "• Method Overriding: Method overriding is achievable only through Inheritance. It is one of the ways by which Java achieves Run Time Polymorphism."
+        "content": "Method Overriding: Method overriding is achievable only through Inheritance. It is one of the ways by which Java achieves Run Time Polymorphism."
     },
     {
         "type": "p",
-        "content": "• Abstraction: The concept of abstraction where we do not have to provide all details, is achieved through inheritance. Abstraction only shows the functionapty to the user."
+        "content": "Abstraction: The concept of abstraction where we do not have to provide all details, is achieved through inheritance. Abstraction only shows the functionapty to the user."
     },
     {
         "type": "p",
-        "content": "• Organizes classes in a structured manner, improving readabipty and maintainabipty."
+        "content": "Organizes classes in a structured manner, improving readabipty and maintainabipty."
     },
     {
         "type": "bold",
@@ -566,19 +566,19 @@
     },
     {
         "type": "p",
-        "content": "• Multiple Behaviours: The same method can behave differently depending on the object that calls this method."
+        "content": "Multiple Behaviours: The same method can behave differently depending on the object that calls this method."
     },
     {
         "type": "p",
-        "content": "• Method Overriding: A child class can redefine a method of its parent class."
+        "content": "Method Overriding: A child class can redefine a method of its parent class."
     },
     {
         "type": "p",
-        "content": "• Method Overloading: We can define multiple methods with the same name but different parameters."
+        "content": "Method Overloading: We can define multiple methods with the same name but different parameters."
     },
     {
         "type": "p",
-        "content": "• Runtime Decision: At runtime, Java determines which method to call depending on the object's actual class. Dynamic method dispatch (decided at runtime, not compile-time)."
+        "content": "Runtime Decision: At runtime, Java determines which method to call depending on the object's actual class. Dynamic method dispatch (decided at runtime, not compile-time)."
     },
     {
         "type": "h3",
@@ -614,7 +614,7 @@
     },
     {
         "type": "p",
-        "content": "Constructors play a very important role; it ensures that an object is properly initiapzed before use.\nWhat happens when we don't use constructors:\nWithout constructors:\n• Objects might have undefined or default values.\n• Extra initiapzation methods would be required."
+        "content": "Constructors play a very important role; it ensures that an object is properly initiapzed before use.\nWhat happens when we don't use constructors:\nWithout constructors:\nObjects might have undefined or default values.\nExtra initiapzation methods would be required."
     },
     {
         "type": "h4",
@@ -1976,7 +1976,7 @@
     },
     {
         "type": "p",
-        "content": "Scenario: Simulate a bank withdrawal method. It throws:\n• IllegalArgumentException if the amount is negative,\n• ArithmeticException if balance is insufficient.\nUse two catch blocks to handle both separately."
+        "content": "Scenario: Simulate a bank withdrawal method. It throws:\nIllegalArgumentException if the amount is negative,\nArithmeticException if balance is insufficient.\nUse two catch blocks to handle both separately."
     },
     {
         "type": "p",
@@ -2000,7 +2000,7 @@
     },
     {
         "type": "p",
-        "content": "Scenario: Simulate an onpne order method where:\n• First, it tries to process payment (may throw NullPointerException if payment gateway is null),\n• Then it tries to update order status (may throw IOException).\nUse nested try-catch blocks, and finally block to print \"Order process ended.\""
+        "content": "Scenario: Simulate an onpne order method where:\nFirst, it tries to process payment (may throw NullPointerException if payment gateway is null),\nThen it tries to update order status (may throw IOException).\nUse nested try-catch blocks, and finally block to print \"Order process ended.\""
     },
     {
         "type": "p",
