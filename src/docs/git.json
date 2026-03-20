@@ -9,7 +9,7 @@
     },
     {
         "type": "code",
-        "content": "git config --pst #To log all the git details"
+        "content": "git config --list #To log all the git details"
     },
     {
         "type": "code",
@@ -69,7 +69,7 @@
     },
     {
         "type": "p",
-        "content": "To go to a particular commit by epminating commits after the commit"
+        "content": "To go to a particular commit by eliminating commits after the commit"
     },
     {
         "type": "code",

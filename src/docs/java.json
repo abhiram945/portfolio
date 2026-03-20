@@ -9,7 +9,7 @@
     },
     {
         "type": "p",
-        "content": "The high-level programming language developed by James Gospng in 1995 at Sun MicroSystems and later acquired by Oracle. It is a hybrid language because it uses both compilation (into bytecode) and interpretation (or JIT compilation) for execution. Gains the popularity because of the features such as Portabipty, Write Once and Run Anywhere, Robustness, Secure and Various fields in which can be appped."
+        "content": "The high-level programming language developed by James Gosling in 1995 at Sun MicroSystems and later acquired by Oracle. It is a hybrid language because it uses both compilation (into bytecode) and interpretation (or JIT compilation) for execution. Gains the popularity because of the features such as Portability, Write Once and Run Anywhere, Robustness, Secure and Various fields in which can be applied."
     },
     {
         "type": "h2",
@@ -17,7 +17,7 @@
     },
     {
         "type": "p",
-        "content": "Popular, Easy to learn, large community, multiple open-source pbraries, powerful development tools, free, platform independent."
+        "content": "Popular, Easy to learn, large community, multiple open-source libraries, powerful development tools, free, platform independent."
     },
     {
         "type": "h2",
@@ -29,7 +29,7 @@
     },
     {
         "type": "p",
-        "content": "Inventor: James Gospng, Sun Microsystems, 1991"
+        "content": "Inventor: James Gosling, Sun Microsystems, 1991"
     },
     {
         "type": "p",
@@ -69,7 +69,7 @@
     },
     {
         "type": "p",
-        "content": "JRE(Platform dependent): JVM + pbraries"
+        "content": "JRE(Platform dependent): JVM + libraries"
     },
     {
         "type": "p",
@@ -129,7 +129,7 @@
     },
     {
         "type": "bold",
-        "content": "pfe Cycle of a Variable"
+        "content": "Life Cycle of a Variable"
     },
     {
         "type": "p",
@@ -290,13 +290,13 @@
             ],
             "rows": [
                 [
-                    "Widening (Imppcit)",
+                    "Widening (Implicit)",
                     "Smaller → Larger",
                     "✅ Yes",
                     "❌ No"
                 ],
                 [
-                    "Narrowing (Exppcit)",
+                    "Narrowing (Explicit)",
                     "Larger → Smaller",
                     "❌ No",
                     "✅ Yes"
@@ -310,7 +310,7 @@
     },
     {
         "type": "p",
-        "content": "Methods of each data type (offered by java), String immutabipty"
+        "content": "Methods of each data type (offered by java), String immutability"
     },
     {
         "type": "h3",
@@ -342,11 +342,11 @@
     },
     {
         "type": "p",
-        "content": "for loop: Used when the number of iterations is known; initiapzation, condition, and update are in one pne."
+        "content": "for loop: Used when the number of iterations is known; initialization, condition, and update are in one line."
     },
     {
         "type": "p",
-        "content": "while loop: Used when the number of iterations is unknown; only condition is specified, initiapzation and update are done separately."
+        "content": "while loop: Used when the number of iterations is unknown; only condition is specified, initialization and update are done separately."
     },
     {
         "type": "p",
@@ -402,7 +402,7 @@
     },
     {
         "type": "p",
-        "content": "Java provides two ways to implement abstraction, which are psted below:"
+        "content": "Java provides two ways to implement abstraction, which are listed below:"
     },
     {
         "type": "p",
@@ -458,7 +458,7 @@
     },
     {
         "type": "p",
-        "content": "By abstracting functionapty, changes in the implementation do not affect the code that depends on the abstraction."
+        "content": "By abstracting functionality, changes in the implementation do not affect the code that depends on the abstraction."
     },
     {
         "type": "bold",
@@ -466,7 +466,7 @@
     },
     {
         "type": "p",
-        "content": "Encapsulation is the process of wrapping data (variables) and methods into a single unit (class) and restricting direct access to them.\nWe manipulate the data using special methods named getter and setter. Encapsulation is used to hide the implementation part and show the functionapty for better readabipty and usabipty."
+        "content": "Encapsulation is the process of wrapping data (variables) and methods into a single unit (class) and restricting direct access to them.\nWe manipulate the data using special methods named getter and setter. Encapsulation is used to hide the implementation part and show the functionality for better readability and usability."
     },
     {
         "type": "bold",
@@ -478,11 +478,11 @@
     },
     {
         "type": "p",
-        "content": "Data Integrity: Only vapdated or safe values can be assigned to an object’s attributes via setter methods."
+        "content": "Data Integrity: Only validated or safe values can be assigned to an object’s attributes via setter methods."
     },
     {
         "type": "p",
-        "content": "Reusabipty: Encapsulated code is more flexible and reusable for future modifications or requirements."
+        "content": "Reusability: Encapsulated code is more flexible and reusable for future modifications or requirements."
     },
     {
         "type": "p",
@@ -526,7 +526,7 @@
     },
     {
         "type": "p",
-        "content": "Code Reusabipty: The code written in the Superclass is common to all subclasses. Child classes can directly use the parent class code."
+        "content": "Code Reusability: The code written in the Superclass is common to all subclasses. Child classes can directly use the parent class code."
     },
     {
         "type": "p",
@@ -534,11 +534,11 @@
     },
     {
         "type": "p",
-        "content": "Abstraction: The concept of abstraction where we do not have to provide all details, is achieved through inheritance. Abstraction only shows the functionapty to the user."
+        "content": "Abstraction: The concept of abstraction where we do not have to provide all details, is achieved through inheritance. Abstraction only shows the functionality to the user."
     },
     {
         "type": "p",
-        "content": "Organizes classes in a structured manner, improving readabipty and maintainabipty."
+        "content": "Organizes classes in a structured manner, improving readability and maintainability."
     },
     {
         "type": "bold",
@@ -586,7 +586,7 @@
     },
     {
         "type": "p",
-        "content": "A constructor is a special block of code that is called when an object is created. Its main job is to initiapze the object, to set up its internal state, or to assign default values to its attributes. This process happens automatically when we use the \"new\" keyword to create an object."
+        "content": "A constructor is a special block of code that is called when an object is created. Its main job is to initialize the object, to set up its internal state, or to assign default values to its attributes. This process happens automatically when we use the \"new\" keyword to create an object."
     },
     {
         "type": "h4",
@@ -614,7 +614,7 @@
     },
     {
         "type": "p",
-        "content": "Constructors play a very important role; it ensures that an object is properly initiapzed before use.\nWhat happens when we don't use constructors:\nWithout constructors:\nObjects might have undefined or default values.\nExtra initiapzation methods would be required."
+        "content": "Constructors play a very important role; it ensures that an object is properly initialized before use.\nWhat happens when we don't use constructors:\nWithout constructors:\nObjects might have undefined or default values.\nExtra initialization methods would be required."
     },
     {
         "type": "h4",
@@ -622,11 +622,11 @@
     },
     {
         "type": "p",
-        "content": "Default constructor: Have no parameters, invisible (created by java itself). By default, java creates the default constructor when we don’t create one. Once we create a constructor (with or without parameters), the java compiler no longer creates the default constructor.\nThe default constructor (imppcit/exppcit) initiapzes the default values such as 0 for numbers, null for objects etc."
+        "content": "Default constructor: Have no parameters, invisible (created by java itself). By default, java creates the default constructor when we don’t create one. Once we create a constructor (with or without parameters), the java compiler no longer creates the default constructor.\nThe default constructor (implicit/explicit) initializes the default values such as 0 for numbers, null for objects etc."
     },
     {
         "type": "p",
-        "content": "Parameterized constructor\nIf we need to initiapze the default values with different values(other then default values) then we use the parameterized constructor."
+        "content": "Parameterized constructor\nIf we need to initialize the default values with different values(other then default values) then we use the parameterized constructor."
     },
     {
         "type": "p",
@@ -658,7 +658,7 @@
     },
     {
         "type": "p",
-        "content": "equals(): used to compare two objects for equapty."
+        "content": "equals(): used to compare two objects for equality."
     },
     {
         "type": "p",
@@ -677,7 +677,7 @@
         "content": {
             "headers": [
                 "Aspect",
-                "== Equapty operator",
+                "== Equality operator",
                 ".equals() methos"
             ],
             "rows": [
@@ -706,15 +706,15 @@
     },
     {
         "type": "p",
-        "content": "wait(), notify(), notifyAll() pnked with threading"
+        "content": "wait(), notify(), notifyAll() linked with threading"
     },
     {
         "type": "p",
-        "content": "clone(): To copy an object without creating a new instance. // requires interfaces, exception handpng"
+        "content": "clone(): To copy an object without creating a new instance. // requires interfaces, exception handling"
     },
     {
         "type": "p",
-        "content": "finapze(): The method invoked by garbage collector, when an object is no more referenced, this method allows an object to perform any necessary cleanup operations such as closing files, releasing network connections or freeing other system resources."
+        "content": "finalize(): The method invoked by garbage collector, when an object is no more referenced, this method allows an object to perform any necessary cleanup operations such as closing files, releasing network connections or freeing other system resources."
     },
     {
         "type": "h3",
@@ -734,7 +734,7 @@
     },
     {
         "type": "h3",
-        "content": "Class Loading & Initiapzation Order"
+        "content": "Class Loading & Initialization Order"
     },
     {
         "type": "p",
@@ -746,7 +746,7 @@
     },
     {
         "type": "h2",
-        "content": "4. Exception Handpng in Java"
+        "content": "4. Exception Handling in Java"
     },
     {
         "type": "h3",
@@ -758,11 +758,11 @@
     },
     {
         "type": "h3",
-        "content": "Why Exception handpng?"
+        "content": "Why Exception handling?"
     },
     {
         "type": "p",
-        "content": "Exception handpng is crucial for robust and repable software development because it allows programs to handle errors or unexpected situations that occur during runtime. Without it, errors can cause program crashes, unpredictable behaviour, and a poor user experience."
+        "content": "Exception handling is crucial for robust and reliable software development because it allows programs to handle errors or unexpected situations that occur during runtime. Without it, errors can cause program crashes, unpredictable behaviour, and a poor user experience."
     },
     {
         "type": "h3",
@@ -770,7 +770,7 @@
     },
     {
         "type": "h4",
-        "content": "Checked (must be handled): Conditions that a well-written apppcation should anticipate and recover from. These are checked at compile-time. The compiler forces the developer to handle them using try-catch block or using throws."
+        "content": "Checked (must be handled): Conditions that a well-written application should anticipate and recover from. These are checked at compile-time. The compiler forces the developer to handle them using try-catch block or using throws."
     },
     {
         "type": "table",
@@ -809,7 +809,7 @@
     },
     {
         "type": "h4",
-        "content": "Unchecked (runtime): An unexpected event occur at runtime and that the apppcation usually cannot anticipate or recover from. The compiler doesn’t force the developer to catch them. But if they aren’t catched properly, the entire apppcation will be crashed. These usually indicate programming bugs, such as logic errors or improper use of an API."
+        "content": "Unchecked (runtime): An unexpected event occur at runtime and that the application usually cannot anticipate or recover from. The compiler doesn’t force the developer to catch them. But if they aren’t catched properly, the entire application will be crashed. These usually indicate programming bugs, such as logic errors or improper use of an API."
     },
     {
         "type": "table",
@@ -829,11 +829,11 @@
                 ],
                 [
                     "ArrayIndexOutOfBoundsException",
-                    "Invapd array index"
+                    "Invalid array index"
                 ],
                 [
                     "StringIndexOutOfBoundsException",
-                    "Invapd string index"
+                    "Invalid string index"
                 ],
                 [
                     "NumberFormatException",
@@ -852,11 +852,11 @@
     },
     {
         "type": "h4",
-        "content": "Errors (fatal): Conditions that are external to the apppcation, and that the apppcation usually cannot anticipate or recover from. Eg: OutOfMemoryError, StackOverflowError"
+        "content": "Errors (fatal): Conditions that are external to the application, and that the application usually cannot anticipate or recover from. Eg: OutOfMemoryError, StackOverflowError"
     },
     {
         "type": "h3",
-        "content": "How to use Exception Handpng?"
+        "content": "How to use Exception Handling?"
     },
     {
         "type": "p",
@@ -888,7 +888,7 @@
     },
     {
         "type": "p",
-        "content": "Always provide multiple constructors for flexibipty"
+        "content": "Always provide multiple constructors for flexibility"
     },
     {
         "type": "h3",
@@ -908,7 +908,7 @@
     },
     {
         "type": "h3",
-        "content": "Final, Finally, and Finapze (Trio Confusion)"
+        "content": "Final, Finally, and Finalize (Trio Confusion)"
     },
     {
         "type": "p",
@@ -920,7 +920,7 @@
     },
     {
         "type": "p",
-        "content": "finapze() (deprecated)"
+        "content": "finalize() (deprecated)"
     },
     {
         "type": "p",
@@ -960,27 +960,27 @@
     },
     {
         "type": "p",
-        "content": "2. Collection: collection implements iterable. The root interface for pst, Set, Queue. It contains: add(), remove(), size(), clear(), contains(), equals(), hashCode(), isEmpty(), iterator(), toArray() etc\nSub interfaces of collection are pst, Set and Queue."
+        "content": "2. Collection: collection implements iterable. The root interface for List, Set, Queue. It contains: add(), remove(), size(), clear(), contains(), equals(), hashCode(), isEmpty(), iterator(), toArray() etc\nSub interfaces of collection are List, Set and Queue."
     },
     {
         "type": "h3",
-        "content": "pst Implementations:"
+        "content": "List Implementations:"
     },
     {
         "type": "p",
-        "content": "pst: The pst is an interface that implements collection interface. It is an ordered collection that allows duppcates. It was implemented by"
+        "content": "List: The List is an interface that implements collection interface. It is an ordered collection that allows duplicates. It was implemented by"
     },
     {
         "type": "p",
-        "content": "Arraypst: Backed by an array. Resize = O(n), insert/delete = O(n)"
+        "content": "ArrayList: Backed by an array. Resize = O(n), insert/delete = O(n)"
     },
     {
         "type": "p",
-        "content": "pnkedpst, Doubly pnked pst. Insert = O(1), but index access = O(n) & Vector"
+        "content": "LinkedList, Doubly Linked List. Insert = O(1), but index access = O(n) & Vector"
     },
     {
         "type": "p",
-        "content": "Note: resizing threshold / capacity growth logic = 1.5x in Arraypst"
+        "content": "Note: resizing threshold / capacity growth logic = 1.5x in ArrayList"
     },
     {
         "type": "p",
@@ -992,7 +992,7 @@
     },
     {
         "type": "p",
-        "content": "Set: The set is an interface that implements collection interface. It doesn’t allow duppcates. It was implemented by"
+        "content": "Set: The set is an interface that implements collection interface. It doesn’t allow duplicates. It was implemented by"
     },
     {
         "type": "p",
@@ -1000,7 +1000,7 @@
     },
     {
         "type": "p",
-        "content": "pnkedHashSet: Maintains insertion order"
+        "content": "LinkedHashSet: Maintains insertion order"
     },
     {
         "type": "p",
@@ -1008,7 +1008,7 @@
     },
     {
         "type": "p",
-        "content": "Methods: same as pst"
+        "content": "Methods: same as List"
     },
     {
         "type": "h3",
@@ -1016,7 +1016,7 @@
     },
     {
         "type": "p",
-        "content": "Queue: Queue is an interface that implements Collection interface. It is used for FIFO data structure. It was implemented by pnkedpst, PriorityQueue, ArrayDeque\nThe Priority queue used the heap data structure to store the data. Especially while storing it uses the min-heap data structure which stores the minimum value at its root. To use PQ, we need to implement the Comparable interface and override the compareTo method."
+        "content": "Queue: Queue is an interface that implements Collection interface. It is used for FIFO data structure. It was implemented by LinkedList, PriorityQueue, ArrayDeque\nThe Priority queue used the heap data structure to store the data. Especially while storing it uses the min-heap data structure which stores the minimum value at its root. To use PQ, we need to implement the Comparable interface and override the compareTo method."
     },
     {
         "type": "h4",
@@ -1064,15 +1064,15 @@
     },
     {
         "type": "p",
-        "content": "Map: A key-value pair storage implemented by using HashMap, pnkedHashMap, TreeMap, HashTable"
+        "content": "Map: A key-value pair storage implemented by using HashMap, LinkedHashMap, TreeMap, HashTable"
     },
     {
         "type": "p",
-        "content": "HashMap: Uses array + pnked pst/binary tree buckets (Java 8+)"
+        "content": "HashMap: Uses array + linked list/binary tree buckets (Java 8+)"
     },
     {
         "type": "p",
-        "content": "pnkedHashMap: Maintains access or insertion order"
+        "content": "LinkedHashMap: Maintains access or insertion order"
     },
     {
         "type": "p",
@@ -1160,7 +1160,7 @@
     },
     {
         "type": "p",
-        "content": "Colpsions handled via chaining or treeification"
+        "content": "Collisions handled via chaining or treeification"
     },
     {
         "type": "p",
@@ -1172,11 +1172,11 @@
     },
     {
         "type": "p",
-        "content": "Iterator: It is used to traverse all types of psts including Arraypst, Vector, pnkedpst, Stack"
+        "content": "Iterator: It is used to traverse all types of Lists including ArrayList, Vector, LinkedList, Stack"
     },
     {
         "type": "p",
-        "content": "pstIterator (only for psts): It extends iterator. It supports bi-directional traversal. And all the four CRUD operations(Create, Read, Update, Delete) operations."
+        "content": "ListIterator (only for Lists): It extends iterator. It supports bi-directional traversal. And all the four CRUD operations(Create, Read, Update, Delete) operations."
     },
     {
         "type": "p",
@@ -1196,7 +1196,7 @@
     },
     {
         "type": "p",
-        "content": "In Java, a thread is a pghtweight process that allows for concurrent execution of code within a program. It is the smallest unit of processing that can be scheduled by the operating system."
+        "content": "In Java, a thread is a Lightweight process that allows for concurrent execution of code within a program. It is the smallest unit of processing that can be scheduled by the operating system."
     },
     {
         "type": "h3",
@@ -1204,11 +1204,11 @@
     },
     {
         "type": "p",
-        "content": "Java supports multithreading, which means that multiple threads can run concurrently within a single apppcation. This enables programs to perform multiple tasks at the same time, improving performance and responsiveness."
+        "content": "Java supports multithreading, which means that multiple threads can run concurrently within a single application. This enables programs to perform multiple tasks at the same time, improving performance and responsiveness."
     },
     {
         "type": "h3",
-        "content": "pfe cycle of a thread:"
+        "content": "Life cycle of a thread:"
     },
     {
         "type": "p",
@@ -1264,7 +1264,7 @@
     },
     {
         "type": "p",
-        "content": "6. isApve(): Checks if the thread is apve."
+        "content": "6. isAlive(): Checks if the thread is alive."
     },
     {
         "type": "p",
@@ -1308,7 +1308,7 @@
     },
     {
         "type": "p",
-        "content": "Guarantees visibipty, not atomicity"
+        "content": "Guarantees visibility, not atomicity"
     },
     {
         "type": "p",
@@ -1352,7 +1352,7 @@
     },
     {
         "type": "p",
-        "content": "pvelock"
+        "content": "Livelock"
     },
     {
         "type": "p",
@@ -1392,11 +1392,11 @@
     },
     {
         "type": "p",
-        "content": "Dynamic Allocation: Memory for objects is allocated at runtime, as needed by the apppcation."
+        "content": "Dynamic Allocation: Memory for objects is allocated at runtime, as needed by the application."
     },
     {
         "type": "p",
-        "content": "Shared Memory: Objects in the heap can be accessed by any part of the apppcation, including multiple threads."
+        "content": "Shared Memory: Objects in the heap can be accessed by any part of the application, including multiple threads."
     },
     {
         "type": "p",
@@ -1436,11 +1436,11 @@
     },
     {
         "type": "p",
-        "content": "pFO (Last-In-First-Out): Stack memory operates on a pFO principle. When a method is called, a new stack frame is created and pushed onto the stack. When the method finishes, the frame is popped off."
+        "content": "LIFO (Last-In-First-Out): Stack memory operates on a LIFO principle. When a method is called, a new stack frame is created and pushed onto the stack. When the method finishes, the frame is popped off."
     },
     {
         "type": "p",
-        "content": "Fast access: Accessing stack memory is fast due to its simple pFO structure."
+        "content": "Fast access: Accessing stack memory is fast due to its simple LIFO structure."
     },
     {
         "type": "h4",
@@ -1472,7 +1472,7 @@
     },
     {
         "type": "p",
-        "content": "Stack memory is used for short-pved data related to method execution, while heap memory is used for storing objects. Stack memory is faster, but has a pmited size, whereas heap memory is more flexible."
+        "content": "Stack memory is used for short-lived data related to method execution, while heap memory is used for storing objects. Stack memory is faster, but has a limited size, whereas heap memory is more flexible."
     },
     {
         "type": "h2",
@@ -1480,7 +1480,7 @@
     },
     {
         "type": "h3",
-        "content": "File handpng"
+        "content": "File handling"
     },
     {
         "type": "p",
@@ -1492,7 +1492,7 @@
     },
     {
         "type": "p",
-        "content": "BufferedReader: For efficient & faster pne by pne reading with FileReader"
+        "content": "BufferedReader: For efficient & faster line by line reading with FileReader"
     },
     {
         "type": "h3",
@@ -1504,11 +1504,11 @@
     },
     {
         "type": "h3",
-        "content": "Seriapzation and Deseriapzation"
+        "content": "Serialization and Deserialization"
     },
     {
         "type": "p",
-        "content": "Seriapzation in Java is the process of converting an object into a byte stream. This stream can then be stored in a file, database, or transmitted over a network. The primary purpose of seriapzation is to save the state of an object so that it can be recreated later.\nDeseriapzation, on the other hand, is the reverse process. It takes a byte stream and reconstructs the original object. This allows you to load objects from storage or receive them over a network, restoring them to their previous state."
+        "content": "Serialization in Java is the process of converting an object into a byte stream. This stream can then be stored in a file, database, or transmitted over a network. The primary purpose of serialization is to save the state of an object so that it can be recreated later.\nDeserialization, on the other hand, is the reverse process. It takes a byte stream and reconstructs the original object. This allows you to load objects from storage or receive them over a network, restoring them to their previous state."
     },
     {
         "type": "h2",
@@ -1580,7 +1580,7 @@
     },
     {
         "type": "p",
-        "content": "13. What is the purpose of access modifiers? pst and explain them briefly."
+        "content": "13. What is the purpose of access modifiers? List and explain them briefly."
     },
     {
         "type": "p",
@@ -1600,7 +1600,7 @@
     },
     {
         "type": "p",
-        "content": "18. Why do local variables need to be initiapzed before use?"
+        "content": "18. Why do local variables need to be initialized before use?"
     },
     {
         "type": "p",
@@ -1640,7 +1640,7 @@
     },
     {
         "type": "p",
-        "content": "7. Write a program to print the multippcation table of a number (e.g., table of 5)."
+        "content": "7. Write a program to print the multiplication table of a number (e.g., table of 5)."
     },
     {
         "type": "p",
@@ -1668,7 +1668,7 @@
     },
     {
         "type": "p",
-        "content": "14. Write a program to check whether a number is a papndrome."
+        "content": "14. Write a program to check whether a number is a palindrome."
     },
     {
         "type": "p",
@@ -1748,7 +1748,7 @@
     },
     {
         "type": "p",
-        "content": "13. What are the key differences between pubpc, protected, private, and default?"
+        "content": "13. What are the key differences between public, protected, private, and default?"
     },
     {
         "type": "p",
@@ -1800,11 +1800,11 @@
     },
     {
         "type": "p",
-        "content": "5. Write a program that attempts to use a local variable without initiapzing it and observe the compile-time error."
+        "content": "5. Write a program that attempts to use a local variable without initializing it and observe the compile-time error."
     },
     {
         "type": "p",
-        "content": "6. Demonstrate variable scope by declaring local, instance, static, and block variables inside a class and printing their accessibipty."
+        "content": "6. Demonstrate variable scope by declaring local, instance, static, and block variables inside a class and printing their accessibility."
     },
     {
         "type": "p",
@@ -1820,7 +1820,7 @@
     },
     {
         "type": "p",
-        "content": "10. Create a program with final variables and attempt to reassign them (to show immutabipty of final)."
+        "content": "10. Create a program with final variables and attempt to reassign them (to show immutability of final)."
     },
     {
         "type": "p",
@@ -1860,7 +1860,7 @@
     },
     {
         "type": "p",
-        "content": "20. Demonstrate the behavior of uninitiapzed object references (null) and how accessing them causes NullPointerException."
+        "content": "20. Demonstrate the behavior of uninitialized object references (null) and how accessing them causes NullPointerException."
     },
     {
         "type": "p",
@@ -1924,7 +1924,7 @@
     },
     {
         "type": "p",
-        "content": "36. Write a class that uses constructors to initiapze variables and print them."
+        "content": "36. Write a class that uses constructors to initialize variables and print them."
     },
     {
         "type": "p",
@@ -1944,7 +1944,7 @@
     },
     {
         "type": "h2",
-        "content": "Exception handpng"
+        "content": "Exception handling"
     },
     {
         "type": "bold",
@@ -1952,7 +1952,7 @@
     },
     {
         "type": "p",
-        "content": "Scenario: Write a program that tries to convert a String \"abc123\" into an integer using Integer.parseInt(). If it fails, catch the exception and print \"Invapd number format\" instead of crashing."
+        "content": "Scenario: Write a program that tries to convert a String \"abc123\" into an integer using Integer.parseInt(). If it fails, catch the exception and print \"Invalid number format\" instead of crashing."
     },
     {
         "type": "p",
@@ -1960,7 +1960,7 @@
     },
     {
         "type": "bold",
-        "content": "2. Division with Safe Handpng"
+        "content": "2. Division with Safe Handling"
     },
     {
         "type": "p",
@@ -1984,11 +1984,11 @@
     },
     {
         "type": "bold",
-        "content": "4. Custom Exception – Age Vapdation"
+        "content": "4. Custom Exception – Age Validation"
     },
     {
         "type": "p",
-        "content": "Scenario: Create a custom exception InvapdAgeException.\nWrite a method registerUser(int age) that throws this exception if the age is less than 18. Catch the exception and print: \"Registration failed: Invapd age\"."
+        "content": "Scenario: Create a custom exception InvalidAgeException.\nWrite a method registerUser(int age) that throws this exception if the age is less than 18. Catch the exception and print: \"Registration failed: Invalid age\"."
     },
     {
         "type": "p",
@@ -1996,11 +1996,11 @@
     },
     {
         "type": "bold",
-        "content": "5. Nested try-catch with finally – Onpne Order Process"
+        "content": "5. Nested try-catch with finally – Online Order Process"
     },
     {
         "type": "p",
-        "content": "Scenario: Simulate an onpne order method where:\nFirst, it tries to process payment (may throw NullPointerException if payment gateway is null),\nThen it tries to update order status (may throw IOException).\nUse nested try-catch blocks, and finally block to print \"Order process ended.\""
+        "content": "Scenario: Simulate an online order method where:\nFirst, it tries to process payment (may throw NullPointerException if payment gateway is null),\nThen it tries to update order status (may throw IOException).\nUse nested try-catch blocks, and finally block to print \"Order process ended.\""
     },
     {
         "type": "p",
@@ -2048,15 +2048,15 @@
     },
     {
         "type": "p",
-        "content": "2. What is the difference between a pst, Set, and Map? Give real-world examples."
+        "content": "2. What is the difference between a List, Set, and Map? Give real-world examples."
     },
     {
         "type": "p",
-        "content": "3. What is the difference between Arraypst and pnkedpst in terms of performance and use-case?"
+        "content": "3. What is the difference between ArrayList and LinkedList in terms of performance and use-case?"
     },
     {
         "type": "p",
-        "content": "4. How does HashSet ensure no duppcates are stored?"
+        "content": "4. How does HashSet ensure no duplicates are stored?"
     },
     {
         "type": "p",
@@ -2088,11 +2088,11 @@
     },
     {
         "type": "p",
-        "content": "1. Create an Arraypst of integers, add 5 elements, and print them using an iterator."
+        "content": "1. Create an ArrayList of integers, add 5 elements, and print them using an iterator."
     },
     {
         "type": "p",
-        "content": "2. Create a HashSet of strings, add some duppcate values, and print the set to demonstrate that duppcates are not stored."
+        "content": "2. Create a HashSet of strings, add some duplicate values, and print the set to demonstrate that duplicates are not stored."
     },
     {
         "type": "p",
@@ -2100,11 +2100,11 @@
     },
     {
         "type": "p",
-        "content": "4. Create a pnkedpst of strings representing tasks in a to-do pst. Add, remove, and print elements to simulate task management."
+        "content": "4. Create a LinkedList of strings representing tasks in a to-do list. Add, remove, and print elements to simulate task management."
     },
     {
         "type": "p",
-        "content": "5. Sort an Arraypst of integers in ascending order using Collections.sort() and print the sorted pst."
+        "content": "5. Sort an ArrayList of integers in ascending order using Collections.sort() and print the sorted list."
     },
     {
         "type": "h2",
@@ -2144,7 +2144,7 @@
     },
     {
         "type": "p",
-        "content": "Checks: sleep(), exception handpng, thread pauses"
+        "content": "Checks: sleep(), exception handling, thread pauses"
     },
     {
         "type": "bold",
@@ -2168,11 +2168,11 @@
     },
     {
         "type": "p",
-        "content": "Checks: sleep(), interrupt(), exception handpng in threads"
+        "content": "Checks: sleep(), interrupt(), exception handling in threads"
     },
     {
         "type": "h2",
-        "content": "File handpng – Theory"
+        "content": "File handling – Theory"
     },
     {
         "type": "p",
@@ -2184,7 +2184,7 @@
     },
     {
         "type": "h2",
-        "content": "File Handpng with JavaIO - Practical"
+        "content": "File Handling with JavaIO - Practical"
     },
     {
         "type": "p",
@@ -2196,6 +2196,6 @@
     },
     {
         "type": "p",
-        "content": "3. Write a java program to read the text from a file pne-by-pne and ensure the exceptions are properly catched with caution."
+        "content": "3. Write a java program to read the text from a file line-by-line and ensure the exceptions are properly catched with caution."
     }
 ]
