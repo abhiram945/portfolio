@@ -88,6 +88,10 @@
         "content": "Imbalanced Classification: Class distribution is skewed and biased predictions"
     },
     {
+        "type": "p",
+        "content": "Binary Cross Entropy (BCE) is the loss function used for binary classification problems—basically when your output is either 0 or 1 (e.g., spam vs not spam)."
+    },
+    {
         "type": "h4",
         "content": "Classification Algorithms:"
     },
@@ -113,7 +117,7 @@
     },
     {
         "type": "p",
-        "content": "Entropy - The measure of randomness in data and is a metric to measure impurity"
+        "content": "Entropy - The measure of randomness in data and is a metric to measure impurity which ranges from 0 to 1. Where 0 indicates pure node(leaf node) with only 1 class label."
     },
     {
         "type": "code",
@@ -133,15 +137,35 @@
     },
     {
         "type": "p",
-        "content": "Gini Index - Another way to measure impurity which is used in CART(Classification and Regression Trees)"
+        "content": "Gini Index - Another way to measure impurity which is used in CART(Classification and Regression Trees) which ranges from 0 to 0.5 for binary classification and upto 1 for multi-class classification. The lowest value indicates best. This criterion measures how impure a node is. The lower the Gini Impurity the better the feature splits the data into distinct categories."
     },
     {
         "type": "p",
         "content": "Reduction in Variance - Algorithm used for continuous target variables(regression problems)"
     },
     {
+        "type": "p",
+        "content": "Pruning is an important technique used to prevent overfitting in Decision Trees. Overfitting occurs when a tree becomes too deep and starts to memorize the training data rather than learning general patterns. This leads to poor performance on new, unseen data. This technique reduces the complexity of the tree by removing branches that have little predictive power."
+    },
+    {
         "type": "bold",
         "content": "SVM"
+    },
+    {
+        "type": "p",
+        "content": "It tries to find the best boundary known as hyperplane that separates different classes in the data. It is useful when you want to do binary classification like spam vs. not spam or cat vs. dog. The main goal of SVM is to maximize the margin between the two classes. The larger the margin the better the model performs on new and unseen data."
+    },
+    {
+        "type": "p",
+        "content": "Types of SVM:"
+    },
+    {
+        "type": "p",
+        "content": "1. Linear SVM: SVMs use a linear decision boundary to separate the data points of different classes. When the data can be precisely linearly separated, linear SVMs are very suitable. This means that a single straight line (in 2D) or a hyperplane (in higher dimensions) can entirely divide the data points into their respective classes."
+    },
+    {
+        "type": "p",
+        "content": "2.Non Linear SVM: used to classify data when it cannot be separated into two classes by a straight line (in the case of 2D). By using kernel functions, nonlinear SVMs can handle nonlinearly separable data. The original input data is transformed by these kernel functions into a higher-dimensional feature space where the data points can be linearly separated. A linear SVM is used to locate a nonlinear decision boundary in this modified space."
     },
     {
         "type": "bold",
@@ -149,11 +173,11 @@
     },
     {
         "type": "p",
-        "content": "Combination of multiple Decision Trees - Ensemble learning"
+        "content": "uses many decision trees to make better predictions. Each tree looks at different random parts of the data and their results are combined by voting for classification or averaging for regression which makes it as ensemble learning technique. This helps in improving accuracy and reducing errors. And It helps to tackle the bias and variance problems."
     },
     {
         "type": "p",
-        "content": "It helps to tackle the bias and variance problems"
+        "content": ""
     },
     {
         "type": "p",
