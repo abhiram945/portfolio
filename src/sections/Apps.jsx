@@ -29,7 +29,7 @@ const Apps = () => {
               <div className='w-full'>
                 {/* Small Screens: Swiper */}
                 <div className='hidden max-[800px]:block'>
-                  <CustomSwiper imagesArray={app.images} location='apps' />
+                  {/* <CustomSwiper imagesArray={app.images} location='apps' /> */}
                 </div>
                 {/* Large Screens: Grid */}
                 <div className='flex justify-around gap-4 max-[800px]:hidden'>
@@ -38,7 +38,7 @@ const Apps = () => {
                       key={idx} 
                       src={`/images/apps/${img}.png`} 
                       alt={app.name} 
-                      className='h-[500px] w-auto rounded-xl border border-lightGray object-contain shadow-sm transition-transform hover:scale-105'
+                      className='h-125 w-auto rounded-xl border border-lightGray object-contain shadow-sm transition-transform hover:scale-105'
                     />
                   ))}
                 </div>

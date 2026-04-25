@@ -20,7 +20,7 @@ const websitesData = [
   },
   {
     name: 'freshbasket',
-    images: ['freshbasket1', 'freshbasket2', 'freshbasket3'],
+    images: Array.from({length:3}).map((value,index)=>`freshbasket${index+1}`),
     usecase: 'The final spot for fresh and healthy food',
     techStack: ['tailwind css', 'mongodb', 'express js', 'react js', 'rest api'],
     url: 'https://freshbasket1.vercel.app',
@@ -74,7 +74,7 @@ const Websites = () => {
                   isEven ? 'pl-12' : 'pr-[8vw]'
                 }`}
               >
-                <h2 className='linear-gradient-text animate-linearGradientAnimation text-[5vw] font-black max-[800px]:text-[2rem] leading-18 mb-4'>
+                <h2 className='linear-gradient-text animate-linearGradientAnimation text-[5vw] font-black max-[800px]:text-[2rem]'>
                   {website.name.toUpperCase()}
                 </h2>
                 <p className='text-2xl max-[800px]:text-base'>{website.usecase}</p>

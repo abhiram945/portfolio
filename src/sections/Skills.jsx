@@ -2,11 +2,11 @@ import useInView from '../hooks/useInView';
 
 const skillsSet = [
   { "Web Development": ["express", "react", "node", "django"] },
-  { "APIs & Realtime updates": ["rest-api", "web-rtc", "web-sockets"] },
-  { "Programming & Scripting": ["java", "python", "js"] },
-  { "App Development": ["reactNative", "expo"] },
-  { "Databases": ["mongoDb", "sql"] },
-  { "Tools & Platforms": ["git", "github", "azure"] }
+  { "APIs & Realtime updates": ["rest api", "web rtc", "web socket", "socket io"] },
+  { "Programming & Scripting": ["java", "python", "java script"] },
+  { "App Development": ["react native", "expo"] },
+  { "Databases": ["mongodb", "sql"] },
+  { "Tools & Platforms": ["git", "github", "aws"] }
 ];
 
 const Skills = () => {
@@ -26,7 +26,7 @@ const Skills = () => {
             <div
               ref={ref}
               key={skillSetName.replace(/\s/g, "")}
-              className={`relative opacity-0 flex min-h-[220px] min-w-[260px] flex-wrap justify-center gap-4 rounded-3xl border-2 border-secondary bg-white p-4 pt-10 shadow-[0_2px_16px_0_rgba(49,59,172,0.07)] transition-shadow hover:shadow-[0_4px_24px_0_rgba(49,59,172,0.13)] max-[1200px]:gap-3 max-[1200px]:p-3 max-[1200px]:pt-8 max-[600px]:min-h-[120px] max-[600px]:min-w-[180px] max-[600px]:max-w-[90%] max-[426px]:p-2 max-[426px]:pt-6 ${
+              className={`relative opacity-0 flex min-h-55 min-w-65 flex-wrap justify-center gap-4 rounded-3xl border-2 border-secondary bg-white p-4 pt-10 shadow-[0_2px_16px_0_rgba(49,59,172,0.07)] transition-shadow hover:shadow-[0_4px_24px_0_rgba(49,59,172,0.13)] max-[1200px]:gap-3 max-[1200px]:p-3 max-[1200px]:pt-8 max-[600px]:min-h-[120px] max-[600px]:min-w-[180px] max-[600px]:max-w-[90%] max-[426px]:p-2 max-[426px]:pt-6 ${
                 visible ? "animate-fadeInUp" : ""
               }`}
               style={{ animationDelay: delay }}
@@ -38,9 +38,9 @@ const Skills = () => {
                 <div className="flex flex-col items-center" key={index}>
                   <img
                     loading="lazy"
-                    src={`/images/skills/${skillName}.png`}
+                    src={`/images/skills/${skillName}.svg`}
                     alt={skillName}
-                    className="h-32 w-32 rounded-full bg-[#f5f5f5] object-cover shadow-[0_2px_8px_0_rgba(49,59,172,0.08)] max-[1200px]:h-24 max-[1200px]:w-24 max-[800px]:h-20 max-[800px]:w-20 max-[426px]:h-14 max-[426px]:w-14"
+                    className="h-32 w-32 rounded-full bg-[#f5f5f5] p-1 shadow-[0_2px_8px_0_rgba(49,59,172,0.08)] max-[1200px]:h-24 max-[1200px]:w-24 max-[800px]:h-20 max-[800px]:w-20 max-[426px]:h-14 max-[426px]:w-14"
                   />
                   <p className="mt-2 text-center text-base font-medium tracking-widest text-secondary max-[426px]:max-w-min max-[426px]:text-[0.8rem]">
                     {skillName.toUpperCase()}

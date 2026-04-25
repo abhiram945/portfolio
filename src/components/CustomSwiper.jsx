@@ -5,7 +5,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 const CustomSwiper = ({ imagesArray, location, auto = false }) => {
-  return (
+  return imagesArray.length === 1 ? <img loading="lazy" src={`/images/${location}/${imagesArray[0]}.png`} alt={imagesArray[0]} className="w-full h-full object-cover" /> :
     <>
       <Swiper
         slidesPerView={1}
@@ -30,7 +30,6 @@ const CustomSwiper = ({ imagesArray, location, auto = false }) => {
         ))}
       </Swiper>
     </>
-  );
 };
 
 export default CustomSwiper;

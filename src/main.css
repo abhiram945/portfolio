@@ -143,3 +143,8 @@
 .swiper-wrapper {
   @apply items-center;
 }
+
+.bn-container,
+.bn-container * {
+  font-family: system-ui, sans-serif !important;
+}

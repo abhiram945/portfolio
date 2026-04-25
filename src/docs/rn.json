@@ -1,142 +1,184 @@
 [
-    {
-        "type": "h1",
-        "content": "REACTNATIVE WITH EXPO"
+  {
+    "type": "heading",
+    "props": {
+      "level": 1
     },
-    {
-        "type": "p",
-        "content": "Install Node.js"
+    "content": "REACTNATIVE WITH EXPO"
+  },
+  {
+    "type": "paragraph",
+    "content": "Install Node.js"
+  },
+  {
+    "type": "paragraph",
+    "content": "Create new expo Project"
+  },
+  {
+    "type": "codeBlock",
+    "props": {
+      "language": "text"
     },
-    {
-        "type": "p",
-        "content": "Create new expo Project"
+    "content": "npx create-expo-app@latest MyExpoAppName"
+  },
+  {
+    "type": "paragraph",
+    "content": "Install Expo Go on mobile"
+  },
+  {
+    "type": "paragraph",
+    "content": "Start the Expo Development server"
+  },
+  {
+    "type": "codeBlock",
+    "props": {
+      "language": "text"
     },
-    {
-        "type": "code",
-        "content": "npx create-expo-app@latest MyExpoAppName"
+    "content": "npm start"
+  },
+  {
+    "type": "paragraph",
+    "content": "Scan the QR code to run the app using Expo go installed on mobile."
+  },
+  {
+    "type": "heading",
+    "props": {
+      "level": 2
     },
-    {
-        "type": "p",
-        "content": "Install Expo Go on mobile"
+    "content": "To test on Android Studio or Using Physical device, download & install Android Studio with SDK, NDK and create a Virtual Device."
+  },
+  {
+    "type": "paragraph",
+    "content": "Set env var User Varables on PC:"
+  },
+  {
+    "type": "paragraph",
+    "content": "1. new=> ANDROID_HOME:C:/Users/user-name/AppData/Local/Android/Sdk"
+  },
+  {
+    "type": "paragraph",
+    "content": "2. Path=> Edit=> New then add C:\\Users\\user-name\\AppData\\Local\\Android\\Sdk\\platform-tools"
+  },
+  {
+    "type": "paragraph",
+    "content": "CMake will be downloaded by android studio, set the cmake path in environmental variables"
+  },
+  {
+    "type": "paragraph",
+    "content": "To generate Development build / android folder"
+  },
+  {
+    "type": "codeBlock",
+    "props": {
+      "language": "text"
     },
-    {
-        "type": "p",
-        "content": "Start the Expo Development server"
+    "content": "npx expo prebuild"
+  },
+  {
+    "type": "paragraph",
+    "content": "To run the developemnt build / test apk on mobile Connect mobile to PC using USB and enable UsbDebugging in Developer Options. Then in terminal at any path, run:"
+  },
+  {
+    "type": "codeBlock",
+    "props": {
+      "language": "text"
     },
-    {
-        "type": "code",
-        "content": "npm start"
+    "content": "adb devices"
+  },
+  {
+    "type": "paragraph",
+    "content": "It will display the connected mobile phone model number as unauthenticated. In mobile it will prompt to allow the PC to debug, Accept/Ok the request."
+  },
+  {
+    "type": "paragraph",
+    "content": "To connect wirelessly, connect PC and mobile to same network and then run:"
+  },
+  {
+    "type": "codeBlock",
+    "props": {
+      "language": "text"
     },
-    {
-        "type": "p",
-        "content": "Scan the QR code to run the app using Expo go installed on mobile."
+    "content": "adb connect mobile_ip_address"
+  },
+  {
+    "type": "paragraph",
+    "content": "To run using prebuild android folder on physical device / on android studio run:"
+  },
+  {
+    "type": "codeBlock",
+    "props": {
+      "language": "text"
     },
-    {
-        "type": "h2",
-        "content": "To test on Android Studio or Using Physical device, download & install Android Studio with SDK, NDK and create a Virtual Device."
+    "content": "npm run android"
+  },
+  {
+    "type": "paragraph",
+    "content": "To reduce APK size add in app.json:"
+  },
+  {
+    "type": "codeBlock",
+    "props": {
+      "language": "text"
     },
-    {
-        "type": "p",
-        "content": "Set env var User Varables on PC:"
+    "content": "In expo obj: “useLegacyPackaging”:true,\nIn expo.android: “enableProguardInReleaseBuilds”: true"
+  },
+  {
+    "type": "paragraph",
+    "content": "To generate a key for signing the apk, open new terminal as Admin and navigate to the path"
+  },
+  {
+    "type": "codeBlock",
+    "props": {
+      "language": "text"
     },
-    {
-        "type": "p",
-        "content": "1. new=> ANDROID_HOME:C:/Users/user-name/AppData/Local/Android/Sdk"
+    "content": "cd C:\\Program Files\\Java\\jdkx.x.x_x\\bin\nkeytool -genkeypair -v -storetype PKCS12 -keystore file_name.keystore -alias file_name_alias -keyalg RSA -keysize 2048 -vapdity 10000"
+  },
+  {
+    "type": "paragraph",
+    "content": "Place the file_name.keystore file under the android/app directory in project folder."
+  },
+  {
+    "type": "paragraph",
+    "content": "Edit the file ~/.gradle/gradle.properties or android/gradle.properties, and add the following (replace ***** with the correct keystore password, alias and key password)"
+  },
+  {
+    "type": "codeBlock",
+    "props": {
+      "language": "text"
     },
-    {
-        "type": "p",
-        "content": "2. Path=> Edit=> New then add C:\\Users\\user-name\\AppData\\Local\\Android\\Sdk\\platform-tools"
+    "content": "MYAPP_UPLOAD_STORE_FILE=file_name.keystore\nMYAPP_UPLOAD_KEY_ALIAS=file_name_alias\nMYAPP_UPLOAD_STORE_PASSWORD=*****\nMYAPP_UPLOAD_KEY_PASSWORD=*****"
+  },
+  {
+    "type": "paragraph",
+    "content": "Clean up the build"
+  },
+  {
+    "type": "codeBlock",
+    "props": {
+      "language": "text"
     },
-    {
-        "type": "p",
-        "content": "CMake will be downloaded by android studio, set the cmake path in environmental variables"
+    "content": ".cd android\n./gradlew clean"
+  },
+  {
+    "type": "paragraph",
+    "content": "Generate the final APK"
+  },
+  {
+    "type": "codeBlock",
+    "props": {
+      "language": "text"
     },
-    {
-        "type": "p",
-        "content": "To generate Development build / android folder"
+    "content": "/gradlew assembleRelease"
+  },
+  {
+    "type": "paragraph",
+    "content": "To get signingReport:"
+  },
+  {
+    "type": "codeBlock",
+    "props": {
+      "language": "text"
     },
-    {
-        "type": "code",
-        "content": "npx expo prebuild"
-    },
-    {
-        "type": "p",
-        "content": "To run the developemnt build / test apk on mobile Connect mobile to PC using USB and enable UsbDebugging in Developer Options. Then in terminal at any path, run:"
-    },
-    {
-        "type": "code",
-        "content": "adb devices"
-    },
-    {
-        "type": "p",
-        "content": "It will display the connected mobile phone model number as unauthenticated. In mobile it will prompt to allow the PC to debug, Accept/Ok the request."
-    },
-    {
-        "type": "p",
-        "content": "To connect wirelessly, connect PC and mobile to same network and then run:"
-    },
-    {
-        "type": "code",
-        "content": "adb connect mobile_ip_address"
-    },
-    {
-        "type": "p",
-        "content": "To run using prebuild android folder on physical device / on android studio run:"
-    },
-    {
-        "type": "code",
-        "content": "npm run android"
-    },
-    {
-        "type": "p",
-        "content": "To reduce APK size add in app.json:"
-    },
-    {
-        "type": "code",
-        "content": "In expo obj: “useLegacyPackaging”:true,\nIn expo.android: “enableProguardInReleaseBuilds”: true"
-    },
-    {
-        "type": "p",
-        "content": "To generate a key for signing the apk, open new terminal as Admin and navigate to the path"
-    },
-    {
-        "type": "code",
-        "content": "cd C:\\Program Files\\Java\\jdkx.x.x_x\\bin\nkeytool -genkeypair -v -storetype PKCS12 -keystore file_name.keystore -alias file_name_alias -keyalg RSA -keysize 2048 -vapdity 10000"
-    },
-    {
-        "type": "p",
-        "content": "Place the file_name.keystore file under the android/app directory in project folder."
-    },
-    {
-        "type": "p",
-        "content": "Edit the file ~/.gradle/gradle.properties or android/gradle.properties, and add the following (replace ***** with the correct keystore password, alias and key password)"
-    },
-    {
-        "type": "code",
-        "content": "MYAPP_UPLOAD_STORE_FILE=file_name.keystore\nMYAPP_UPLOAD_KEY_ALIAS=file_name_alias\nMYAPP_UPLOAD_STORE_PASSWORD=*****\nMYAPP_UPLOAD_KEY_PASSWORD=*****"
-    },
-    {
-        "type": "p",
-        "content": "Clean up the build"
-    },
-    {
-        "type": "code",
-        "content": ".cd android\n./gradlew clean"
-    },
-    {
-        "type": "p",
-        "content": "Generate the final APK"
-    },
-    {
-        "type": "code",
-        "content": "/gradlew assembleRelease"
-    },
-    {
-        "type": "p",
-        "content": "To get signingReport:"
-    },
-    {
-        "type": "code",
-        "content": "cd android\n./gradlew signingReport"
-    }
+    "content": "cd android\n./gradlew signingReport"
+  }
 ]
