@@ -125,6 +125,7 @@ const Docs = ({ docName }) => {
         initialContent: dataMap[docName]
     });
     useEffect(() => {
+        if (!import.meta.env.DEV) return;
         let timeOutId = null;
         if (!editor) return;
         const handleOnChnage = editor.onChange((e) => {
@@ -134,7 +135,10 @@ const Docs = ({ docName }) => {
                 localStorage.setItem("editor-content", JSON.stringify(editor.document))
             }, 2000);
         })
-        return () => handleOnChnage()
+        return () => {
+            clearTimeout(timeOutId);
+            handleOnChnage();
+        };
     }, [editor])
     return <>
         <div className="fixed z-10 top-4 right-4 flex items-center gap-4">
