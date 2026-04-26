@@ -29,10 +29,10 @@ const Apps = () => {
               <div className='w-full'>
                 {/* Small Screens: Swiper */}
                 <div className='hidden max-[800px]:block'>
-                  {/* <CustomSwiper imagesArray={app.images} location='apps' /> */}
+                  <CustomSwiper imagesArray={app.images} location='apps' />
                 </div>
                 {/* Large Screens: Grid */}
-                <div className='flex justify-around gap-4 max-[800px]:hidden'>
+                <div className='flex justify-around flex-wrap gap-4 max-[800px]:hidden'>
                   {app.images.map((img, idx) => (
                     <img 
                       key={idx} 

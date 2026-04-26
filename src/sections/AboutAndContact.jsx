@@ -59,7 +59,7 @@ const AboutAndContact = () => {
 
         <div
           ref={aboutSwiperRef}
-          className={`mx-auto mt-6 w-[40vw] max-[769px]:w-[90%] ${
+          className={`mx-auto mt-6 w-[50vw] max-[769px]:w-[95%] ${
             aboutSwiperVisible ? 'animate-fadeInUp opacity-100' : 'opacity-0'
           }`}
         >

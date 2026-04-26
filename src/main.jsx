@@ -1,14 +1,21 @@
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+
 import "./main.css"
+
 import Portfolio from "./pages/portfolio"
 import Docs from './pages/Docs'
 
 
 const Main = () => {
-    const pathName = window.location.pathname
-    return pathName==="/" ? <Portfolio/> : pathName.startsWith("/docs") ? <Docs docName={pathName.split("/")[2]}/> : window.location="/"
+    return <BrowserRouter>
+        <Routes>
+            <Route path='/' element={<Portfolio />} />
+            <Route path='/docs/:doc' element={<Docs />} />
+            <Route path='*' element={<Navigate to="/"/>} />
+        </Routes>
+    </BrowserRouter>
 }
-
 createRoot(document.getElementById('root')).render(
     <Main />
 )

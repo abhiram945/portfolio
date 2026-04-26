@@ -20,7 +20,7 @@ const Hero = () => {
       {/* Middle Column */}
       <div className="flex h-full w-1/2 flex-col justify-center gap-6 max-[800px]:h-1/2 max-[800px]:w-full max-[800px]:gap-4 max-[426px]:gap-8">
         <div className="flex items-center justify-center">
-          <div className="flex animate-fadeIn relative text-[9vw] font-anton leading-none text-black max-[800px]:text-[15vw] max-[426px]:text-8xl">
+          <div className="flex animate-fadeIn relative text-[20vw] sm:text-[12.5vw] md:text-[15vw] lg:text-[8vw] xl:text-[10vw] font-anton leading-none text-black">
             <img
               src="/images/hero/ring.png" alt="ring" loading="lazy"
               className="h-[25vw] w-[25vw] animate-[ringFadeIn_2s_ease-in_forwards_1s,moveUpDown_4s_ease-in-out_infinite_1s] opacity-0
