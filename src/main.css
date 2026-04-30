@@ -148,3 +148,25 @@
 .bn-container * {
   font-family: system-ui, sans-serif !important;
 }
+
+
+/* Docs styles */
+[contenteditable]:empty:before {
+    content: attr(placeholder);
+    color: #aaa;
+    pointer-events: none;
+}
+.docs-container {
+    counter-reset: ol-counter;
+}
+.ol-item {
+    counter-increment: ol-counter;
+    display: flex;
+    align-items: flex-start;
+}
+.ol-item::before {
+    content: counter(ol-counter) ".";
+    font-weight: bold;
+    margin-right: 0.25rem;
+    min-width: 1.25rem;
+}
