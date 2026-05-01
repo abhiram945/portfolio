@@ -10,6 +10,37 @@ const getDocCollectionName = (docName) => `doc_${normalizeDocName(docName)}`;
 const getBlocksCollection = (docName) => collection(db, getDocCollectionName(docName));
 const INDENT_PX = 24;
 
+const sortByOrder = (arr = []) => [...arr].sort((a, b) => (a.order || 0) - (b.order || 0));
+
+const toUiBlock = (block, overrides = {}) => ({
+    id: block.id,
+    type: "p",
+    text: "",
+    order: 1,
+    parentId: null,
+    children: [],
+    ...block,
+    ...overrides
+});
+
+const flattenNestedBlocks = (topLevelBlocks = []) => {
+    const flat = [];
+    const walk = (node, parentId = null) => {
+        const children = Array.isArray(node.children) ? node.children : [];
+        flat.push(toUiBlock(node, { parentId, children: children.map((c) => c.id) }));
+        sortByOrder(children).forEach((child) => walk(child, node.id));
+    };
+    sortByOrder(topLevelBlocks).forEach((block) => walk(block, null));
+    return flat;
+};
+
+const stripOrder = (node) => ({
+    id: node.id,
+    type: node.type,
+    text: node.text,
+    children: (node.children || []).map(stripOrder)
+});
+
 const TableCell = memo(({ value, onChange }) => {
     const ref = useRef(null);
 
@@ -39,7 +70,7 @@ const placeCaretAtEnd = (el) => {
     selection.addRange(range);
 };
 
-const Block = memo(function Block({ b, i, updateBlock, handleKeyDown, olNumber }) {
+const Block = memo(function Block({ b, i, updateBlock, handleKeyDown, olNumber, setActiveBlockId }) {
     const ref = useRef(null);
 
     useEffect(() => {
@@ -156,6 +187,7 @@ const Block = memo(function Block({ b, i, updateBlock, handleKeyDown, olNumber }
         onInput: (e) => updateBlock(b.id, e.currentTarget.innerText),
         onKeyDown: (e) => handleKeyDown(e, i, b),
         onFocus: (e) => {
+            setActiveBlockId?.(b.id);
             if (!b._new) {
                 placeCaretAtEnd(e.currentTarget);
             }
@@ -192,8 +224,10 @@ export default function Docs() {
     const [docList, setDocList] = useState([]);
     const [loading, setLoading] = useState(true);
     const [activeDropDownId, setActiveDropDownId] = useState(null);
+    const [activeBlockId, setActiveBlockId] = useState(null);
     const [open, setOpen] = useState(false);
     const [docExists, setDocExists] = useState(true);
+    const persistedTopLevelRef = useRef(new Map());
 
     useEffect(() => {
         const unsub = onAuthStateChanged(auth, setUser);
@@ -263,19 +297,31 @@ export default function Docs() {
             return;
         }
 
-        const blocksArray = snap.docs
-            .map((d) => ({
-                id: d.id,
-                type: "p",
-                text: "",
-                order: 1,
-                parentId: null,
-                children: [],
-                ...d.data()
-            }))
-            .sort((a, b) => a.order - b.order);
+        const rawDocs = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+        const hasLegacyFlatShape = rawDocs.some((d) => d.parentId !== undefined);
 
-        setBlocks(blocksArray);
+        if (hasLegacyFlatShape) {
+            const blocksArray = rawDocs
+                .map((d) => toUiBlock(d, { id: d.id }))
+                .sort((a, b) => a.order - b.order);
+            setBlocks(blocksArray);
+            persistedTopLevelRef.current = new Map(
+                blocksArray.filter((b) => b.parentId === null).map((b) => [b.id, { id: b.id, type: b.type, text: b.text, order: b.order, children: [] }])
+            );
+            setLoading(false);
+            return;
+        }
+
+        const topLevelBlocks = rawDocs.map((d) => ({
+            id: d.id,
+            type: d.type || "p",
+            text: d.text || "",
+            order: d.order || 1,
+            children: Array.isArray(d.children) ? d.children : []
+        }));
+
+        setBlocks(flattenNestedBlocks(topLevelBlocks));
+        persistedTopLevelRef.current = new Map(topLevelBlocks.map((b) => [b.id, b]));
         setLoading(false);
     };
 
@@ -284,6 +330,7 @@ export default function Docs() {
     }, []);
 
     const deleteBlock = useCallback(async (id) => {
+        const targetBlock = blocks.find((b) => b.id === id);
         setBlocks(prev => {
             const newBlocks = prev
                 .filter((b) => b.id !== id)
@@ -297,8 +344,8 @@ export default function Docs() {
                 : newBlocks;
         });
 
-        // Surgical delete from Firestore (single block document)
-        if (!id.startsWith("temp-")) {
+        // Only top-level blocks are standalone documents in Firestore.
+        if (!id.startsWith("temp-") && targetBlock?.parentId === null) {
             try {
                 await deleteDoc(doc(db, getDocCollectionName(docNameAsId), id));
             } catch (error) {
@@ -307,7 +354,7 @@ export default function Docs() {
                 }
             }
         }
-    }, [docNameAsId]);
+    }, [blocks, docNameAsId]);
 
     const addBlock = useCallback((index, type = "p") => {
         setBlocks(prev => {
@@ -466,18 +513,78 @@ export default function Docs() {
         try {
             const normalizedName = normalizeDocName(docNameAsId);
             const batch = writeBatch(db);
-            const normalizedBlocks = blocks.map((b, idx) => ({
+            const idRemap = new Map();
+            const normalizedBlocks = blocks.map((b, idx) => {
+                const nextId = b.id.startsWith("temp-") ? "id-" + Date.now() + "-" + idx : b.id;
+                idRemap.set(b.id, nextId);
+                return { ...b, id: nextId };
+            }).map((b) => ({
                 ...b,
-                id: b.id.startsWith("temp-") ? "id-" + Date.now() + "-" + idx : b.id,
-                order: idx + 1
+                parentId: b.parentId ? (idRemap.get(b.parentId) || b.parentId) : null,
+                children: (b.children || []).map((cid) => idRemap.get(cid) || cid)
             }));
-            normalizedBlocks.forEach((block) => {
-                const { _new, _updated, ...payload } = block;
-                const blockRef = doc(db, getDocCollectionName(normalizedName), block.id);
-                if (_new) {
-                    batch.set(blockRef, payload);
-                } else if (_updated) {
-                    batch.set(blockRef, payload, { merge: true });
+
+            const byId = new Map(normalizedBlocks.map((b) => [b.id, {
+                id: b.id,
+                type: b.type,
+                text: b.text,
+                order: b.order || 1,
+                parentId: b.parentId || null,
+                children: []
+            }]));
+
+            const orderedIds = normalizedBlocks.map((b) => b.id);
+            const childIdsByParent = new Map();
+            const topLevelIds = [];
+            orderedIds.forEach((id) => {
+                const block = byId.get(id);
+                if (!block) return;
+                if (!block.parentId) {
+                    topLevelIds.push(id);
+                    return;
+                }
+                if (!childIdsByParent.has(block.parentId)) childIdsByParent.set(block.parentId, []);
+                childIdsByParent.get(block.parentId).push(id);
+            });
+
+            const assignOrdersAndChildren = (id) => {
+                const node = byId.get(id);
+                if (!node) return null;
+                const childIds = childIdsByParent.get(id) || [];
+                node.children = childIds.map((cid, idx) => {
+                    const childNode = byId.get(cid);
+                    if (!childNode) return null;
+                    childNode.order = idx + 1;
+                    return assignOrdersAndChildren(cid);
+                }).filter(Boolean);
+                return { id: node.id, type: node.type, text: node.text, order: node.order, children: node.children };
+            };
+
+            const topLevelNodes = topLevelIds.map((id, idx) => {
+                const node = byId.get(id);
+                if (!node) return null;
+                node.order = idx + 1;
+                return assignOrdersAndChildren(id);
+            }).filter(Boolean);
+
+            const previousTopLevel = persistedTopLevelRef.current;
+            topLevelNodes.forEach((node) => {
+                const blockRef = doc(db, getDocCollectionName(normalizedName), node.id);
+                const prev = previousTopLevel.get(node.id);
+
+                if (!prev) {
+                    batch.set(blockRef, node);
+                    return;
+                }
+
+                const sameContent = JSON.stringify(stripOrder(prev)) === JSON.stringify(stripOrder(node));
+                if (sameContent && prev.order !== node.order) {
+                    batch.set(blockRef, { order: node.order }, { merge: true });
+                    return;
+                }
+
+                if (!sameContent || prev.order !== node.order) {
+                    batch.set(blockRef, node, { merge: true });
                 }
             });
 
@@ -495,8 +602,15 @@ export default function Docs() {
     };
 
     const handleOutSideClick = (e) => {
+        const clickedInsideBlock = e.target.closest("[data-doc-block='true']");
+        if (clickedInsideBlock) {
+            return;
+        }
         if (activeDropDownId) {
             setActiveDropDownId(null);
+        }
+        if (activeBlockId) {
+            setActiveBlockId(null);
         }
         if (open) {
             setOpen(false);
@@ -561,6 +675,7 @@ export default function Docs() {
                     {blocks.map((b, i) => (
                         <div
                             key={b.id}
+                            data-doc-block="true"
                             className="group flex gap-3 items-start rounded"
                             style={{
                                 marginLeft: `${Math.min(
@@ -580,7 +695,7 @@ export default function Docs() {
                                 ) * INDENT_PX}px`
                             }}
                         >
-                            <div className="relative opacity-0 group-hover:opacity-100 flex gap-1 group">
+                            <div className={`relative flex gap-1 group ${activeBlockId === b.id ? "opacity-100 lg:opacity-0 lg:group-hover:opacity-100" : "opacity-0 lg:group-hover:opacity-100"}`}>
                                 <button className="cursor-pointer" onClick={(e) => {
                                     e.stopPropagation();
                                     setActiveDropDownId(prev => prev === b.id ? null : b.id);
@@ -599,7 +714,7 @@ export default function Docs() {
                                 </div>
                             </div>
                             <div className="flex-1 min-w-0">
-                                <Block b={b} i={i} updateBlock={updateBlock} handleKeyDown={handleKeyDown} olNumber={getOlNumber(b)} />
+                                <Block b={b} i={i} updateBlock={updateBlock} handleKeyDown={handleKeyDown} olNumber={getOlNumber(b)} setActiveBlockId={setActiveBlockId} />
                             </div>
                         </div>
                     ))}
