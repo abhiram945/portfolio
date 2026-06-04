@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, memo, useCallback } from "react";
+import { useState, useEffect, useRef, memo, useMemo, useCallback } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { collection, doc, getDocs, getDoc, setDoc, deleteDoc, query, orderBy, writeBatch } from "firebase/firestore";
@@ -229,6 +229,45 @@ export default function Docs() {
     const [docExists, setDocExists] = useState(true);
     const persistedTopLevelRef = useRef(new Map());
 
+    // Optimize: Pre-calculate structure-related metadata (depth, olNumber)
+    // only when the document structure (order, parentage, types) changes.
+    const structureKey = blocks.map(b => `${b.id}-${b.parentId}-${b.type}`).join("|");
+    const blockMetadata = useMemo(() => {
+        const byId = new Map(blocks.map(b => [b.id, b]));
+        const metadata = new Map();
+
+        for (let i = 0; i < blocks.length; i++) {
+            const b = blocks[i];
+
+            // Depth calculation (iterative for safety and performance)
+            let depth = 0;
+            let parentId = b.parentId;
+            const visited = new Set();
+            while (parentId && byId.has(parentId) && !visited.has(parentId)) {
+                visited.add(parentId);
+                depth++;
+                parentId = byId.get(parentId).parentId;
+                if (depth >= 8) break; // UI limit
+            }
+
+            // OL Number calculation (efficient look-back)
+            let olNumber = null;
+            if (b.type === "ol") {
+                olNumber = 1;
+                for (let j = i - 1; j >= 0; j--) {
+                    const prev = blocks[j];
+                    if (prev.parentId === b.parentId) {
+                        if (prev.type === "ol") olNumber++;
+                        else break; // Interrupted by a different block type at same level
+                    }
+                }
+            }
+
+            metadata.set(b.id, { depth, olNumber });
+        }
+        return metadata;
+    }, [structureKey]);
+
     useEffect(() => {
         const unsub = onAuthStateChanged(auth, setUser);
         return () => unsub();
@@ -298,7 +337,7 @@ export default function Docs() {
         }
 
         const rawDocs = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
-        const hasLegacyFlatShape = rawDocs.some((d) => d.parentId !== undefined);
+        const hasLegacyFlatShape = rawDocs.some((d) => d.parentId !== undefined && d.parentId !== null);
 
         if (hasLegacyFlatShape) {
             const blocksArray = rawDocs
@@ -617,19 +656,6 @@ export default function Docs() {
         }
     }
 
-    const getOlNumber = (block) => {
-        if (block.type !== "ol") return null;
-        const siblings = blocks.filter((b) => b.parentId === block.parentId).sort((a, b) => a.order - b.order);
-        const idx = siblings.findIndex((b) => b.id === block.id);
-        if (idx === -1) return 1;
-        let count = 0;
-        for (let j = idx; j >= 0; j--) {
-            if (siblings[j].type !== "ol") break;
-            count += 1;
-        }
-        return count;
-    };
-
     return (
         <main className="w-full h-full select-text" onClick={(e) => handleOutSideClick(e)}>
             <header className="flex gap-2 absolute z-10 right-2 top-2 bg-secondary backdrop-blur p-1 rounded-2xl">
@@ -672,52 +698,41 @@ export default function Docs() {
                 </div>
             ) : (
                 <div className="space-y-2 p-4 docs-container">
-                    {blocks.map((b, i) => (
-                        <div
-                            key={b.id}
-                            data-doc-block="true"
-                            className="group flex gap-3 items-start rounded"
-                            style={{
-                                marginLeft: `${Math.min(
-                                    (() => {
-                                        let depth = 0;
-                                        let parentId = b.parentId;
-                                        const byId = new Map(blocks.map((x) => [x.id, x]));
-                                        const visited = new Set();
-                                        while (parentId && byId.has(parentId) && !visited.has(parentId)) {
-                                            visited.add(parentId);
-                                            depth += 1;
-                                            parentId = byId.get(parentId)?.parentId || null;
-                                        }
-                                        return depth;
-                                    })(),
-                                    8
-                                ) * INDENT_PX}px`
-                            }}
-                        >
-                            <div className={`relative flex gap-1 group ${activeBlockId === b.id ? "opacity-100 lg:opacity-0 lg:group-hover:opacity-100" : "opacity-0 lg:group-hover:opacity-100"}`}>
-                                <button className="cursor-pointer" onClick={(e) => {
-                                    e.stopPropagation();
-                                    setActiveDropDownId(prev => prev === b.id ? null : b.id);
-                                }}>
-                                    <img className="w-6 h-w-6" src="/images/docs/plus.svg" alt="add" />
-                                </button>
-                                <button className="cursor-pointer" onClick={() => deleteBlock(b.id)}>
-                                    <img className="w-5 h-w-5" src="/images/docs/delete.svg" alt="delete" />
-                                </button>
-                                <div className={`${activeDropDownId === b.id ? "flex flex-col gap-2 bg-lightGray p-1 rounded-md absolute top-full left-0 z-20" : "hidden"} text-xs`}>
-                                    <button className="p-2 hover:bg-gray cursor-pointer rounded-md" onClick={() => addBlock(i, "h1")}>H1</button>
-                                    <button className="p-2 px-3 hover:bg-gray cursor-pointer rounded-md" onClick={() => addBlock(i, "ol")}>1.</button>
-                                    <button className="p-2 px-3 hover:bg-gray cursor-pointer rounded-md" onClick={() => addBlock(i, "p")}>P</button>
-                                    <button className="p-2 hover:bg-gray cursor-pointer rounded-md" onClick={() => addBlock(i, "table")}>Table</button>
-                                    <button className="p-2 hover:bg-gray cursor-pointer rounded-md" onClick={() => addBlock(i, "code")}>{"</>"}</button>
+                    {blocks.map((b, i) => {
+                        const { depth, olNumber } = blockMetadata.get(b.id) || { depth: 0, olNumber: null };
+                        return (
+                            <div
+                                key={b.id}
+                                data-doc-block="true"
+                                className="group flex gap-3 items-start rounded"
+                                style={{
+                                    marginLeft: `${Math.min(depth, 8) * INDENT_PX}px`
+                                }}
+                            >
+                                <div className={`relative flex gap-1 group ${activeBlockId === b.id ? "opacity-100 lg:opacity-0 lg:group-hover:opacity-100" : "opacity-0 lg:group-hover:opacity-100"}`}>
+                                    <button className="cursor-pointer" onClick={(e) => {
+                                        e.stopPropagation();
+                                        setActiveDropDownId(prev => prev === b.id ? null : b.id);
+                                    }}>
+                                        <img className="w-6 h-w-6" src="/images/docs/plus.svg" alt="add" />
+                                    </button>
+                                    <button className="cursor-pointer" onClick={() => deleteBlock(b.id)}>
+                                        <img className="w-5 h-w-5" src="/images/docs/delete.svg" alt="delete" />
+                                    </button>
+                                    <div className={`${activeDropDownId === b.id ? "flex flex-col gap-2 bg-lightGray p-1 rounded-md absolute top-full left-0 z-20" : "hidden"} text-xs`}>
+                                        <button className="p-2 hover:bg-gray cursor-pointer rounded-md" onClick={() => addBlock(i, "h1")}>H1</button>
+                                        <button className="p-2 px-3 hover:bg-gray cursor-pointer rounded-md" onClick={() => addBlock(i, "ol")}>1.</button>
+                                        <button className="p-2 px-3 hover:bg-gray cursor-pointer rounded-md" onClick={() => addBlock(i, "p")}>P</button>
+                                        <button className="p-2 hover:bg-gray cursor-pointer rounded-md" onClick={() => addBlock(i, "table")}>Table</button>
+                                        <button className="p-2 hover:bg-gray cursor-pointer rounded-md" onClick={() => addBlock(i, "code")}>{"</>"}</button>
+                                    </div>
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <Block b={b} i={i} updateBlock={updateBlock} handleKeyDown={handleKeyDown} olNumber={olNumber} setActiveBlockId={setActiveBlockId} />
                                 </div>
                             </div>
-                            <div className="flex-1 min-w-0">
-                                <Block b={b} i={i} updateBlock={updateBlock} handleKeyDown={handleKeyDown} olNumber={getOlNumber(b)} setActiveBlockId={setActiveBlockId} />
-                            </div>
-                        </div>
-                    ))}
+                        )
+                    })}
                 </div>
             )}
         </main>
