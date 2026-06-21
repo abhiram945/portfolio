@@ -192,18 +192,17 @@ const Block = memo(function Block({ b, i, updateBlock, handleKeyDown, olNumber, 
                 placeCaretAtEnd(e.currentTarget);
             }
         },
-        className: "outline-none w-full select-text",
         placeholder: "Start typing..."
     };
 
     switch (b.type) {
         case "h1":
-            return <h1 {...commonProps} className="text-3xl font-bold outline-none w-full select-text" />
+            return <h1 {...commonProps} className="text-3xl font-bold outline-none w-full select-text whitespace-pre-wrap break-words" />
         case "ol":
             return (
                 <div className="text-base outline-none w-full select-text flex items-start">
                     <span className="font-bold mr-1 min-w-5">{olNumber}.</span>
-                    <div {...commonProps} className="text-base outline-none w-full select-text" />
+                    <div {...commonProps} className="text-base outline-none w-full select-text whitespace-pre-wrap break-words" />
                 </div>
             )
         case "code":
@@ -212,7 +211,7 @@ const Block = memo(function Block({ b, i, updateBlock, handleKeyDown, olNumber, 
             </pre>
         case "p":
         default:
-            return <p {...commonProps} className="text-base outline-none w-full select-text" />
+            return <p {...commonProps} className="text-base outline-none w-full select-text whitespace-pre-wrap break-words" />
     }
 });
 
@@ -658,7 +657,7 @@ export default function Docs() {
 
     return (
         <main className="w-full h-full select-text" onClick={(e) => handleOutSideClick(e)}>
-            <header className="flex gap-2 absolute z-10 right-2 top-2 bg-secondary backdrop-blur p-1 rounded-2xl">
+            <header className="flex gap-2 fixed z-10 right-2 top-2 bg-secondary backdrop-blur p-1 rounded-2xl">
                 <div className="relative" onMouseLeave={() => setOpen(false)}>
                     <button className="bg-secondary text-white px-4 py-2 rounded-xl border flex items-center justify-between min-w-[140px] cursor-pointer" onMouseEnter={() => setOpen(true)}>
                         <p className="mr-auto">{docNameAsId.toUpperCase()}</p> <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="inline-block transition-transform duration-200 transform-gpu origin-center" height="1.6em" width="1.6em" xmlns="http://www.w3.org/2000/svg">
