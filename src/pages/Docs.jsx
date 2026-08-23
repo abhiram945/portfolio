@@ -4,7 +4,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { collection, doc, getDocs, getDoc, setDoc, deleteDoc, query, orderBy, writeBatch } from "firebase/firestore";
 import { auth, db } from "../lib/firebase";
 
-const DOCS_NAMES_COLLECTION = "docs-names";
+const DOCS_NAMES_COLLECTION = "doc_names";
 const normalizeDocName = (name = "") => name.trim().toLowerCase();
 const getDocCollectionName = (docName) => `doc_${normalizeDocName(docName)}`;
 const getBlocksCollection = (docName) => collection(db, getDocCollectionName(docName));
