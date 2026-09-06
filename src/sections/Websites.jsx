@@ -3,6 +3,14 @@ import useInView from '../hooks/useInView';
 
 const websitesData = [
   {
+    name: 'marketmea',
+    images: Array.from({length:8}).map((value,index)=>`marketmea${index+1}`),
+    usecase: 'A b2b market place',
+    techStack: ['mongodb', 'express js', 'react js', 'rest api', 'jwt', 'node workers', 'nodemailer', 'twilio', 'aws-ec2', 'aws-s3'],
+    url: 'https://www.marketmea.com',
+    github: '',
+  },
+  {
     name: 'finbook',
     images: Array.from({length:5}).map((value,index)=>`finbook${index+1}`),
     usecase: 'A finance management system',
@@ -100,7 +108,7 @@ const Websites = () => {
                       target='_blank'
                       className='mr-2 flex items-center gap-2 rounded-lg bg-secondary p-2 font-medium tracking-widest text-white shadow-hero transition-transform hover:scale-110'
                     >
-                      Visit <img src='/images/websites/view.svg' alt='Visit' className='w-4' />
+                      Visit <img src='/images/websites/visit.svg' alt='Visit' className='w-4' />
                     </a>
                   )}
                   {website.github && (
@@ -109,7 +117,7 @@ const Websites = () => {
                       target='_blank'
                       className='mr-2 flex items-center gap-2 rounded-lg bg-black p-2 font-bold tracking-widest text-lightGray shadow-hero transition-transform hover:scale-110'
                     >
-                      Github <img src='/images/websites/visit.svg' alt='Github' className='w-4' />
+                      Github <img src='/images/websites/view.svg' alt='Github' className='w-4' />
                     </a>
                   )}
                 </div>
