@@ -6,30 +6,28 @@ import 'swiper/css/navigation';
 
 const CustomSwiper = ({ imagesArray, location, auto = false }) => {
   return imagesArray.length === 1 ? <img loading="lazy" src={`/images/${location}/${imagesArray[0]}.png`} alt={imagesArray[0]} className="w-full h-full object-cover" /> :
-    <>
-      <Swiper
-        slidesPerView={1}
-        spaceBetween={30}
-        centeredSlides={false}
-        pagination={true}
-        loop={true}
-        autoplay={auto ? { delay: 3000, disableOnInteraction: false } : false}
-        navigation={true}
-        modules={[Navigation, Autoplay, Pagination]}
-        className="customSwiper w-full h-full"
-      >
-        {imagesArray.map((image, index) => (
-          <SwiperSlide key={image + index} className="w-full h-full">
-            <img
-              loading="lazy"
-              src={`/images/${location}/${image}.png`}
-              alt={image}
-              className="w-full h-full object-cover"
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </>
+    <Swiper
+      slidesPerView={1}
+      spaceBetween={30}
+      centeredSlides={false}
+      pagination={true}
+      loop={imagesArray.length > 3}
+      autoplay={auto ? { delay: 3000, disableOnInteraction: false } : false}
+      navigation={true}
+      modules={[Navigation, Autoplay, Pagination]}
+      className="customSwiper w-full h-full"
+    >
+      {imagesArray.map((image, index) => (
+        <SwiperSlide key={image + index} className="w-full h-full">
+          <img
+            loading="lazy"
+            src={`/images/${location}/${image}.png`}
+            alt={image}
+            className="w-full h-full object-cover"
+          />
+        </SwiperSlide>
+      ))}
+    </Swiper>
 };
 
 export default CustomSwiper;

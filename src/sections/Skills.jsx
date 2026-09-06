@@ -1,57 +1,148 @@
-import useInView from '../hooks/useInView';
+import React, { useState } from "react";
 
 const skillsSet = [
-  { "Web Development": ["express", "react", "node", "django"] },
-  { "APIs & Realtime updates": ["rest api", "web rtc", "web socket", "socket io"] },
-  { "Programming & Scripting": ["java", "python", "java script"] },
-  { "App Development": ["react native", "expo"] },
-  { "Databases": ["mongodb", "sql"] },
-  { "Tools & Platforms": ["git", "github", "aws"] }
+  {
+    category: "ML, Gen AI & Data Science",
+    icon: (
+      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ),
+    skills: [
+      "Machine Learning",
+      "Deep Learning",
+      "Natural Language Processing",
+      "Large Language Models",
+      "Retrieval Augmented Generation",
+      "Agentic AI",
+      "AI Agents",
+      "Model Context Protocol",
+      "Prompt Engineering"
+    ],
+  },
+  {
+    category: "Programming & Scripting",
+    icon: (
+      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+      </svg>
+    ),
+    skills: ["Python", "JavaScript", "TypeScript", "Java"],
+  },
+  {
+    category: "App Development",
+    icon: (
+      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+      </svg>
+    ),
+    skills: ["React Native", "Expo"],
+  },
+  {
+    category: "Web Development",
+    icon: (
+      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      </svg>
+    ),
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React Js",
+      "Tailwind CSS",
+      "Node Js",
+      "Express Js",
+      "Django",
+      "FastAPI",
+    ],
+  },
+  {
+    category: "APIs & Realtime Updates",
+    icon: (
+      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+    ),
+    skills: ["REST API", "WebSockets", "Socket.io", "WebRTC"],
+  },
+  {
+    category: "Databases",
+    icon: (
+      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+      </svg>
+    ),
+    skills: ["MongoDB", "Firebase", "MySQL", "PostgreSQL", "Pinecone"],
+  },
+  {
+    category: "Cloud, DevOps & Tools",
+    icon: (
+      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+      </svg>
+    ),
+    skills: ["Azure", "AWS", "Git", "GitHub", "Postman", "SEO", "MS Office"],
+  },
 ];
 
 const Skills = () => {
-  return (
-    <div id="skills" className="w-full overflow-hidden bg-primary pt-[7vh] max-[600px]:pt-[5vh] max-[426px]:px-0 max-[426px]:pb-4 max-[426px]:pt-1">
-      <h2 className="mb-12 text-center font-anton text-5xl tracking-widest text-black max-[800px]:mb-10 max-[800px]:text-[2.2rem] max-[600px]:text-2xl max-[426px]:mb-8">
-        <span className="text-secondary">SKILLS</span> gained
-      </h2>
-      <div className="flex flex-wrap justify-center gap-10 px-[5vw] max-[800px]:gap-8 max-[426px]:px-0">
-        {skillsSet.map((skillSet, skillSetIndex) => {
-          const skillSetName = Object.keys(skillSet)[0];
-          const skillSetArray = skillSet[skillSetName];
-          const [ref, visible] = useInView(0.2);
-          const delay = `${skillSetIndex * 0.15}s`;
 
-          return (
-            <div
-              ref={ref}
-              key={skillSetName.replace(/\s/g, "")}
-              className={`relative opacity-0 w-full md:max-w-max flex flex-wrap justify-evenly gap-5 rounded-3xl border-2 border-secondary bg-white p-4 pt-10 shadow-[0_2px_16px_0_rgba(49,59,172,0.07)] transition-shadow hover:shadow-[0_4px_24px_0_rgba(49,59,172,0.13)] max-[1200px]:gap-3 max-[1200px]:p-3 max-[1200px]:pt-8 max-[600px]:min-h-[120px] max-[600px]:min-w-[180px] max-[600px]:max-w-[90%] max-[426px]:p-2 max-[426px]:pt-6 ${
-                visible ? "animate-fadeInUp" : ""
-              }`}
-              style={{ animationDelay: delay }}
-            >
-              <p className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-3xl bg-secondary px-3 py-2 text-[1.1rem] font-bold tracking-widest text-white max-[800px]:px-2.5 max-[800px]:py-1.5 max-[800px]:text-[0.9rem]">
-                {skillSetName}
-              </p>
-              {skillSetArray.map((skillName, index) => (
-                <div className="flex flex-col items-center" key={index}>
-                  <img
-                    loading="lazy"
-                    src={`/images/skills/${skillName}.svg`}
-                    alt={skillName}
-                    className="h-32 w-32 rounded-full bg-[#f5f5f5] p-1 shadow-[0_2px_8px_0_rgba(49,59,172,0.08)] max-[1200px]:h-24 max-[1200px]:w-24 max-[800px]:h-20 max-[800px]:w-20 max-[426px]:h-15 max-[426px]:w-15"
-                  />
-                  <p className="mt-2 text-center text-base font-medium tracking-widest text-secondary max-[426px]:max-w-min max-[426px]:text-[0.8rem]">
-                    {skillName.toUpperCase()}
-                  </p>
-                </div>
-              ))}
-            </div>
-          );
-        })}
+  return (
+    <section id="skills" className="w-full bg-primary py-16 px-4 sm:px-8 lg:px-12">
+      {/* Section Header */}
+      <div className="mb-10 text-center">
+        <h2 className="font-anton text-4xl sm:text-5xl lg:text-6xl tracking-wider text-black">
+          <span className="text-secondary">SKILLS</span> GAINED
+        </h2>
+        <div className="mx-auto mt-2 h-1.5 w-20 rounded-full bg-secondary" />
       </div>
-    </div>
+
+
+      {/* Grid Container */}
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {skillsSet.map((group) => (
+          <div
+            key={group.category}
+            className={`${group.skills.length > 8 ? 'lg:col-span-2' : ''} group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-secondary/15 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-secondary hover:shadow-xl`}
+          >
+            {/* Background Accent Mesh */}
+            <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-secondary/5 transition-all duration-500 group-hover:scale-150 group-hover:bg-secondary/10" />
+
+            <div>
+              {/* Card Header */}
+              <div className="relative mb-6 flex items-center justify-between border-b border-gray-100 pb-3">
+                <div className="flex items-center gap-2.5 text-secondary">
+                  <div className="rounded-lg bg-secondary/10 p-2 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+                    {group.icon}
+                  </div>
+                  <h3 className="text-base font-bold tracking-wide text-gray-900">
+                    {group.category}
+                  </h3>
+                </div>
+                <span className="rounded-full bg-secondary/10 px-2.5 py-1 text-xs font-extrabold text-secondary">
+                  {group.skills.length}
+                </span>
+              </div>
+
+              {/* Skill Pill Badges */}
+              <div className="relative flex flex-wrap gap-2">
+                {group.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="inline-flex items-center rounded-lg border border-gray-200/80 bg-gray-50/60 px-3 py-1.5 text-xs font-semibold text-gray-700 transition-all duration-200 hover:scale-105 hover:border-secondary hover:bg-white hover:text-secondary hover:shadow-sm"
+                  >
+                    <span className="mr-1.5 h-1.5 w-1.5 rounded-full bg-secondary/50 group-hover:bg-secondary" />
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

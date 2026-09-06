@@ -1,0 +1,79 @@
+const skillsSet = [
+  {
+    "ML, Gen AI & Data Science": [
+      "machine learning",
+      "deep learning",
+      "natural language processing",
+      "large language models",
+      "retrieval augmented generation",
+      "agentic ai",
+      "ai agents",
+      "model context protocol",
+      "prompt engineering",
+      "pinecone"
+    ]
+  },
+
+  {
+    "Web Development": [
+      "html",
+      "css",
+      "javascript",
+      "typescript",
+      "react",
+      "tailwind css",
+      "node",
+      "express",
+      "django",
+      "fastapi"
+    ]
+  },
+
+  {
+    "APIs & Realtime Updates": [
+      "rest api",
+      "websockets",
+      "socket io",
+      "web rtc"
+    ]
+  },
+
+  {
+    "Programming & Scripting": [
+      "python",
+      "javascript",
+      "typescript",
+      "java"
+    ]
+  },
+
+  {
+    "App Development": [
+      "react native",
+      "expo"
+    ]
+  },
+
+  {
+    "Databases": [
+      "mongodb",
+      "firebase",
+      "mysql",
+      "postgresql",
+      "pinecone"
+    ]
+  },
+
+  {
+    "Cloud, DevOps & Tools": [
+      "azure",
+      "aws",
+      "git",
+      "github",
+      "postman",
+      "seo",
+      "ms office"
+    ]
+  }
+
+];

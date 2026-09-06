@@ -1,12 +1,11 @@
 import CustomSwiper from '../components/CustomSwiper';
-import useInView from '../hooks/useInView';
 
 const websitesData = [
   {
     name: 'marketmea',
     images: Array.from({length:8}).map((value,index)=>`marketmea${index+1}`),
     usecase: 'A b2b market place',
-    techStack: ['mongodb', 'express js', 'react js', 'rest api', 'jwt', 'node workers', 'nodemailer', 'twilio', 'aws-ec2', 'aws-s3'],
+    techStack: ['mongodb', 'express js', 'react js', 'type script', 'rest api', 'jwt', 'node workers', 'nodemailer', 'twilio', 'aws-ec2', 'aws-s3'],
     url: 'https://www.marketmea.com',
     github: '',
   },
@@ -64,14 +63,12 @@ const Websites = () => {
       </h2>
       <div className='flex flex-col'>
         {websitesData.map((website, index) => {
-          const [ref, visible] = useInView(0.2);
           const isEven = index % 2 === 0;
           return (
             <div
-              ref={ref}
               className={`flex w-full items-center px-[5%] mb-10 max-[800px]:flex-col max-[800px]:border-b max-[800px]:border-lightGray max-[800px]:p-2 max-[800px]:last:border-none ${
                 isEven ? 'flex-row' : 'flex-row-reverse'
-              } ${visible ? 'animate-fadeInUp opacity-100' : 'opacity-0'}`}
+              } opacity-100`}
               key={index}
             >
               <div className='h-max w-1/2 overflow-hidden rounded-xl border-[0.15rem] border-lightGray max-[800px]:w-full max-[800px]:rounded-lg'>
@@ -82,17 +79,17 @@ const Websites = () => {
                   isEven ? 'pl-12' : 'pr-[8vw]'
                 }`}
               >
-                <h2 className='linear-gradient-text animate-linearGradientAnimation text-[5vw] font-black max-[800px]:text-[2rem]'>
+                <h2 className='linear-gradient-text leading-normal lg:leading-none animate-linearGradientAnimation text-[4.5vw] font-black max-[800px]:text-[2rem]'>
                   {website.name.toUpperCase()}
                 </h2>
                 <p className='text-2xl max-[800px]:text-base'>{website.usecase}</p>
-                <div className='my-6 flex flex-wrap gap-4 max-[800px]:my-2 max-[800px]:justify-center max-[800px]:gap-2'>
+                <div className='my-6 flex flex-wrap gap-3 max-[800px]:my-2 max-[800px]:justify-center max-[800px]:gap-2'>
                   {website.techStack.map((tech, i) => {
                     const techKey = tech.replaceAll(' ', '').toLocaleLowerCase();
                     return (
                       <p
                         key={tech + i}
-                        className={`cursor-default rounded-lg p-2 text-white shadow-hero ${
+                        className={`cursor-default rounded-4xl px-3 py-2 text-white shadow-hero ${
                           techColors[techKey] || 'bg-black'
                         }`}
                       >
